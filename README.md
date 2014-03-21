@@ -11,6 +11,6 @@ Manually copy and paste the Docset Feed URL in Dash > Preferences... > Downloads
 
 `https://github.com/soulshake/gandi-docset/raw/master/gandi.xml`
 
-or
+or, browsing to this URL in a browser might work if you're lucky:
 
-[Click here](dash-feed://https%3A%2F%2Fgithub.com%2Fsoulshake%2Fgandi-docset%2Fraw%2Fmaster%2Fgandi.xml) to subscribe automatically.
+`dash-feed://https%3A%2F%2Fgithub.com%2Fsoulshake%2Fgandi-docset%2Fraw%2Fmaster%2Fgandi.xml`
