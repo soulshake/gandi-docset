@@ -10,11 +10,3 @@ Instant offline access to [Gandi API](http://doc.rpc.gandi.net/) documentation w
 Manually copy and paste the Docset Feed URL in Dash > Preferences... > Downloads > +
 
 `https://github.com/soulshake/gandi-docset/raw/master/gandi.xml`
-
-or
-
-Copy and paste this custom URL scheme in Chrome/Safari, which will cause Dash to subscribe to that feed:
-
-`dash-feed://https%3A%2F%2Fgithub.com%2Fsoulshake%2Fgandi-docset%2Fraw%2Fmaster%2Fgandi.xml`
-
-
