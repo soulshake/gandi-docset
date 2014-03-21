@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="_static/menu.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="index.html" />
+    <link rel="next" title="Gandi Domain API" href="domain/index.html" />
+    <link rel="prev" title="Gandi API Manual" href="index.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="domain/index.html" title="Gandi Domain API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi API Manual"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#xml-rpc-interface">XML-RPC Interface</a><ul>
+<li><a class="reference internal" href="#client">Client</a></li>
+<li><a class="reference internal" href="#stateless">Stateless</a></li>
+<li><a class="reference internal" href="#authentication">Authentication</a></li>
+<li><a class="reference internal" href="#rate-limit">Rate limit</a></li>
+<li><a class="reference internal" href="#introspection">Introspection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ot-e-system">OT&amp;E System</a></li>
+<li><a class="reference internal" href="#versioning-and-release-policy">Versioning and Release Policy</a></li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Gandi API Manual</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="domain/index.html"
+                        title="next chapter">Gandi Domain API</a></p>
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Gandi provides remotes APIs using the <a class="reference external" href="http://en.wikipedia.org/wiki/XML-RPC">XML-RPC</a> protocol. It becomes
+easier to build your third party applications to manage your Gandi
+resources (domain, contact, hosting, etc).</p>
+<p>This documentation is a complete reference to the Gandi API v3.0.</p>
+</div>
+<div class="section" id="xml-rpc-interface">
+<h2>XML-RPC Interface<a class="headerlink" href="#xml-rpc-interface" title="Permalink to this headline">¶</a></h2>
+<p><strong>Endpoint:</strong> <tt class="docutils literal"><span class="pre">https://rpc.gandi.net/xmlrpc/</span></tt></p>
+<p>All connections to rpc.gandi.net must be done over HTTPS. This is for
+the safety of our users. The certificate fingerprints are:</p>
+<div class="line-block">
+<div class="line"><strong>SHA1:</strong> 4C:81:0A:28:9D:F6:FD:AA:53:0F:52:B8:B1:92:BF:8C:25:30:6B:F6</div>
+<div class="line"><strong>MD5:</strong>  F7:0A:FF:82:D6:AE:13:12:75:72:7F:9A:59:63:F4:41</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The old URL <tt class="docutils literal"><span class="pre">https://rpc.gandi.net/xmlrpc/2.0/</span></tt> is now obsolete
+and will be removed soon.</p>
+</div>
+<div class="section" id="client">
+<h3>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h3>
+<div id="tabpages-01">
+    <ul>
+        <li><a href="#tab-python-01">python</a></li>
+        <li><a href="#tab-php-01">php</a></li>
+        <li><a href="#tab-nodejs-01">nodejs</a></li>
+        <li><a href="#tab-perl-10">perl</a></li>
+        <li><a href="#tab-ruby-10">ruby</a></li>
+        <li><a href="#tab-C-10">C</a></li>
+    </ul>
+    <div id="tab-python-01"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Now you can call API methods.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># You must authenticate yourself by passing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># the API key as the first method&#39;s argument</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">version</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In Python, use the <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> module from the standard
+library.</p>
+<p class="last">In Python 3 <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> has been renamed xmlrpc.client.</p>
+</div>
+</div>
+<div id="tab-php-01"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// Library installed from PEAR</span>
+<span class="k">require_once</span> <span class="s1">&#39;XML/RPC2/Client.php&#39;</span><span class="p">;</span>
+
+<span class="c1">// The first step is to connect to the API</span>
+<span class="nv">$version_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span>
+    <span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;version.&#39;</span><span class="p">,</span> <span class="s1">&#39;sslverify&#39;</span> <span class="o">=&gt;</span> <span class="k">True</span> <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 checks the SSL certificate with Curl</span>
+<span class="c1">// Curl has its own CA bundle so you may :</span>
+<span class="c1">// * disable the &#39;sslverify&#39; option: leads to security issue</span>
+<span class="c1">// * enable the &#39;sslverify&#39; option (default) and add the Gandi</span>
+<span class="c1">// SSL certificate to the Curl bundle: best choice for security</span>
+<span class="c1">// See: http://curl.haxx.se/docs/sslcerts.html</span>
+
+<span class="nv">$apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1">// Now you can call API method</span>
+<span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="c1">// as the first method&#39;s argument</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$version_api</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 has known bugs on methods calls</span>
+<span class="c1">// See http://pear.php.net/bugs/bug.php?id=13963</span>
+<span class="c1">// You may use this call instead of the above one :</span>
+<span class="c1">// $result = $version_api-&gt;__call(&quot;info&quot;, $apikey);</span>
+
+<span class="c1">// dump the result</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In PHP 5, use the <a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> package from pear.</p>
+<p class="last"><a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> works with &#8216;prefix&#8217; in order to bind to namespace.
+The &#8216;prefix&#8217; isn&#8217;t editable, so you have to instanciante
+a client by namespace.</p>
+</div>
+</div>
+<div id="tab-nodejs-01"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">xmlrpc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">xmlrpc</span><span class="p">.</span><span class="nx">createSecureClient</span><span class="p">({</span>
+<span class="p">...</span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;rpc.gandi.net&#39;</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">port</span><span class="o">:</span> <span class="mi">443</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/xmlrpc/&#39;</span>
+<span class="p">...</span> <span class="p">})</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="c1">// Now you can call API methods.</span>
+<span class="o">&gt;</span> <span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="o">&gt;</span> <span class="c1">// as the first method&#39;s argument</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;version.info&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">apikey</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With NodeJS, use the <a class="reference external" href="http://search.npmjs.org/#/xmlrpc">npm xmlrpc package</a>.</p>
+</div>
+</div>
+<div id="tab-perl-10"><div class="highlight-perl"><div class="highlight"><pre><span class="k">use</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$api</span> <span class="o">=</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="k">my</span> <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;version.info&#39;</span><span class="p">,</span> <span class="nv">$apikey</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With perl, use the <a class="reference external" href="http://search.cpan.org/~daan/XML-RPC-0.9/lib/XML/RPC.pm">cpan xml::rpc package</a>.</p>
+</div>
+</div>
+<div id="tab-ruby-10"><div class="highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;xmlrpc/client&#39;</span>
+
+<span class="k">class</span> <span class="nc">ZlibParserDecorator</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+    <span class="vi">@parser</span> <span class="o">=</span> <span class="n">parser</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodResponse</span><span class="p">(</span><span class="n">responseText</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodResponse</span><span class="p">(</span><span class="no">Zlib</span><span class="o">::</span><span class="no">GzipReader</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">StringIO</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">responseText</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">XMLRPC</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new2</span><span class="p">(</span><span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">http_header_extra</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Accept-Encoding&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;gzip&quot;</span> <span class="p">}</span>
+<span class="n">server</span><span class="o">.</span><span class="n">set_parser</span> <span class="no">ZlibParserDecorator</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:parser</span><span class="p">))</span>
+
+<span class="n">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>With ruby, use the <a class="reference external" href="http://ruby-doc.org/stdlib/libdoc/xmlrpc/rdoc/index.html">xmlrpc/client</a> module from the standard library.
+Ruby does not support gzip by default, the ZlibParserDecorator
+is used to enabled with Ruby &gt;1.9.</p>
+<p class="last">For older ruby version, neither set the http_header_extra nor the parser.</p>
+</div>
+</div>
+<div id="tab-C-10"><div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="cp">#include &lt;xmlrpc.h&gt;</span>
+<span class="cp">#include &lt;xmlrpc_client.h&gt;</span>
+
+<span class="cp">#define CLIENT_NAME             &quot;Documentation Client&quot;</span>
+<span class="cp">#define CLIENT_VERSION          &quot;0.1&quot;</span>
+<span class="cp">#define CLIENT_USERAGENT        CLIENT_NAME &quot;/&quot; CLIENT_VERSION</span>
+
+<span class="cp">#define SERVER_URL              &quot;https:</span><span class="c1">//rpc.gandi.net/xmlrpc/&quot;</span>
+
+<span class="kt">int</span>     <span class="n">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+<span class="kt">void</span>    <span class="n">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">xmlrpc_env</span>      <span class="n">env</span><span class="p">;</span>
+        <span class="n">xmlrpc_value</span>    <span class="o">*</span><span class="n">apikey</span><span class="p">,</span> <span class="o">*</span><span class="n">rv</span><span class="p">;</span>
+
+        <span class="n">client_connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">apikey</span> <span class="o">=</span> <span class="n">xmlrpc_build_value</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="s">&quot;(s)&quot;</span><span class="p">,</span> <span class="s">&quot;my 24-character API key&quot;</span><span class="p">);</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">xmlrpc_client_call_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="n">SERVER_URL</span><span class="p">,</span> <span class="s">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">);</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">rv</span><span class="p">);</span>
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">apikey</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_clean</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_cleanup</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_clientparms</span> <span class="n">clientp</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_curl_xportparms</span> <span class="n">curlp</span><span class="p">;</span>
+
+        <span class="n">curlp</span><span class="p">.</span><span class="n">network_interface</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>         <span class="cm">/* use curl&#39;s default */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifypeer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>               <span class="cm">/* Gandi API CA must be present */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifyhost</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">user_agent</span> <span class="o">=</span> <span class="n">CLIENT_USERAGENT</span><span class="p">;</span>    <span class="cm">/* XML-RPC requirement */</span>
+
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transport</span> <span class="o">=</span> <span class="s">&quot;curl&quot;</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparmsP</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">curlp</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparm_size</span> <span class="o">=</span> <span class="n">XMLRPC_CXPSIZE</span><span class="p">(</span><span class="n">user_agent</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_init</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_init2</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">XMLRPC_CLIENT_NO_FLAGS</span><span class="p">,</span> <span class="n">CLIENT_NAME</span><span class="p">,</span>
+            <span class="n">CLIENT_VERSION</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">clientp</span><span class="p">,</span> <span class="n">XMLRPC_CPSIZE</span><span class="p">(</span><span class="n">transportparm_size</span><span class="p">));</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_occurred</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;XML-RPC Fault: %s (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_string</span><span class="p">,</span>
+                    <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_code</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With C, use the <a class="reference external" href="http://xmlrpc-c.sourceforge.net/">xmlrpc-c</a> library.</p>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-01" ).tabs();
+    });
+</script></div>
+<div class="section" id="stateless">
+<h3>Stateless<a class="headerlink" href="#stateless" title="Permalink to this headline">¶</a></h3>
+<p>Gandi APIs does not maintain session. It only provides descriptions of
+objects. In other words a call does not depend on previous calls but
+only on its arguments.</p>
+</div>
+<div class="section" id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+<p>Every calls to Gandi APIs are authenticated. That is why all our methods
+take a unique <strong>API Key</strong> as first argument. If you don&#8217;t have it
+already, you can retrieve your API key on the <a class="reference external" href="https://www.gandi.net/admin/apixml/">account</a> page.</p>
+<div id="tabpages-02">
+    <ul>
+        <li><a href="#tab-python-02">python</a></li>
+        <li><a href="#tab-php-02">php</a></li>
+        <li><a href="#tab-nodejs-02">nodejs</a></li>
+        <li><a href="#tab-perl-02">perl</a></li>
+        <li><a href="#tab-ruby-02">ruby</a></li>
+        <li><a href="#tab-C-02">C</a></li>
+    </ul>
+    <div id="tab-python-02"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-php-02"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$api_version</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">))</span>
+
+<span class="c1">// See bug : http://pear.php.net/bugs/bug.php?id=13963</span>
+<span class="c1">// In case of problem, use : print_r($api_version-&gt;_call(&quot;info&quot;, $apikey))</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div id="tab-nodejs-02"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;version.info&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">apikey</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-perl-02"><div class="highlight-perl"><div class="highlight"><pre><span class="k">my</span> <span class="nv">$info</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;version.info&#39;</span><span class="p">,</span> <span class="nv">$apikey</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-ruby-02"><div class="highlight-ruby"><div class="highlight"><pre><span class="n">info</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;version.info&#39;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-C-02"><div class="highlight-c"><div class="highlight"><pre><span class="n">xmlrpc_value</span> <span class="o">*</span><span class="n">info</span><span class="p">;</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">xmlrpc_client_call_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="n">SERVER_URL</span><span class="p">,</span> <span class="s">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">);</span>
+</pre></div>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-02" ).tabs();
+    });
+</script><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Store your API key in a safe place.</p>
+</div>
+</div>
+<div class="section" id="rate-limit">
+<h3>Rate limit<a class="headerlink" href="#rate-limit" title="Permalink to this headline">¶</a></h3>
+<p>A maximum of 30 calls per 2 seconds are permitted with the same API Key.</p>
+</div>
+<div class="section" id="introspection">
+<h3>Introspection<a class="headerlink" href="#introspection" title="Permalink to this headline">¶</a></h3>
+<p>Gandi APIs support the XML introspection API :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">listMethods</span><span class="p">()</span>
+<span class="go">[&#39;catalog.list&#39;, &#39;contact.balance&#39;, &#39;contact.can_associate&#39;, ...]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">methodHelp</span><span class="p">(</span><span class="s">&#39;domain.list&#39;</span><span class="p">)</span>
+<span class="go">domain.list(apikey, [opts=nil])</span>
+<span class="go">List domains associated to the contact represented by **apikey**.</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">methodSignature</span><span class="p">(</span><span class="s">&#39;domain.list&#39;</span><span class="p">)</span>
+<span class="go">[[&#39;struct&#39;, &#39;string&#39;, &#39;array&#39;]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ot-e-system">
+<h2>OT&amp;E System<a class="headerlink" href="#ot-e-system" title="Permalink to this headline">¶</a></h2>
+<p><strong>Endpoint:</strong> <tt class="docutils literal"><span class="pre">https://rpc.ote.gandi.net/xmlrpc/</span></tt></p>
+<p>Alongside the production APIs, Gandi provides an Operational Test
+and Evaluation (OT&amp;E) system. The certificate fingerprints are:</p>
+<div class="line-block">
+<div class="line"><strong>SHA1:</strong> 78:7F:05:3A:88:A4:C5:29:4C:BE:5E:1C:0B:E2:C5:77:46:2F:14:50</div>
+<div class="line"><strong>MD5:</strong>  6E:DE:F3:37:2B:91:DE:DC:53:81:EE:E6:C4:B5:44:9D</div>
+</div>
+<p>Gandi OT&amp;E APIs are almost similar to the production ones. The
+differences are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You won&#8217;t receive email notification of your commands status</li>
+<li>All calls are executed in the Registries OT&amp;E Systems</li>
+</ul>
+</div></blockquote>
+<p>For example, if you create a domain it will be really created
+but not for production, only in the test server of the registry.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to some registry limitation, not all TLDs are available
+in Gandi OT&amp;E System.</p>
+</div>
+</div>
+<div class="section" id="versioning-and-release-policy">
+<h2>Versioning and Release Policy<a class="headerlink" href="#versioning-and-release-policy" title="Permalink to this headline">¶</a></h2>
+<p>When a new version of the API code is ready to be released, Gandi will install
+it on the OT&amp;E platform (  <a class="reference external" href="https://rpc.ote.gandi.net/xmlrpc/">https://rpc.ote.gandi.net/xmlrpc/</a> ).
+Customers can connect to this API and test/validate/update their application
+code following Gandi&#8217;s changes, which will be outlined in the documentation&#8217;s
+changelog.</p>
+<p>Gandi will post information about a new version reaching OT&amp;E on various
+communication mediums.</p>
+<p>After a specified amount of time, the release on OT&amp;E will be made available on
+the production API (<a class="reference external" href="https://rpc.gandi.net/xmlrpc/">https://rpc.gandi.net/xmlrpc/</a>) and the documentation will
+be made available (<a class="reference external" href="http://doc.rpc.gandi.net/">http://doc.rpc.gandi.net/</a>).
+Gandi will announce this change.</p>
+<p>API versions follow a simple pattern: 3.x.y with y being a minor version
+mainly for internal purpose and x a &#8216;major&#8217; version which indicates a major
+change in the API (such as signature change or other incompatibility).
+The first number is a historical number for Gandi, notably the third rewrite
+of our information system.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="domain/index.html" title="Gandi Domain API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi API Manual"
+             >previous</a> |</li>
+        <li><a href="index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Catalog API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="index.html" rel="up" title="Gandi Catalog API"/>
+<link href="usage.html" rel="prev" title="Catalog API"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="P" href="usage.html" title="Catalog API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a accesskey="U" href="index.html">Gandi Catalog API</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Catalog API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="usage.html" title="previous chapter">Catalog API</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="catalog-api-reference">
+<span id="catalog-api-ref"></span><h1>Catalog API Reference<a class="headerlink" href="#catalog-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="catalog.list"><a name="//apple_ref/cpp/clm/catalog.list"></a>
+<tt class="descclassname">catalog.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em>, <em>opts</em><span class="optional">[</span>, <em>currency='EUR'</em>, <em>grid='A'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#catalog.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List catalog entries.
+The default currency is EUR.
+The default grid is A.
+Override the parameters in order to get the price of a product
+associated with your currency and your price grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#ProductSearchOptions" title="ProductSearchOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+<li><strong>currency</strong> (<em>string</em>) – ISO currency</li>
+<li><strong>grid</strong> (<em>string</em>) – Name of the Grid</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#CatalogListReturn" title="CatalogListReturn"><tt class="xref py py-data docutils literal"><span class="pre">List</span> <span class="pre">of</span> <span class="pre">products</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="Currency"><a name="//apple_ref/cpp/clconst/Currency"></a>
+<tt class="descname">Currency</tt><a class="headerlink" href="#Currency" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#catalog.list" title="catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">catalog.list()</span></tt></a></p>
+<p>used by <a class="reference internal" href="../contact/reference.html#PrepaidReturn" title="PrepaidReturn"><tt class="xref py py-data docutils literal"><span class="pre">PrepaidReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>EUR</td>
+<td>Euro</td>
+</tr>
+<tr class="row-odd"><td>USD</td>
+<td>United States Dollar</td>
+</tr>
+<tr class="row-even"><td>GBP</td>
+<td>Great Britain Pound</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Grid"><a name="//apple_ref/cpp/clconst/Grid"></a>
+<tt class="descname">Grid</tt><a class="headerlink" href="#Grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#catalog.list" title="catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">catalog.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>D</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>E</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Product"><a name="//apple_ref/cpp/clconst/Product"></a>
+<tt class="descname">Product</tt><a class="headerlink" href="#Product" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ProductSearchOptions" title="ProductSearchOptions"><tt class="xref py py-data docutils literal"><span class="pre">ProductSearchOptions</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ProductTypeName" title="ProductTypeName"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>quantity</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~description</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProductSearchOptions"><a name="//apple_ref/cpp/clconst/ProductSearchOptions"></a>
+<tt class="descname">ProductSearchOptions</tt><a class="headerlink" href="#ProductSearchOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#catalog.list" title="catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">catalog.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Product" title="Product"><tt class="xref py py-data docutils literal"><span class="pre">product</span></tt></a></td>
+<td> </td>
+<td>struct</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Action" title="Action"><tt class="xref py py-data docutils literal"><span class="pre">action</span></tt></a></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Action"><a name="//apple_ref/cpp/clconst/Action"></a>
+<tt class="descname">Action</tt><a class="headerlink" href="#Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ProductSearchOptions" title="ProductSearchOptions"><tt class="xref py py-data docutils literal"><span class="pre">ProductSearchOptions</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ActionName" title="ActionName"><tt class="xref py py-data docutils literal"><span class="pre">name</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>duration</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">param</span></tt></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ActionName"><a name="//apple_ref/cpp/clconst/ActionName"></a>
+<tt class="descname">ActionName</tt><a class="headerlink" href="#ActionName" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#Action" title="Action"><tt class="xref py py-data docutils literal"><span class="pre">Action</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>add</td>
+<td> </td>
+</tr>
+<tr class="row-odd"><td>create</td>
+<td> </td>
+</tr>
+<tr class="row-even"><td>remove</td>
+<td> </td>
+</tr>
+<tr class="row-odd"><td>release</td>
+<td>Release an hosting resource</td>
+</tr>
+<tr class="row-even"><td>renew</td>
+<td>Renew a domain</td>
+</tr>
+<tr class="row-odd"><td>restore</td>
+<td>Restore a domain</td>
+</tr>
+<tr class="row-even"><td>transfer</td>
+<td>Transfer a domain to Gandi</td>
+</tr>
+<tr class="row-odd"><td>change_owner</td>
+<td>Change domain owner</td>
+</tr>
+<tr class="row-even"><td>transfer_reseller</td>
+<td> </td>
+</tr>
+<tr class="row-odd"><td>update</td>
+<td> </td>
+</tr>
+<tr class="row-even"><td>delete</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProductTypeName"><a name="//apple_ref/cpp/clconst/ProductTypeName"></a>
+<tt class="descname">ProductTypeName</tt><a class="headerlink" href="#ProductTypeName" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#Product" title="Product"><tt class="xref py py-data docutils literal"><span class="pre">Product</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>domain</td>
+<td>Domain</td>
+</tr>
+<tr class="row-odd"><td>gandimail</td>
+<td>Email</td>
+</tr>
+<tr class="row-even"><td>hosting</td>
+<td>Hosting resource</td>
+</tr>
+<tr class="row-odd"><td>iaas</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>paas</td>
+<td>PaaS</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="CatalogListReturn"><a name="//apple_ref/cpp/clconst/CatalogListReturn"></a>
+<tt class="descname">CatalogListReturn</tt><a class="headerlink" href="#CatalogListReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#catalog.list" title="catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">catalog.list()</span></tt></a></p>
+<p>list of <tt class="xref py py-data docutils literal"><span class="pre">CatalogReturn</span></tt></p>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="usage.html" title="Catalog API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Catalog API</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

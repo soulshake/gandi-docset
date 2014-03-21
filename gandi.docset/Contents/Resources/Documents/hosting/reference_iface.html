@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Network Interface API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="reference.html" rel="up" title="IaaS Hosting API Reference"/>
+<link href="reference_ip.html" rel="next" title="IP Address API Reference"/>
+<link href="reference_disk.html" rel="prev" title="Disk API Reference"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="reference_ip.html" title="IP Address API Reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="reference_disk.html" title="Disk API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a accesskey="U" href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Network Interface API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="reference_disk.html" title="previous chapter">Disk API Reference</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="reference_ip.html" title="next chapter">IP Address API Reference</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="network-interface-api-reference">
+<span id="hosting-iface-api-ref"></span><h1>Network Interface API Reference<a class="headerlink" href="#network-interface-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Legacy access to <cite>iface.*</cite> methods will be removed soon, you will need to use <cite>hosting.iface.*</cite> instead</p>
+</div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 3.2.2: </span>The following methods are not available anymore : hosting.iface.ip_attach, hosting.iface.ip_detach</p>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="hosting.iface.count"><a name="//apple_ref/cpp/clm/hosting.iface.count"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.iface.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count network interfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#IfaceCountOptions" title="IfaceCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – number of network interfaces</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.iface.create"><a name="//apple_ref/cpp/clm/hosting.iface.create"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>iface_spec</em><big>)</big><a class="headerlink" href="#hosting.iface.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create a network interface using attributes specified by <strong>iface_spec</strong>.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>iface_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#IfaceDescription" title="IfaceDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">network</span> <span class="pre">interface</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_create</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.iface.delete"><a name="//apple_ref/cpp/clm/hosting.iface.delete"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>iface_id</em><big>)</big><a class="headerlink" href="#hosting.iface.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a network interface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>iface_id</strong> (<em>int</em>) – unique identifier of the network interface to delete</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_delete</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.iface.info"><a name="//apple_ref/cpp/clm/hosting.iface.info"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>iface_id</em><big>)</big><a class="headerlink" href="#hosting.iface.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a network interface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>iface_id</strong> (<em>int</em>) – network interface unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">network</span> <span class="pre">interface</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.iface.list"><a name="//apple_ref/cpp/clm/hosting.iface.list"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.iface.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List network interfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#IfaceListOptions" title="IfaceListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">network</span> <span class="pre">interfaces</span> <span class="pre">descriptions</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.iface.update"><a name="//apple_ref/cpp/clm/hosting.iface.update"></a>
+<tt class="descclassname">hosting.iface.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>iface_id</em>, <em>iface_spec</em><big>)</big><a class="headerlink" href="#hosting.iface.update" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Updates a network interface using attributes specified by <strong>iface_spec</strong>.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>iface_id</strong> (<em>int</em>) – network interface unique identifier</li>
+<li><strong>iface_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#IfaceUpdate" title="IfaceUpdate"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">iface</span> <span class="pre">to</span> <span class="pre">update</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_update</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="IfaceCountOptions"><a name="//apple_ref/cpp/clconst/IfaceCountOptions"></a>
+<tt class="descname">IfaceCountOptions</tt><a class="headerlink" href="#IfaceCountOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.iface.count" title="hosting.iface.count"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.count()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.count()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>ip.address</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>ip.reverse</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#IfaceState" title="IfaceState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#IfaceType" title="IfaceType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vlan</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vlan_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vm_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~vlan</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IfaceDescription"><a name="//apple_ref/cpp/clconst/IfaceDescription"></a>
+<tt class="descname">IfaceDescription</tt><a class="headerlink" href="#IfaceDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.iface.create" title="hosting.iface.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.create()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.create()</span></tt></p>
+<blockquote>
+<div><p class="versionchanged">
+<span class="versionmodified">Changed in version 3.2.0: </span>key <tt class="docutils literal"><span class="pre">vlan</span></tt> has been added</p>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 3.2.0: </span>key <tt class="docutils literal"><span class="pre">ip_version</span></tt> has changed</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Datacenter id</td>
+</tr>
+<tr class="row-even"><td>bandwidth</td>
+<td> </td>
+<td>double</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The iface bandwidth</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference_vm.html#IPVersion" title="IPVersion"><tt class="xref py py-data docutils literal"><span class="pre">ip_version</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">IP version</td>
+</tr>
+<tr class="row-even"><td>vlan</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Vlan Id (vlan api will come public soon)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IfaceListOptions"><a name="//apple_ref/cpp/clconst/IfaceListOptions"></a>
+<tt class="descname">IfaceListOptions</tt><a class="headerlink" href="#IfaceListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.iface.list" title="hosting.iface.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.list()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.list()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>ip.address</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>ip.reverse</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#IfaceState" title="IfaceState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#IfaceType" title="IfaceType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vlan</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vlan_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vm_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>~vlan</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IfaceState"><a name="//apple_ref/cpp/clconst/IfaceState"></a>
+<tt class="descname">IfaceState</tt><a class="headerlink" href="#IfaceState" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#IfaceCountOptions" title="IfaceCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">IfaceCountOptions</span></tt></a>, <a class="reference internal" href="#IfaceListOptions" title="IfaceListOptions"><tt class="xref py py-data docutils literal"><span class="pre">IfaceListOptions</span></tt></a> and <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">IfaceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>used</td>
+<td>free iface</td>
+</tr>
+<tr class="row-odd"><td>free</td>
+<td>used iface</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IfaceType"><a name="//apple_ref/cpp/clconst/IfaceType"></a>
+<tt class="descname">IfaceType</tt><a class="headerlink" href="#IfaceType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#IfaceCountOptions" title="IfaceCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">IfaceCountOptions</span></tt></a>, <a class="reference internal" href="#IfaceListOptions" title="IfaceListOptions"><tt class="xref py py-data docutils literal"><span class="pre">IfaceListOptions</span></tt></a> and <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">IfaceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>public</td>
+<td>public iface</td>
+</tr>
+<tr class="row-odd"><td>private</td>
+<td>private iface</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IfaceUpdate"><a name="//apple_ref/cpp/clconst/IfaceUpdate"></a>
+<tt class="descname">IfaceUpdate</tt><a class="headerlink" href="#IfaceUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.iface.update" title="hosting.iface.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.update()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.update()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>bandwidth</td>
+<td> </td>
+<td>double</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IPState"><a name="//apple_ref/cpp/clconst/IPState"></a>
+<tt class="descname">IPState</tt><a class="headerlink" href="#IPState" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="reference_ip.html#IPCountOptions" title="IPCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">IPCountOptions</span></tt></a>, <a class="reference internal" href="reference_ip.html#IPListOptions" title="IPListOptions"><tt class="xref py py-data docutils literal"><span class="pre">IPListOptions</span></tt></a> and <a class="reference internal" href="#IPReturn" title="IPReturn"><tt class="xref py py-data docutils literal"><span class="pre">IPReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>being_created</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>created</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>recyclable</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>releasing</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="IfaceReturn"><a name="//apple_ref/cpp/clconst/IfaceReturn"></a>
+<tt class="descname">IfaceReturn</tt><a class="headerlink" href="#IfaceReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#hosting.iface.info" title="hosting.iface.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.info()</span></tt></a>, <a class="reference internal" href="#hosting.iface.list" title="hosting.iface.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.list()</span></tt></a>, <tt class="xref py py-meth docutils literal"><span class="pre">iface.info()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.list()</span></tt></p>
+<p>used by <a class="reference internal" href="reference_vm.html#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>bandwidth</td>
+<td>double</td>
+</tr>
+<tr class="row-odd"><td>datacenter_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#IPReturn" title="IPReturn"><tt class="xref py py-data docutils literal"><span class="pre">ips</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#hosting.iface.info" title="hosting.iface.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">iface.info()</span></tt></td>
+</tr>
+<tr class="row-odd"><td>ips_id</td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>num</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#IfaceState" title="IfaceState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#IfaceType" title="IfaceType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#PrivateVlanReturn" title="PrivateVlanReturn"><tt class="xref py py-data docutils literal"><span class="pre">vlan</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>vm_id</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="IPReturn"><a name="//apple_ref/cpp/clconst/IPReturn"></a>
+<tt class="descname">IPReturn</tt><a class="headerlink" href="#IPReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="reference_ip.html#hosting.ip.info" title="hosting.ip.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.ip.info()</span></tt></a>, <a class="reference internal" href="reference_ip.html#hosting.ip.list" title="hosting.ip.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.ip.list()</span></tt></a>, <tt class="xref py py-meth docutils literal"><span class="pre">ip.info()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">ip.list()</span></tt></p>
+<p>used by <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">IfaceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>datacenter_id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>iface_id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>ip</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>num</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>reverse</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#IPState" title="IPState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">version</span></tt></a></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="PrivateVlanReturn"><a name="//apple_ref/cpp/clconst/PrivateVlanReturn"></a>
+<tt class="descname">PrivateVlanReturn</tt><a class="headerlink" href="#PrivateVlanReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">IfaceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">ID of the private vlan</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Name of the private vlan</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="reference_ip.html" title="IP Address API Reference">next</a> |</li>
+<li class="right">
+<a href="reference_disk.html" title="Disk API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

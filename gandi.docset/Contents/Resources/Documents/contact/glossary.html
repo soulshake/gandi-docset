@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contact API Glossary &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/menu.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="../index.html" />
+    <link rel="up" title="Gandi Contact API" href="index.html" />
+    <link rel="next" title="Gandi Certificate API" href="../cert/index.html" />
+    <link rel="prev" title="Contact API Reference" href="reference.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../cert/index.html" title="Gandi Certificate API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="Contact API Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Gandi Contact API</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+        
+        
+        
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="previous chapter">Contact API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../cert/index.html"
+                        title="next chapter">Gandi Certificate API</a></p>
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="contact-api-glossary">
+<h1>Contact API Glossary<a class="headerlink" href="#contact-api-glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-contact-types">contact types</dt>
+<dd><p class="first">A contact type is specified by an integer according to the following mapping:</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">value</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>person</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>company</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>association</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>organization</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>reseller</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt id="term-error-codes">error codes</dt>
+<dd><p class="first">Error codes can be concatenated with + and can be prefixed with ! if negative.
+Some error codes are mainly used in their negative form (like EC_OLDENOUGH for example)</p>
+<p>exceptions</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">error code</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>EC_CANASSOCIATE</td>
+<td>The contact can&#8217;t be associated to that TLD</td>
+</tr>
+<tr class="row-odd"><td>EC_INVALIDPARAM1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>EC_INVALIDPARAM2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>EC_INVALIDPARAM3</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>parameters</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">error code</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>EC_STRTOOFEWCHARS</td>
+<td>The string is too short</td>
+</tr>
+<tr class="row-odd"><td>EC_STRTOOMANYCHARS</td>
+<td>The string is too long</td>
+</tr>
+<tr class="row-even"><td>EC_STRLENCHARS</td>
+<td>The string is the right size</td>
+</tr>
+<tr class="row-odd"><td>EC_STRTOOFEWWORDS</td>
+<td>The string contains too few words</td>
+</tr>
+<tr class="row-even"><td>EC_STRTOOMANYWORDS</td>
+<td>The string contains too many words</td>
+</tr>
+<tr class="row-odd"><td>EC_STRLENWORDS</td>
+<td>The string contains the right number of words</td>
+</tr>
+<tr class="row-even"><td>EC_STRMATCH</td>
+<td>The string matches the regexp</td>
+</tr>
+<tr class="row-odd"><td>EC_ENUMIN</td>
+<td>The value is in the list of possible values</td>
+</tr>
+<tr class="row-even"><td>EC_INTLOWER</td>
+<td>The integer is too small</td>
+</tr>
+<tr class="row-odd"><td>EC_INTGREATER</td>
+<td>The integer is too big</td>
+</tr>
+<tr class="row-even"><td>EC_FLOATLOWER</td>
+<td>The float is too small</td>
+</tr>
+<tr class="row-odd"><td>EC_FLOATGREATER</td>
+<td>The float is too big</td>
+</tr>
+<tr class="row-even"><td>EC_MULTIPLE</td>
+<td>The value is a multiple</td>
+</tr>
+<tr class="row-odd"><td>EC_VALIDAPIKEY</td>
+<td>The API key is valid</td>
+</tr>
+<tr class="row-even"><td>EC_VALIDBOOL</td>
+<td>The bool is valid</td>
+</tr>
+<tr class="row-odd"><td>EC_MISSINGFIELD</td>
+<td>One field is missing</td>
+</tr>
+<tr class="row-even"><td>EC_MISSINGFIELDS</td>
+<td>Several fields are missing</td>
+</tr>
+<tr class="row-odd"><td>EC_MISSINGMANDATORY</td>
+<td>One mandatory field is missing</td>
+</tr>
+<tr class="row-even"><td>EC_MISSINGMANDATORIES</td>
+<td>Several mandatory fields are missing</td>
+</tr>
+<tr class="row-odd"><td>EC_UNKNOWNFIELD</td>
+<td>The field is unknown</td>
+</tr>
+<tr class="row-even"><td>EC_LISTTOOFEW</td>
+<td>The list contains too few elements</td>
+</tr>
+<tr class="row-odd"><td>EC_LISTTOOMANY</td>
+<td>The list contains too many elements</td>
+</tr>
+<tr class="row-even"><td>EC_LISTDUPLICATE</td>
+<td>The list contains duplicates</td>
+</tr>
+<tr class="row-odd"><td>EC_VALIDDATE</td>
+<td>The date has a valid format</td>
+</tr>
+<tr class="row-even"><td>EC_VALIDTIME</td>
+<td>The time has a valid format</td>
+</tr>
+<tr class="row-odd"><td>EC_VALIDDATETIME</td>
+<td>The datetime has a valid format</td>
+</tr>
+<tr class="row-even"><td>EC_OLDENOUGH</td>
+<td>The contact is old enough</td>
+</tr>
+<tr class="row-odd"><td>EC_VALIDSIREN</td>
+<td>The SIREN has a valid format</td>
+</tr>
+<tr class="row-even"><td>EC_VALIDSIRET</td>
+<td>The SIRET has a valid format</td>
+</tr>
+<tr class="row-odd"><td>EC_VALIDDOMAIN</td>
+<td>The domain has a valid format</td>
+</tr>
+<tr class="row-even"><td>EC_VALIDPASSWORD</td>
+<td>The password has a valid format</td>
+</tr>
+<tr class="row-odd"><td>EC_FIELDEQUAL</td>
+<td>The two fields are equal</td>
+</tr>
+<tr class="row-even"><td>EC_FIELDUPDATEPOSSIBLE</td>
+<td>The field can&#8217;t be updated</td>
+</tr>
+<tr class="row-odd"><td>EC_FORBIDDENCONTACTTYPE</td>
+<td>This contact type is forbidden</td>
+</tr>
+<tr class="row-even"><td>EC_CLOSEDTLD</td>
+<td>This TLD is closed</td>
+</tr>
+<tr class="row-odd"><td>EC_OPENTLD</td>
+<td>This TLD is open to everyone</td>
+</tr>
+<tr class="row-even"><td>EC_NORULETLD</td>
+<td>This TLD has no validation rule</td>
+</tr>
+<tr class="row-odd"><td>EC_TLDNEEDSAMECONTACT</td>
+<td>This TLD needs the same contact at different roles</td>
+</tr>
+<tr class="row-even"><td>EC_OUTOFCONTEXT</td>
+<td>The rule does not apply in that context</td>
+</tr>
+<tr class="row-odd"><td>EC_NOTAHANDLE</td>
+<td>This should be a gandi handle</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../cert/index.html" title="Gandi Certificate API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reference.html" title="Contact API Reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Gandi Contact API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

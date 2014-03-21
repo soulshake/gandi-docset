@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Operation API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="index.html" rel="up" title="Gandi Operation API"/>
+<link href="../catalog/index.html" rel="next" title="Gandi Catalog API"/>
+<link href="index.html" rel="prev" title="Gandi Operation API"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="../catalog/index.html" title="Gandi Catalog API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="index.html" title="Gandi Operation API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a accesskey="U" href="index.html">Gandi Operation API</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Operation API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="index.html" title="previous chapter">Gandi Operation API</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="../catalog/index.html" title="next chapter">Gandi Catalog API</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="operation-api-reference">
+<span id="operation-api-ref"></span><h1>Operation API Reference<a class="headerlink" href="#operation-api-reference" title="Permalink to this headline">¶</a></h1>
+<p>Methods which perform a modification return an operation.</p>
+<p>You should use the <tt class="xref py py-meth docutils literal"><span class="pre">operation.info</span></tt> method to monitor
+the progress of your requested operation until the step value is <tt class="docutils literal"><span class="pre">DONE</span></tt> to ensure
+that your operation is successfully finished.</p>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="operation.cancel"><a name="//apple_ref/cpp/clm/operation.cancel"></a>
+<tt class="descclassname">operation.</tt><tt class="descname">cancel</tt><big>(</big><em>apikey</em>, <em>operation</em><big>)</big><a class="headerlink" href="#operation.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel an operation.</p>
+<p>Set the <cite>step</cite> of an operation to <tt class="docutils literal"><span class="pre">CANCEL</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>operation</strong> (<em>int</em>) – ID of the operation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – True</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="operation.count"><a name="//apple_ref/cpp/clm/operation.count"></a>
+<tt class="descclassname">operation.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#operation.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count operations created by this contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#OperationListOptions" title="OperationListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – Number of operations</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="operation.info"><a name="//apple_ref/cpp/clm/operation.info"></a>
+<tt class="descclassname">operation.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>operation</em><big>)</big><a class="headerlink" href="#operation.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get operation information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>operation</strong> (<em>int</em>) – ID of the operation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="operation.list"><a name="//apple_ref/cpp/clm/operation.list"></a>
+<tt class="descclassname">operation.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#operation.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List operations created by this contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#OperationListOptions" title="OperationListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">List</span> <span class="pre">of</span> <span class="pre">operations</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="operation.relaunch"><a name="//apple_ref/cpp/clm/operation.relaunch"></a>
+<tt class="descclassname">operation.</tt><tt class="descname">relaunch</tt><big>(</big><em>apikey</em>, <em>operation</em>, <em>params</em><big>)</big><a class="headerlink" href="#operation.relaunch" title="Permalink to this definition">¶</a></dt>
+<dd><p>relaunch an operation.</p>
+<p>Relaunch an operation and modify parameters.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.7.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>operation</strong> (<em>int</em>) – ID of the operation.</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#RelaunchOperationParameters" title="RelaunchOperationParameters"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – True</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="OperationListOptions"><a name="//apple_ref/cpp/clconst/OperationListOptions"></a>
+<tt class="descname">OperationListOptions</tt><a class="headerlink" href="#OperationListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#operation.count" title="operation.count"><tt class="xref py py-meth docutils literal"><span class="pre">operation.count()</span></tt></a> and <a class="reference internal" href="#operation.list" title="operation.list"><tt class="xref py py-meth docutils literal"><span class="pre">operation.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>&lt;date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&lt;date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&lt;date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&gt;date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&gt;date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&gt;date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>cert.hostname</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>cert_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>contact_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>disk.name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>disk_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>domain</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>iface_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>mbox_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>paas.name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>site.name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>site_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#OperationStep" title="OperationStep"><tt class="xref py py-data docutils literal"><span class="pre">step</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#OperationType" title="OperationType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vm.hostname</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vm_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="RelaunchOperationParameters"><a name="//apple_ref/cpp/clconst/RelaunchOperationParameters"></a>
+<tt class="descname">RelaunchOperationParameters</tt><a class="headerlink" href="#RelaunchOperationParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#operation.relaunch" title="operation.relaunch"><tt class="xref py py-meth docutils literal"><span class="pre">operation.relaunch()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>authinfo</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-aero_ens_authid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-aero_ens_authkey</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-au_registrant_id_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-au_registrant_id_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../contact/reference.html#CaLegalType" title="CaLegalType"><tt class="xref py py-data docutils literal"><span class="pre">x-ca_legaltype</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-ca_owner_name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-coop_sponsor</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-cy_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../contact/reference.html#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-document_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-document_value</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-fi_based_on_person_name</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-fi_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-fi_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-fi_name_registration_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-fi_name_registration_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_birth_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-hk_registrant_document_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../contact/reference.html#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_origin_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../contact/reference.html#HkOwnerDocType" title="HkOwnerDocType"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_other_document_type</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-hu_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-hu_owner_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-ir_login_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-ir_login_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-it_pin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-kr_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-lv_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-my_admin_contact_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-my_admin_contact_username</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-my_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../contact/reference.html#MyOrganizationType" title="MyOrganizationType"><tt class="xref py py-data docutils literal"><span class="pre">x-my_organization_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-no_registrant_identity</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-nu_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-nu_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-pro_authority</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-pro_authoritywebsite</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-pro_licensenumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-pro_profession</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-pt_arbitration</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-pt_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-pt_roid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-ro_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-rs_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-rs_reg_tax_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-ru_registrant_passport_data</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-se_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-sg_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-sk_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>x-travel_uin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>x-xxx_membership_contact</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-xxx_sponsored_community</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="OperationInformation"><a name="//apple_ref/cpp/clconst/OperationInformation"></a>
+<tt class="descname">OperationInformation</tt><a class="headerlink" href="#OperationInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">OperationReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>extras</td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">additional informations</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>label</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">name given by the user to the associated product</td>
+</tr>
+<tr class="row-odd"><td>product_action</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">associated action</td>
+</tr>
+<tr class="row-odd"><td>product_name</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">product name if available</td>
+</tr>
+<tr class="row-odd"><td>product_type</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">associated product type in the catalog</td>
+</tr>
+<tr class="row-odd"><td>quantity</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="OperationReturn"><a name="//apple_ref/cpp/clconst/OperationReturn"></a>
+<tt class="descname">OperationReturn</tt><a class="headerlink" href="#OperationReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="../cert/reference.html#cert.create" title="cert.create"><tt class="xref py py-meth docutils literal"><span class="pre">cert.create()</span></tt></a>, <a class="reference internal" href="../cert/reference.html#cert.delete" title="cert.delete"><tt class="xref py py-meth docutils literal"><span class="pre">cert.delete()</span></tt></a>, <a class="reference internal" href="../cert/reference.html#cert.renew" title="cert.renew"><tt class="xref py py-meth docutils literal"><span class="pre">cert.renew()</span></tt></a>, <a class="reference internal" href="../cert/reference.html#cert.update" title="cert.update"><tt class="xref py py-meth docutils literal"><span class="pre">cert.update()</span></tt></a>, <tt class="xref py py-meth docutils literal"><span class="pre">changeowner.create()</span></tt>, <a class="reference internal" href="../domain/reference.html#domain.contacts.set" title="domain.contacts.set"><tt class="xref py py-meth docutils literal"><span class="pre">domain.contacts.set()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.create" title="domain.create"><tt class="xref py py-meth docutils literal"><span class="pre">domain.create()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.dnssec.create" title="domain.dnssec.create"><tt class="xref py py-meth docutils literal"><span class="pre">domain.dnssec.create()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.dnssec.delete" title="domain.dnssec.delete"><tt class="xref py py-meth docutils literal"><span class="pre">domain.dnssec.delete()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.host.create" title="domain.host.create"><tt class="xref py py-meth docutils literal"><span class="pre">domain.host.create()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.host.delete" title="domain.host.delete"><tt class="xref py py-meth docutils literal"><span class="pre">domain.host.delete()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.host.update" title="domain.host.update"><tt class="xref py py-meth docutils literal"><span class="pre">domain.host.update()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.mailbox.purge" title="domain.mailbox.purge"><tt class="xref py py-meth docutils literal"><span class="pre">domain.mailbox.purge()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.mailbox.responder.activate" title="domain.mailbox.responder.activate"><tt class="xref py py-meth docutils literal"><span class="pre">domain.mailbox.responder.activate()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.mailbox.responder.deactivate" title="domain.mailbox.responder.deactivate"><tt class="xref py py-meth docutils literal"><span class="pre">domain.mailbox.responder.deactivate()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.nameservers.set" title="domain.nameservers.set"><tt class="xref py py-meth docutils literal"><span class="pre">domain.nameservers.set()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.owner.set" title="domain.owner.set"><tt class="xref py py-meth docutils literal"><span class="pre">domain.owner.set()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.packmail.autorenew" title="domain.packmail.autorenew"><tt class="xref py py-meth docutils literal"><span class="pre">domain.packmail.autorenew()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.packmail.create" title="domain.packmail.create"><tt class="xref py py-meth docutils literal"><span class="pre">domain.packmail.create()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.packmail.delete" title="domain.packmail.delete"><tt class="xref py py-meth docutils literal"><span class="pre">domain.packmail.delete()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.packmail.renew" title="domain.packmail.renew"><tt class="xref py py-meth docutils literal"><span class="pre">domain.packmail.renew()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.packmail.update" title="domain.packmail.update"><tt class="xref py py-meth docutils literal"><span class="pre">domain.packmail.update()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.renew" title="domain.renew"><tt class="xref py py-meth docutils literal"><span class="pre">domain.renew()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.reseller.set" title="domain.reseller.set"><tt class="xref py py-meth docutils literal"><span class="pre">domain.reseller.set()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.restore" title="domain.restore"><tt class="xref py py-meth docutils literal"><span class="pre">domain.restore()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.status.lock" title="domain.status.lock"><tt class="xref py py-meth docutils literal"><span class="pre">domain.status.lock()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.status.unlock" title="domain.status.unlock"><tt class="xref py py-meth docutils literal"><span class="pre">domain.status.unlock()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.transferin.proceed" title="domain.transferin.proceed"><tt class="xref py py-meth docutils literal"><span class="pre">domain.transferin.proceed()</span></tt></a>, <a class="reference internal" href="#operation.info" title="operation.info"><tt class="xref py py-meth docutils literal"><span class="pre">operation.info()</span></tt></a>, <a class="reference internal" href="#operation.list" title="operation.list"><tt class="xref py py-meth docutils literal"><span class="pre">operation.list()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.create" title="paas.create"><tt class="xref py py-meth docutils literal"><span class="pre">paas.create()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.delete" title="paas.delete"><tt class="xref py py-meth docutils literal"><span class="pre">paas.delete()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.renew" title="paas.renew"><tt class="xref py py-meth docutils literal"><span class="pre">paas.renew()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.restart" title="paas.restart"><tt class="xref py py-meth docutils literal"><span class="pre">paas.restart()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.update" title="paas.update"><tt class="xref py py-meth docutils literal"><span class="pre">paas.update()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.vhost.create" title="paas.vhost.create"><tt class="xref py py-meth docutils literal"><span class="pre">paas.vhost.create()</span></tt></a>, <a class="reference internal" href="../paas/reference.html#paas.vhost.delete" title="paas.vhost.delete"><tt class="xref py py-meth docutils literal"><span class="pre">paas.vhost.delete()</span></tt></a>, <a class="reference internal" href="../site/reference.html#site.alter_zone" title="site.alter_zone"><tt class="xref py py-meth docutils literal"><span class="pre">site.alter_zone()</span></tt></a>, <a class="reference internal" href="../site/reference.html#site.create" title="site.create"><tt class="xref py py-meth docutils literal"><span class="pre">site.create()</span></tt></a>, <a class="reference internal" href="../site/reference.html#site.delete" title="site.delete"><tt class="xref py py-meth docutils literal"><span class="pre">site.delete()</span></tt></a>, <a class="reference internal" href="../site/reference.html#site.renew" title="site.renew"><tt class="xref py py-meth docutils literal"><span class="pre">site.renew()</span></tt></a> and <a class="reference internal" href="../site/reference.html#site.update" title="site.update"><tt class="xref py py-meth docutils literal"><span class="pre">site.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_start</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>eta</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">estimated time of processing the operation</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#OperationInformation" title="OperationInformation"><tt class="xref py py-data docutils literal"><span class="pre">infos</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-odd"><td>last_error</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">last error of the operation</td>
+</tr>
+<tr class="row-odd"><td>params</td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>session_id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">session number for the operation</td>
+</tr>
+<tr class="row-even"><td>source</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">contact who create the operation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#OperationStep" title="OperationStep"><tt class="xref py py-data docutils literal"><span class="pre">step</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">current step of the operation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#OperationType" title="OperationType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../catalog/index.html" title="Gandi Catalog API">next</a> |</li>
+<li class="right">
+<a href="index.html" title="Gandi Operation API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Operation API</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

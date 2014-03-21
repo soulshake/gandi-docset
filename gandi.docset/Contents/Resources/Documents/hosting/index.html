@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Gandi Hosting API &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/menu.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="../index.html" />
+    <link rel="next" title="IaaS Hosting API" href="usage.html" />
+    <link rel="prev" title="PaaS API Reference" href="../paas/reference.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="IaaS Hosting API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../paas/reference.html" title="PaaS API Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+        
+        
+        
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../paas/reference.html"
+                        title="previous chapter">PaaS API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="next chapter">IaaS Hosting API</a></p>
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gandi-hosting-api">
+<h1>Gandi Hosting API<a class="headerlink" href="#gandi-hosting-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">IaaS Hosting API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#connect-to-the-api-server">Connect to the API server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#attributes-conventions">Attributes Conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#virtual-machine-management">Virtual Machine Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#steps-to-create-a-vm">Steps to create a VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#check-available-resources">Check available resources</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#shares">Shares</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#gandi-credits">Gandi credits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#choose-a-datacenter">Choose a datacenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#choose-an-operating-system-image">Choose an operating system image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#create-the-vm">Create the VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#log-into-a-vm">Log into a VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#update-a-vm">Update a VM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">IaaS Hosting API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference_account.html">Hosting Account API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_account.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_account.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_account.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_datacenter.html">Datacenter API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_datacenter.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_datacenter.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_datacenter.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_image.html">Disk Image API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_image.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_image.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_image.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_disk.html">Disk API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_disk.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_disk.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_disk.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_iface.html">Network Interface API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_iface.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_iface.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_iface.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_ip.html">IP Address API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_ip.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_ip.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_ip.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_vm.html">Virtual Machine API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_vm.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_vm.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_vm.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_catalog.html">Hosting Catalog API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_catalog.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_catalog.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_catalog.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_rating.html">Rating API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_rating.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_rating.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_rating.html#returns">Returns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference_product.html">Product API Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference_product.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_product.html#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="IaaS Hosting API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../paas/reference.html" title="PaaS API Reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

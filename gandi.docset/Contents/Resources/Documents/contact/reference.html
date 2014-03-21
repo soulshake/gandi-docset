@@ -1,0 +1,4151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Contact API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="index.html" rel="up" title="Gandi Contact API"/>
+<link href="glossary.html" rel="next" title="Contact API Glossary"/>
+<link href="usage.html" rel="prev" title="Contact API"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="glossary.html" title="Contact API Glossary">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="usage.html" title="Contact API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a accesskey="U" href="index.html">Gandi Contact API</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Contact API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="usage.html" title="previous chapter">Contact API</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="glossary.html" title="next chapter">Contact API Glossary</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="contact-api-reference">
+<span id="contact-api-ref"></span><h1>Contact API Reference<a class="headerlink" href="#contact-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="contact.balance"><a name="//apple_ref/cpp/clm/contact.balance"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">balance</tt><big>(</big><em>apikey</em><big>)</big><a class="headerlink" href="#contact.balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get contact financial balance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>apikey</strong> (<em>string</em>) – API connection key</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">struct – <a class="reference internal" href="#BalanceReturn" title="BalanceReturn"><tt class="xref py py-data docutils literal"><span class="pre">Financial</span> <span class="pre">balance</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.can_associate"><a name="//apple_ref/cpp/clm/contact.can_associate"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">can_associate</tt><big>(</big><em>apikey</em>, <em>contact</em>, <em>params</em><big>)</big><a class="headerlink" href="#contact.can_associate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a contact description can be associated to a domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>contact</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">Description</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">contact</span></tt></a></li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactCheckDomain" title="ContactCheckDomain"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – <tt class="docutils literal"><span class="pre">1</span></tt> on success, <tt class="docutils literal"><span class="pre">0</span></tt> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.can_associate_domain"><a name="//apple_ref/cpp/clm/contact.can_associate_domain"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">can_associate_domain</tt><big>(</big><em>apikey</em>, <em>handle</em>, <em>params</em><big>)</big><a class="headerlink" href="#contact.can_associate_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a contact can be associated to a domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>handle</strong> (<em>string</em>) – Gandi handle</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactCheckDomain" title="ContactCheckDomain"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – <tt class="docutils literal"><span class="pre">1</span></tt> on success, <tt class="docutils literal"><span class="pre">0</span></tt> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.count"><a name="//apple_ref/cpp/clm/contact.count"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#contact.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count contacts associated to the one represented by <strong>apikey</strong>.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.7.</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Non reseller cannot have “associated” contacts and                   will always get <tt class="docutils literal"><span class="pre">0</span></tt> as result.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactListOptions" title="ContactListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – Number of contacts</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.create"><a name="//apple_ref/cpp/clm/contact.create"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>params</em><big>)</big><a class="headerlink" href="#contact.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">Contact</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.delete"><a name="//apple_ref/cpp/clm/contact.delete"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>handle=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#contact.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a contact.</p>
+<p>If no <strong>handle</strong> is provided, the contact represented by
+<strong>apikey</strong> is deleted.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.9.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>handle</strong> (<em>string</em>) – Gandi handle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – <tt class="docutils literal"><span class="pre">1</span></tt> if the operation succeed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.info"><a name="//apple_ref/cpp/clm/contact.info"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>handle=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#contact.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get contact information.</p>
+<p>If no <strong>handle</strong> is provided, information about the contact
+represented by <strong>apikey</strong> are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>handle</strong> (<em>string</em>) – Gandi handle</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">Contact</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.list"><a name="//apple_ref/cpp/clm/contact.list"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#contact.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List contacts associated to the one represented by <strong>apikey</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Non reseller cannot have “associated” contacts and                   will always get an empty result.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactListOptions" title="ContactListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">Contact</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.release"><a name="//apple_ref/cpp/clm/contact.release"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">release</tt><big>(</big><em>apikey</em>, <em>handle</em><big>)</big><a class="headerlink" href="#contact.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release a contact from a reseller account.</p>
+<p>A reseller account may manage multiple contacts.
+This method allows releasing one of them.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only resellers can use this method. It will have                   no effect for other kind of accounts.</p>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.9.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>handle</strong> (<em>string</em>) – Gandi handle of the contact to release</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – <tt class="docutils literal"><span class="pre">1</span></tt> if the operation succeed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="contact.update"><a name="//apple_ref/cpp/clm/contact.update"></a>
+<tt class="descclassname">contact.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>handle</em>, <em>params</em><big>)</big><a class="headerlink" href="#contact.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a contact.</p>
+<p>If the contact is associated to some domains, the same rules
+as in <a class="reference internal" href="#contact.can_associate_domain" title="contact.can_associate_domain"><tt class="xref py py-func docutils literal"><span class="pre">can_associate_domain()</span></tt></a> will be applied, and the
+domains will be updated if possible.</p>
+<p>If no <strong>handle</strong> is provided, information about the contact
+represented by <strong>apikey</strong> are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>handle</strong> (<em>string</em>) – Gandi handle</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#ContactUpdateFormDescription" title="ContactUpdateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">Contact</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="SudoableIdent"><a name="//apple_ref/cpp/clconst/SudoableIdent"></a>
+<tt class="descname">SudoableIdent</tt><a class="headerlink" href="#SudoableIdent" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">changeowner.create()</span></tt>, <a class="reference internal" href="#contact.balance" title="contact.balance"><tt class="xref py py-meth docutils literal"><span class="pre">contact.balance()</span></tt></a>, <a class="reference internal" href="#contact.delete" title="contact.delete"><tt class="xref py py-meth docutils literal"><span class="pre">contact.delete()</span></tt></a>, <a class="reference internal" href="#contact.info" title="contact.info"><tt class="xref py py-meth docutils literal"><span class="pre">contact.info()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.create" title="domain.create"><tt class="xref py py-meth docutils literal"><span class="pre">domain.create()</span></tt></a>, <a class="reference internal" href="../domain/reference.html#domain.owner.set" title="domain.owner.set"><tt class="xref py py-meth docutils literal"><span class="pre">domain.owner.set()</span></tt></a> and <a class="reference internal" href="../domain/reference.html#domain.transferin.proceed" title="domain.transferin.proceed"><tt class="xref py py-meth docutils literal"><span class="pre">domain.transferin.proceed()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>apikey</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>handle</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactCheckDomain"><a name="//apple_ref/cpp/clconst/ContactCheckDomain"></a>
+<tt class="descname">ContactCheckDomain</tt><a class="headerlink" href="#ContactCheckDomain" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#contact.can_associate_domain" title="contact.can_associate_domain"><tt class="xref py py-meth docutils literal"><span class="pre">contact.can_associate_domain()</span></tt></a> and <a class="reference internal" href="#contact.can_associate" title="contact.can_associate"><tt class="xref py py-meth docutils literal"><span class="pre">contact.can_associate()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>domain</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>admin</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>bill</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Context" title="Context"><tt class="xref py py-data docutils literal"><span class="pre">context</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">extra_parameters</span></tt></a></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>tech</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactType"><a name="//apple_ref/cpp/clconst/ContactType"></a>
+<tt class="descname">ContactType</tt><a class="headerlink" href="#ContactType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactCreateFormDescription</span></tt></a> and <a class="reference internal" href="#ContactListOptions" title="ContactListOptions"><tt class="xref py py-data docutils literal"><span class="pre">ContactListOptions</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>person</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>company</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>association</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>public body</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>reseller</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Context"><a name="//apple_ref/cpp/clconst/Context"></a>
+<tt class="descname">Context</tt><a class="headerlink" href="#Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCheckDomain" title="ContactCheckDomain"><tt class="xref py py-data docutils literal"><span class="pre">ContactCheckDomain</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td> </td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>update</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>can_associate_domain</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>can_associate</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>domain_transfer_in</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>domain_create</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>domain_contact_change</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ExtraParameters"><a name="//apple_ref/cpp/clconst/ExtraParameters"></a>
+<tt class="descname">ExtraParameters</tt><a class="headerlink" href="#ExtraParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCheckDomain" title="ContactCheckDomain"><tt class="xref py py-data docutils literal"><span class="pre">ContactCheckDomain</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>birth_city</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth city</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">birth_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth country</td>
+</tr>
+<tr class="row-even"><td>birth_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth date (YYYY-MM-DD)</td>
+</tr>
+<tr class="row-even"><td>birth_department</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth department</td>
+</tr>
+<tr class="row-even"><td>brand_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">company brand number</td>
+</tr>
+<tr class="row-even"><td>duns</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact duns number</td>
+</tr>
+<tr class="row-even"><td>waldec</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact waldec number</td>
+</tr>
+<tr class="row-even"><td>x-aero_ens_authid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">aero id (you can apply for an .aero id on             <a class="reference external" href="http://www.information.aero/">http://www.information.aero/</a>)</td>
+</tr>
+<tr class="row-even"><td>x-aero_ens_authkey</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">aero password</td>
+</tr>
+<tr class="row-even"><td>x-au_registrant_id_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-au_registrant_id_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">ABN (Australian Business Number), ACN</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CaLegalType" title="CaLegalType"><tt class="xref py py-data docutils literal"><span class="pre">x-ca_legaltype</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s legal type</td>
+</tr>
+<tr class="row-odd"><td>x-ca_owner_name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner name</td>
+</tr>
+<tr class="row-odd"><td>x-coop_sponsor</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Coop Verification Code obtained on the coop registry             website (see
+<a class="reference external" href="http://www.nic.coop/preverification">http://www.nic.coop/preverification</a>).</td>
+</tr>
+<tr class="row-odd"><td>x-cy_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if physical</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-document_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s country which issued the document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s document type</td>
+</tr>
+<tr class="row-odd"><td>x-document_value</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s document number</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-fi_based_on_person_name</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Whether or not domain is based on a         physical or moral person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s identification number for a moral         person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s identification number for a physical         person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_name_registration_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Identifier of the register where the name         is recorded if based on a moral person’s name</td>
+</tr>
+<tr class="row-odd"><td>x-fi_name_registration_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Number of the record in the register         where the name is recorded if based on a moral person’s name</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_birth_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s birth date (YYYY-MM-DD)</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_document_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">number of the above document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_origin_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">country code (<tt class="docutils literal"><span class="pre">FR</span></tt>,             <tt class="docutils literal"><span class="pre">GB</span></tt>, <tt class="docutils literal"><span class="pre">US</span></tt>...) of the origin country of the above document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#HkOwnerDocType" title="HkOwnerDocType"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s document type</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_other_document_type</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">mandatory if             x-hk_registrant_document_type is <tt class="docutils literal"><span class="pre">OTHIDV</span></tt> or <tt class="docutils literal"><span class="pre">OTHORG</span></tt></td>
+</tr>
+<tr class="row-odd"><td>x-hu_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number of the physical             person</td>
+</tr>
+<tr class="row-odd"><td>x-hu_owner_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">vatid of the moral person</td>
+</tr>
+<tr class="row-odd"><td>x-ir_login_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s login id</td>
+</tr>
+<tr class="row-odd"><td>x-ir_login_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s login password</td>
+</tr>
+<tr class="row-odd"><td>x-it_pin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s Italian fiscal code or the number of an             identity document</td>
+</tr>
+<tr class="row-odd"><td>x-kr_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Certificate</td>
+</tr>
+<tr class="row-odd"><td>x-lv_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if physical person,</td>
+</tr>
+<tr class="row-odd"><td>x-my_admin_contact_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Admin contact password record (For</td>
+</tr>
+<tr class="row-odd"><td>x-my_admin_contact_username</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Admin contact username as per Whois</td>
+</tr>
+<tr class="row-odd"><td>x-my_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Number</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#MyOrganizationType" title="MyOrganizationType"><tt class="xref py py-data docutils literal"><span class="pre">x-my_organization_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Organization Type</td>
+</tr>
+<tr class="row-odd"><td>x-no_registrant_identity</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">organization number of the Norwegian             organization (consisting of exactly 9 digits)</td>
+</tr>
+<tr class="row-odd"><td>x-nu_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s id number or         organization number</td>
+</tr>
+<tr class="row-odd"><td>x-nu_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">vatid of the moral person</td>
+</tr>
+<tr class="row-odd"><td>x-pro_authority</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">authority where the contact is registred</td>
+</tr>
+<tr class="row-odd"><td>x-pro_authoritywebsite</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">link to the registration authority</td>
+</tr>
+<tr class="row-odd"><td>x-pro_licensenumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">licence number</td>
+</tr>
+<tr class="row-odd"><td>x-pro_profession</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">contact profession</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-pt_arbitration</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4"><cite>true</cite> (default) or <cite>false</cite> as answer to whether or            not the registry arbitration is accepted</td>
+</tr>
+<tr class="row-odd"><td>x-pt_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s VAT for company or ID card number             for individual</td>
+</tr>
+<tr class="row-odd"><td>x-pt_roid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">roid of the domain (in transfer process only)</td>
+</tr>
+<tr class="row-odd"><td>x-ro_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if</td>
+</tr>
+<tr class="row-odd"><td>x-rs_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Certificate</td>
+</tr>
+<tr class="row-odd"><td>x-rs_reg_tax_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s GST/VAT number</td>
+</tr>
+<tr class="row-odd"><td>x-ru_registrant_passport_data</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s passport number</td>
+</tr>
+<tr class="row-odd"><td>x-se_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Swedish personal identity or organisational             number or passport number, or id card number for
+individuals             outside of Sweden</td>
+</tr>
+<tr class="row-odd"><td>x-sg_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s id number</td>
+</tr>
+<tr class="row-odd"><td>x-sk_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if</td>
+</tr>
+<tr class="row-odd"><td>x-travel_uin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">an Unique Identification Number</td>
+</tr>
+<tr class="row-odd"><td>x-xxx_membership_contact</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner contact membership ID, obtained on             the xxx registry website.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-xxx_sponsored_community</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4"><tt class="docutils literal"><span class="pre">yes</span></tt> or <tt class="docutils literal"><span class="pre">no</span></tt> as answer to whether or             not the owner is a member of the .XXX Adult Industry
+Sponsored             Community</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CountryIso"><a name="//apple_ref/cpp/clconst/CountryIso"></a>
+<tt class="descname">CountryIso</tt><a class="headerlink" href="#CountryIso" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactCreateFormDescription</span></tt></a>, <a class="reference internal" href="#ContactListOptions" title="ContactListOptions"><tt class="xref py py-data docutils literal"><span class="pre">ContactListOptions</span></tt></a>, <a class="reference internal" href="#ContactUpdateFormDescription" title="ContactUpdateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactUpdateFormDescription</span></tt></a>, <a class="reference internal" href="../hosting/reference_datacenter.html#DatacenterReturn" title="DatacenterReturn"><tt class="xref py py-data docutils literal"><span class="pre">DatacenterReturn</span></tt></a>, <a class="reference internal" href="../domain/reference.html#DomainExtraParameters" title="DomainExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">DomainExtraParameters</span></tt></a>, <a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">ExtraParameters</span></tt></a> and <a class="reference internal" href="../operation/reference.html#RelaunchOperationParameters" title="RelaunchOperationParameters"><tt class="xref py py-data docutils literal"><span class="pre">RelaunchOperationParameters</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>AF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ZA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>DE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>DK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>DO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>EC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ER</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ES</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>US</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ET</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>FO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>FI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GQ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>HI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>HK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ID</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IQ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>JM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>JP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>JE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>JO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ML</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MX</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>UG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>UZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>QA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>WS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ST</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>UA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>UY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>YE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ZM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ZW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AQ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MQ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>YT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CX</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>HM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AX</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ME</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>WF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BQ</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="StateCode"><a name="//apple_ref/cpp/clconst/StateCode"></a>
+<tt class="descname">StateCode</tt><a class="headerlink" href="#StateCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactCreateFormDescription</span></tt></a> and <a class="reference internal" href="#ContactUpdateFormDescription" title="ContactUpdateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactUpdateFormDescription</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>AL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>DE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>FL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>HI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ID</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ME</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NJ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ND</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>OK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TX</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>UT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>WA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>WV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>WI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>WY</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ON</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>QC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>YK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ACT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NSW</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>QLD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TAS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VIC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>WA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>HP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>JK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>KE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ME</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>OR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>UP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>WB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AQ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>FE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>FI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>FR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>IM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>IS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>KR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>LT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ME</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>OR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PZ</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>RO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TN</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>UD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>RSM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>AG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CH</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>DF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>DG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>JA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ME</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>OA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>QE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>QR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>VE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>YU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ZA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AL</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>O</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>AV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>BA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>B</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>S</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>CO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>CU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>H</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>HU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>J</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GC</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>L</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>M</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>MU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>NA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>P</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TF</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SG</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>SE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>SO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>T</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>TE</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>V</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>VA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>BI</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>ZA</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>Z</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>NU</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-A</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-I</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-G</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-C</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-F</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-D</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-B</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-M</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-L</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-J</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-H</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>GR-E</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>GR-K</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>42</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>72</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>83</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>26</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>53</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>24</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>21</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>94</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>43</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>91</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>74</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>41</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>73</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>31</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>25</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>23</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>52</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>22</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>54</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>93</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>82</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>01</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>03</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>02</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>06</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>04</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="BusinessUnit"><a name="//apple_ref/cpp/clconst/BusinessUnit"></a>
+<tt class="descname">BusinessUnit</tt><a class="headerlink" href="#BusinessUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">ContactReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Taxes" title="Taxes"><tt class="xref py py-data docutils literal"><span class="pre">taxes</span></tt></a></td>
+<td>struct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Taxes"><a name="//apple_ref/cpp/clconst/Taxes"></a>
+<tt class="descname">Taxes</tt><a class="headerlink" href="#Taxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#BalanceReturn" title="BalanceReturn"><tt class="xref py py-data docutils literal"><span class="pre">BalanceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>default</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ReachabilityStatus"><a name="//apple_ref/cpp/clconst/ReachabilityStatus"></a>
+<tt class="descname">ReachabilityStatus</tt><a class="headerlink" href="#ReachabilityStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">ContactReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>pending</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>done</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>failed</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>deleted</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>none</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ShippingAddress"><a name="//apple_ref/cpp/clconst/ShippingAddress"></a>
+<tt class="descname">ShippingAddress</tt><a class="headerlink" href="#ShippingAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#ContactReturn" title="ContactReturn"><tt class="xref py py-data docutils literal"><span class="pre">ContactReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>country</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>family</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>given</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>orgname</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>state</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>streetaddr</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>streetaddr2</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>zip</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactCreateFormDescription"><a name="//apple_ref/cpp/clconst/ContactCreateFormDescription"></a>
+<tt class="descname">ContactCreateFormDescription</tt><a class="headerlink" href="#ContactCreateFormDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#contact.can_associate" title="contact.can_associate"><tt class="xref py py-meth docutils literal"><span class="pre">contact.can_associate()</span></tt></a> and <a class="reference internal" href="#contact.create" title="contact.create"><tt class="xref py py-meth docutils literal"><span class="pre">contact.create()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>family</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>given</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>phone</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>streetaddr</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ContactType" title="ContactType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>brand_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>data_obfuscated</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">extra_parameters</span></tt></a></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>fax</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>jo_announce_number</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>jo_announce_page</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>jo_declaration_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>jo_publication_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>lang</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>mail_obfuscated</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>mobile</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>newsletter</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>orgname</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>security_question_answer</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>security_question_num</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>siren</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#StateCode" title="StateCode"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>third_part_resell</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vat_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>zip</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactListOptions"><a name="//apple_ref/cpp/clconst/ContactListOptions"></a>
+<tt class="descname">ContactListOptions</tt><a class="headerlink" href="#ContactListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#contact.count" title="contact.count"><tt class="xref py py-meth docutils literal"><span class="pre">contact.count()</span></tt></a> and <a class="reference internal" href="#contact.list" title="contact.list"><tt class="xref py py-meth docutils literal"><span class="pre">contact.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>family</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>given</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>handle</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>orgname</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>streetaddr</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ContactType" title="ContactType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>zip</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~email</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>~family</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~given</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>~handle</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~orgname</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactUpdateFormDescription"><a name="//apple_ref/cpp/clconst/ContactUpdateFormDescription"></a>
+<tt class="descname">ContactUpdateFormDescription</tt><a class="headerlink" href="#ContactUpdateFormDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#contact.update" title="contact.update"><tt class="xref py py-meth docutils literal"><span class="pre">contact.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>brand_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>city</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>data_obfuscated</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">extra_parameters</span></tt></a></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>family</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>fax</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>given</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>jo_announce_number</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>jo_announce_page</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>jo_declaration_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>jo_publication_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>lang</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>mail_obfuscated</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>mobile</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>newsletter</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>phone</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>security_question_answer</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>security_question_num</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>siren</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#StateCode" title="StateCode"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>streetaddr</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>third_part_resell</td>
+<td> </td>
+<td>int, boolean or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vat_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>zip</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt>
+<tt class="descname">ExtraParameters</tt></dt>
+<dd><p>used by <a class="reference internal" href="#ContactCreateFormDescription" title="ContactCreateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactCreateFormDescription</span></tt></a> and <a class="reference internal" href="#ContactUpdateFormDescription" title="ContactUpdateFormDescription"><tt class="xref py py-data docutils literal"><span class="pre">ContactUpdateFormDescription</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>birth_city</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth city</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">birth_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth country</td>
+</tr>
+<tr class="row-even"><td>birth_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth date (YYYY-MM-DD)</td>
+</tr>
+<tr class="row-even"><td>birth_department</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact birth department</td>
+</tr>
+<tr class="row-even"><td>brand_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">company brand number</td>
+</tr>
+<tr class="row-even"><td>duns</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact duns number</td>
+</tr>
+<tr class="row-even"><td>waldec</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">contact waldec number</td>
+</tr>
+<tr class="row-even"><td>x-aero_ens_authid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">aero id (you can apply for an .aero id on             <a class="reference external" href="http://www.information.aero/">http://www.information.aero/</a>)</td>
+</tr>
+<tr class="row-even"><td>x-aero_ens_authkey</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">aero password</td>
+</tr>
+<tr class="row-even"><td>x-au_registrant_id_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-au_registrant_id_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">ABN (Australian Business Number), ACN</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CaLegalType" title="CaLegalType"><tt class="xref py py-data docutils literal"><span class="pre">x-ca_legaltype</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s legal type</td>
+</tr>
+<tr class="row-odd"><td>x-ca_owner_name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner name</td>
+</tr>
+<tr class="row-odd"><td>x-coop_sponsor</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Coop Verification Code obtained on the coop registry             website (see
+<a class="reference external" href="http://www.nic.coop/preverification">http://www.nic.coop/preverification</a>).</td>
+</tr>
+<tr class="row-odd"><td>x-cy_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if physical</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-document_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s country which issued the document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s document type</td>
+</tr>
+<tr class="row-odd"><td>x-document_value</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s document number</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-fi_based_on_person_name</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Whether or not domain is based on a         physical or moral person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s identification number for a moral         person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s identification number for a physical         person</td>
+</tr>
+<tr class="row-odd"><td>x-fi_name_registration_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Identifier of the register where the name         is recorded if based on a moral person’s name</td>
+</tr>
+<tr class="row-odd"><td>x-fi_name_registration_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Number of the record in the register         where the name is recorded if based on a moral person’s name</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_birth_date</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s birth date (YYYY-MM-DD)</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_document_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">number of the above document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CountryIso" title="CountryIso"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_origin_country</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">country code (<tt class="docutils literal"><span class="pre">FR</span></tt>,             <tt class="docutils literal"><span class="pre">GB</span></tt>, <tt class="docutils literal"><span class="pre">US</span></tt>...) of the origin country of the above document</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#HkOwnerDocType" title="HkOwnerDocType"><tt class="xref py py-data docutils literal"><span class="pre">x-hk_registrant_document_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s document type</td>
+</tr>
+<tr class="row-odd"><td>x-hk_registrant_other_document_type</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">mandatory if             x-hk_registrant_document_type is <tt class="docutils literal"><span class="pre">OTHIDV</span></tt> or <tt class="docutils literal"><span class="pre">OTHORG</span></tt></td>
+</tr>
+<tr class="row-odd"><td>x-hu_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number of the physical             person</td>
+</tr>
+<tr class="row-odd"><td>x-hu_owner_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">vatid of the moral person</td>
+</tr>
+<tr class="row-odd"><td>x-ir_login_id</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s login id</td>
+</tr>
+<tr class="row-odd"><td>x-ir_login_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s login password</td>
+</tr>
+<tr class="row-odd"><td>x-it_pin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s Italian fiscal code or the number of an             identity document</td>
+</tr>
+<tr class="row-odd"><td>x-kr_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Certificate</td>
+</tr>
+<tr class="row-odd"><td>x-lv_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if physical person,</td>
+</tr>
+<tr class="row-odd"><td>x-my_admin_contact_password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Admin contact password record (For</td>
+</tr>
+<tr class="row-odd"><td>x-my_admin_contact_username</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Admin contact username as per Whois</td>
+</tr>
+<tr class="row-odd"><td>x-my_business_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Number</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#MyOrganizationType" title="MyOrganizationType"><tt class="xref py py-data docutils literal"><span class="pre">x-my_organization_type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Organization Type</td>
+</tr>
+<tr class="row-odd"><td>x-no_registrant_identity</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">organization number of the Norwegian             organization (consisting of exactly 9 digits)</td>
+</tr>
+<tr class="row-odd"><td>x-nu_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s id number or         organization number</td>
+</tr>
+<tr class="row-odd"><td>x-nu_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">vatid of the moral person</td>
+</tr>
+<tr class="row-odd"><td>x-pro_authority</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">authority where the contact is registred</td>
+</tr>
+<tr class="row-odd"><td>x-pro_authoritywebsite</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">link to the registration authority</td>
+</tr>
+<tr class="row-odd"><td>x-pro_licensenumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">licence number</td>
+</tr>
+<tr class="row-odd"><td>x-pro_profession</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">contact profession</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-pt_arbitration</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4"><cite>true</cite> (default) or <cite>false</cite> as answer to whether or            not the registry arbitration is accepted</td>
+</tr>
+<tr class="row-odd"><td>x-pt_registrant_vatid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s VAT for company or ID card number             for individual</td>
+</tr>
+<tr class="row-odd"><td>x-pt_roid</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">roid of the domain (in transfer process only)</td>
+</tr>
+<tr class="row-odd"><td>x-ro_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if</td>
+</tr>
+<tr class="row-odd"><td>x-rs_reg_identity_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s Business Certificate</td>
+</tr>
+<tr class="row-odd"><td>x-rs_reg_tax_no</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s GST/VAT number</td>
+</tr>
+<tr class="row-odd"><td>x-ru_registrant_passport_data</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner’s passport number</td>
+</tr>
+<tr class="row-odd"><td>x-se_ident_number</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Swedish personal identity or organisational             number or passport number, or id card number for
+individuals             outside of Sweden</td>
+</tr>
+<tr class="row-odd"><td>x-sg_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Registrant’s id number</td>
+</tr>
+<tr class="row-odd"><td>x-sk_registrant_idnumber</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">id card number or passport number if</td>
+</tr>
+<tr class="row-odd"><td>x-travel_uin</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">an Unique Identification Number</td>
+</tr>
+<tr class="row-odd"><td>x-xxx_membership_contact</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">owner contact membership ID, obtained on             the xxx registry website.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">x-xxx_sponsored_community</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4"><tt class="docutils literal"><span class="pre">yes</span></tt> or <tt class="docutils literal"><span class="pre">no</span></tt> as answer to whether or             not the owner is a member of the .XXX Adult Industry
+Sponsored             Community</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CaLegalType"><a name="//apple_ref/cpp/clconst/CaLegalType"></a>
+<tt class="descname">CaLegalType</tt><a class="headerlink" href="#CaLegalType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../domain/reference.html#DomainExtraParameters" title="DomainExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">DomainExtraParameters</span></tt></a>, <a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">ExtraParameters</span></tt></a> and <a class="reference internal" href="../operation/reference.html#RelaunchOperationParameters" title="RelaunchOperationParameters"><tt class="xref py py-data docutils literal"><span class="pre">RelaunchOperationParameters</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>CCO</td>
+<td>Corporation</td>
+</tr>
+<tr class="row-odd"><td>CCT</td>
+<td>Canadian citizen</td>
+</tr>
+<tr class="row-even"><td>RES</td>
+<td>Permanent Resident of Canada</td>
+</tr>
+<tr class="row-odd"><td>GOV</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>EDU</td>
+<td>Canadian Educational institution</td>
+</tr>
+<tr class="row-odd"><td>ASS</td>
+<td>Canadian Unincorporated Association</td>
+</tr>
+<tr class="row-even"><td>HOP</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>PRT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TDM</td>
+<td>Trade-mark registered in Canada (by a non-Canadian owner)</td>
+</tr>
+<tr class="row-odd"><td>TRD</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>PLT</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LAM</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>TRS</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ABO</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>INB</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>LGR</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>OMK</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>MAJ</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="HkOwnerDocType"><a name="//apple_ref/cpp/clconst/HkOwnerDocType"></a>
+<tt class="descname">HkOwnerDocType</tt><a class="headerlink" href="#HkOwnerDocType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../domain/reference.html#DomainExtraParameters" title="DomainExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">DomainExtraParameters</span></tt></a>, <a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">ExtraParameters</span></tt></a> and <a class="reference internal" href="../operation/reference.html#RelaunchOperationParameters" title="RelaunchOperationParameters"><tt class="xref py py-data docutils literal"><span class="pre">RelaunchOperationParameters</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>HKID</td>
+<td>Hong Kong Identity Number</td>
+</tr>
+<tr class="row-odd"><td>OTHID</td>
+<td>Other’s Country Identity Number</td>
+</tr>
+<tr class="row-even"><td>PASSNO</td>
+<td>Passport No.</td>
+</tr>
+<tr class="row-odd"><td>BIRTHCERT</td>
+<td>Birth Certificate</td>
+</tr>
+<tr class="row-even"><td>OTHIDV</td>
+<td>Others Individual Document</td>
+</tr>
+<tr class="row-odd"><td>BR</td>
+<td>Business Registration Certificate</td>
+</tr>
+<tr class="row-even"><td>CI</td>
+<td>Certificate of Incorporation</td>
+</tr>
+<tr class="row-odd"><td>CRS</td>
+<td>Certificate of Registration of a School</td>
+</tr>
+<tr class="row-even"><td>HKSARG</td>
+<td>Hong Kong Special Administrative Region Government Department</td>
+</tr>
+<tr class="row-odd"><td>HKORDINANCE</td>
+<td>Ordinance of Hong Kong</td>
+</tr>
+<tr class="row-even"><td>OTHORG</td>
+<td>Others Organization Document</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="MyOrganizationType"><a name="//apple_ref/cpp/clconst/MyOrganizationType"></a>
+<tt class="descname">MyOrganizationType</tt><a class="headerlink" href="#MyOrganizationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../domain/reference.html#DomainExtraParameters" title="DomainExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">DomainExtraParameters</span></tt></a>, <a class="reference internal" href="#ExtraParameters" title="ExtraParameters"><tt class="xref py py-data docutils literal"><span class="pre">ExtraParameters</span></tt></a> and <a class="reference internal" href="../operation/reference.html#RelaunchOperationParameters" title="RelaunchOperationParameters"><tt class="xref py py-data docutils literal"><span class="pre">RelaunchOperationParameters</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>ota000001</td>
+<td>architect firm</td>
+</tr>
+<tr class="row-odd"><td>ota000002</td>
+<td>audit firm</td>
+</tr>
+<tr class="row-even"><td>ota000003</td>
+<td>business pursuant to business registration act(rob)</td>
+</tr>
+<tr class="row-odd"><td>ota000004</td>
+<td>business pursuant to commercial license ordinance</td>
+</tr>
+<tr class="row-even"><td>ota000005</td>
+<td>company pursuant to companies act(roc)</td>
+</tr>
+<tr class="row-odd"><td>ota000006</td>
+<td>educational institution accredited/registered by relevant                     government
+department/agency</td>
+</tr>
+<tr class="row-even"><td>ota000007</td>
+<td>farmers organisation</td>
+</tr>
+<tr class="row-odd"><td>ota000008</td>
+<td>federal government department or agency</td>
+</tr>
+<tr class="row-even"><td>ota000009</td>
+<td>foreign embassy</td>
+</tr>
+<tr class="row-odd"><td>ota000010</td>
+<td>foreign office</td>
+</tr>
+<tr class="row-even"><td>ota000011</td>
+<td>government aided primary and/or secondary school</td>
+</tr>
+<tr class="row-odd"><td>ota000012</td>
+<td>law firm</td>
+</tr>
+<tr class="row-even"><td>ota000013</td>
+<td>lembaga (board)</td>
+</tr>
+<tr class="row-odd"><td>ota000014</td>
+<td>local authority department or agency</td>
+</tr>
+<tr class="row-even"><td>ota000015</td>
+<td>maktab rendah sains mara (mrsm) under the administration                     of mara</td>
+</tr>
+<tr class="row-odd"><td>ota000016</td>
+<td>ministry of defences department or agency</td>
+</tr>
+<tr class="row-even"><td>ota000017</td>
+<td>offshore company</td>
+</tr>
+<tr class="row-odd"><td>ota000018</td>
+<td>parents teachers association</td>
+</tr>
+<tr class="row-even"><td>ota000019</td>
+<td>polytechnic under ministry of education administration</td>
+</tr>
+<tr class="row-odd"><td>ota000020</td>
+<td>private higher educational institution</td>
+</tr>
+<tr class="row-even"><td>ota000021</td>
+<td>private school</td>
+</tr>
+<tr class="row-odd"><td>ota000022</td>
+<td>regional office</td>
+</tr>
+<tr class="row-even"><td>ota000023</td>
+<td>religious entity</td>
+</tr>
+<tr class="row-odd"><td>ota000024</td>
+<td>representative office</td>
+</tr>
+<tr class="row-even"><td>ota000025</td>
+<td>society pursuant to societies act(ros)</td>
+</tr>
+<tr class="row-odd"><td>ota000026</td>
+<td>sports organisation</td>
+</tr>
+<tr class="row-even"><td>ota000027</td>
+<td>state government department or agency</td>
+</tr>
+<tr class="row-odd"><td>ota000028</td>
+<td>trade union</td>
+</tr>
+<tr class="row-even"><td>ota000029</td>
+<td>trustee</td>
+</tr>
+<tr class="row-odd"><td>ota000030</td>
+<td>university under the administration of ministry of</td>
+</tr>
+<tr class="row-even"><td>ota000031</td>
+<td>valuer, appraiser and estate agent firm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="BalanceReturn"><a name="//apple_ref/cpp/clconst/BalanceReturn"></a>
+<tt class="descname">BalanceReturn</tt><a class="headerlink" href="#BalanceReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#contact.balance" title="contact.balance"><tt class="xref py py-meth docutils literal"><span class="pre">contact.balance()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>annual_balance</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>grid</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>grid_hosting</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>outstanding_amount</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#PrepaidReturn" title="PrepaidReturn"><tt class="xref py py-data docutils literal"><span class="pre">prepaid</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Taxes" title="Taxes"><tt class="xref py py-data docutils literal"><span class="pre">taxes</span></tt></a></td>
+<td>struct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="PrepaidReturn"><a name="//apple_ref/cpp/clconst/PrepaidReturn"></a>
+<tt class="descname">PrepaidReturn</tt><a class="headerlink" href="#PrepaidReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#BalanceReturn" title="BalanceReturn"><tt class="xref py py-data docutils literal"><span class="pre">BalanceReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>amount</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../catalog/reference.html#Currency" title="Currency"><tt class="xref py py-data docutils literal"><span class="pre">currency</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ContactReturn"><a name="//apple_ref/cpp/clconst/ContactReturn"></a>
+<tt class="descname">ContactReturn</tt><a class="headerlink" href="#ContactReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#contact.create" title="contact.create"><tt class="xref py py-meth docutils literal"><span class="pre">contact.create()</span></tt></a>, <a class="reference internal" href="#contact.info" title="contact.info"><tt class="xref py py-meth docutils literal"><span class="pre">contact.info()</span></tt></a>, <a class="reference internal" href="#contact.list" title="contact.list"><tt class="xref py py-meth docutils literal"><span class="pre">contact.list()</span></tt></a> and <a class="reference internal" href="#contact.update" title="contact.update"><tt class="xref py py-meth docutils literal"><span class="pre">contact.update()</span></tt></a></p>
+<blockquote>
+<div><p class="versionchanged">
+<span class="versionmodified">Changed in version 3.3.0: </span>keys <tt class="docutils literal"><span class="pre">security_question_num</span></tt>, <tt class="docutils literal"><span class="pre">security_question_answer</span></tt> are deprecated and will be removed in the next major release</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>brand_number</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#BusinessUnit" title="BusinessUnit"><tt class="xref py py-data docutils literal"><span class="pre">bu</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>country</td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>data_obfuscated</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>extra_parameters</td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td>family</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>fax</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>given</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>handle</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>is_corporate</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><td>jo_announce_number</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>jo_announce_page</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>jo_declaration_date</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>jo_publication_date</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>lang</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>mail_obfuscated</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>mobile</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>newsletter</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>orgname</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>phone</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ReachabilityStatus" title="ReachabilityStatus"><tt class="xref py py-data docutils literal"><span class="pre">reachability</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>security_question_answer</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">empty string</td>
+</tr>
+<tr class="row-even"><td>security_question_num</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">0</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ShippingAddress" title="ShippingAddress"><tt class="xref py py-data docutils literal"><span class="pre">shippingaddress</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td>siren</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>streetaddr</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>third_part_resell</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>vat_number</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>zip</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="glossary.html" title="Contact API Glossary">next</a> |</li>
+<li class="right">
+<a href="usage.html" title="Contact API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Contact API</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

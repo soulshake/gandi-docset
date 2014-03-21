@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IaaS Hosting API &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/menu.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="../index.html" />
+    <link rel="up" title="Gandi Hosting API" href="index.html" />
+    <link rel="next" title="IaaS Hosting API Reference" href="reference.html" />
+    <link rel="prev" title="Gandi Hosting API" href="index.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="IaaS Hosting API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi Hosting API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Gandi Hosting API</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">IaaS Hosting API</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#connect-to-the-api-server">Connect to the API server</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#attributes-conventions">Attributes Conventions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#virtual-machine-management">Virtual Machine Management</a><ul>
+<li><a class="reference internal" href="#steps-to-create-a-vm">Steps to create a VM</a></li>
+<li><a class="reference internal" href="#check-available-resources">Check available resources</a><ul>
+<li><a class="reference internal" href="#shares">Shares</a></li>
+<li><a class="reference internal" href="#gandi-credits">Gandi credits</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#choose-a-datacenter">Choose a datacenter</a></li>
+<li><a class="reference internal" href="#choose-an-operating-system-image">Choose an operating system image</a></li>
+<li><a class="reference internal" href="#create-the-vm">Create the VM</a></li>
+<li><a class="reference internal" href="#log-into-a-vm">Log into a VM</a></li>
+<li><a class="reference internal" href="#update-a-vm">Update a VM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Gandi Hosting API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="next chapter">IaaS Hosting API Reference</a></p>
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="iaas-hosting-api">
+<span id="hosting-api-usage"></span><h1>IaaS Hosting API<a class="headerlink" href="#iaas-hosting-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Gandi Hosting API provides a set of remote requests to manage your hosting
+account like the Gandi.net control panel does.
+You can manage your hosting devices &amp; servers instances in all Gandi datacenters
+from any location using the same API.</p>
+</div>
+<div class="section" id="connect-to-the-api-server">
+<h2>Connect to the API server<a class="headerlink" href="#connect-to-the-api-server" title="Permalink to this headline">¶</a></h2>
+<p>The Gandi Hosting API is provided through a set of XML-RPC calls.</p>
+<div id="tabpages-01">
+    <ul>
+        <li><a href="#tab-python-01">python</a></li>
+        <li><a href="#tab-php-01">php</a></li>
+        <li><a href="#tab-nodejs-01">nodejs</a></li>
+        <li><a href="#tab-perl-10">perl</a></li>
+        <li><a href="#tab-ruby-10">ruby</a></li>
+        <li><a href="#tab-C-10">C</a></li>
+    </ul>
+    <div id="tab-python-01"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Now you can call API methods.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># You must authenticate yourself by passing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># the API key as the first method&#39;s argument</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">version</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In Python, use the <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> module from the standard
+library.</p>
+<p class="last">In Python 3 <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> has been renamed xmlrpc.client.</p>
+</div>
+</div>
+<div id="tab-php-01"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// Library installed from PEAR</span>
+<span class="k">require_once</span> <span class="s1">&#39;XML/RPC2/Client.php&#39;</span><span class="p">;</span>
+
+<span class="c1">// The first step is to connect to the API</span>
+<span class="nv">$version_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span>
+    <span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;version.&#39;</span><span class="p">,</span> <span class="s1">&#39;sslverify&#39;</span> <span class="o">=&gt;</span> <span class="k">True</span> <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 checks the SSL certificate with Curl</span>
+<span class="c1">// Curl has its own CA bundle so you may :</span>
+<span class="c1">// * disable the &#39;sslverify&#39; option: leads to security issue</span>
+<span class="c1">// * enable the &#39;sslverify&#39; option (default) and add the Gandi</span>
+<span class="c1">// SSL certificate to the Curl bundle: best choice for security</span>
+<span class="c1">// See: http://curl.haxx.se/docs/sslcerts.html</span>
+
+<span class="nv">$apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1">// Now you can call API method</span>
+<span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="c1">// as the first method&#39;s argument</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$version_api</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 has known bugs on methods calls</span>
+<span class="c1">// See http://pear.php.net/bugs/bug.php?id=13963</span>
+<span class="c1">// You may use this call instead of the above one :</span>
+<span class="c1">// $result = $version_api-&gt;__call(&quot;info&quot;, $apikey);</span>
+
+<span class="c1">// dump the result</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In PHP 5, use the <a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> package from pear.</p>
+<p class="last"><a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> works with &#8216;prefix&#8217; in order to bind to namespace.
+The &#8216;prefix&#8217; isn&#8217;t editable, so you have to instanciante
+a client by namespace.</p>
+</div>
+</div>
+<div id="tab-nodejs-01"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">xmlrpc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">xmlrpc</span><span class="p">.</span><span class="nx">createSecureClient</span><span class="p">({</span>
+<span class="p">...</span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;rpc.gandi.net&#39;</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">port</span><span class="o">:</span> <span class="mi">443</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/xmlrpc/&#39;</span>
+<span class="p">...</span> <span class="p">})</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="c1">// Now you can call API methods.</span>
+<span class="o">&gt;</span> <span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="o">&gt;</span> <span class="c1">// as the first method&#39;s argument</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;version.info&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">apikey</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With NodeJS, use the <a class="reference external" href="http://search.npmjs.org/#/xmlrpc">npm xmlrpc package</a>.</p>
+</div>
+</div>
+<div id="tab-perl-10"><div class="highlight-perl"><div class="highlight"><pre><span class="k">use</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$api</span> <span class="o">=</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="k">my</span> <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;version.info&#39;</span><span class="p">,</span> <span class="nv">$apikey</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With perl, use the <a class="reference external" href="http://search.cpan.org/~daan/XML-RPC-0.9/lib/XML/RPC.pm">cpan xml::rpc package</a>.</p>
+</div>
+</div>
+<div id="tab-ruby-10"><div class="highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;xmlrpc/client&#39;</span>
+
+<span class="k">class</span> <span class="nc">ZlibParserDecorator</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+    <span class="vi">@parser</span> <span class="o">=</span> <span class="n">parser</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodResponse</span><span class="p">(</span><span class="n">responseText</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodResponse</span><span class="p">(</span><span class="no">Zlib</span><span class="o">::</span><span class="no">GzipReader</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">StringIO</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">responseText</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">XMLRPC</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new2</span><span class="p">(</span><span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">http_header_extra</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Accept-Encoding&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;gzip&quot;</span> <span class="p">}</span>
+<span class="n">server</span><span class="o">.</span><span class="n">set_parser</span> <span class="no">ZlibParserDecorator</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:parser</span><span class="p">))</span>
+
+<span class="n">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>With ruby, use the <a class="reference external" href="http://ruby-doc.org/stdlib/libdoc/xmlrpc/rdoc/index.html">xmlrpc/client</a> module from the standard library.
+Ruby does not support gzip by default, the ZlibParserDecorator
+is used to enabled with Ruby &gt;1.9.</p>
+<p class="last">For older ruby version, neither set the http_header_extra nor the parser.</p>
+</div>
+</div>
+<div id="tab-C-10"><div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="cp">#include &lt;xmlrpc.h&gt;</span>
+<span class="cp">#include &lt;xmlrpc_client.h&gt;</span>
+
+<span class="cp">#define CLIENT_NAME             &quot;Documentation Client&quot;</span>
+<span class="cp">#define CLIENT_VERSION          &quot;0.1&quot;</span>
+<span class="cp">#define CLIENT_USERAGENT        CLIENT_NAME &quot;/&quot; CLIENT_VERSION</span>
+
+<span class="cp">#define SERVER_URL              &quot;https:</span><span class="c1">//rpc.gandi.net/xmlrpc/&quot;</span>
+
+<span class="kt">int</span>     <span class="n">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+<span class="kt">void</span>    <span class="n">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">xmlrpc_env</span>      <span class="n">env</span><span class="p">;</span>
+        <span class="n">xmlrpc_value</span>    <span class="o">*</span><span class="n">apikey</span><span class="p">,</span> <span class="o">*</span><span class="n">rv</span><span class="p">;</span>
+
+        <span class="n">client_connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">apikey</span> <span class="o">=</span> <span class="n">xmlrpc_build_value</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="s">&quot;(s)&quot;</span><span class="p">,</span> <span class="s">&quot;my 24-character API key&quot;</span><span class="p">);</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">xmlrpc_client_call_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="n">SERVER_URL</span><span class="p">,</span> <span class="s">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">);</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">rv</span><span class="p">);</span>
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">apikey</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_clean</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_cleanup</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_clientparms</span> <span class="n">clientp</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_curl_xportparms</span> <span class="n">curlp</span><span class="p">;</span>
+
+        <span class="n">curlp</span><span class="p">.</span><span class="n">network_interface</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>         <span class="cm">/* use curl&#39;s default */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifypeer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>               <span class="cm">/* Gandi API CA must be present */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifyhost</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">user_agent</span> <span class="o">=</span> <span class="n">CLIENT_USERAGENT</span><span class="p">;</span>    <span class="cm">/* XML-RPC requirement */</span>
+
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transport</span> <span class="o">=</span> <span class="s">&quot;curl&quot;</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparmsP</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">curlp</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparm_size</span> <span class="o">=</span> <span class="n">XMLRPC_CXPSIZE</span><span class="p">(</span><span class="n">user_agent</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_init</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_init2</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">XMLRPC_CLIENT_NO_FLAGS</span><span class="p">,</span> <span class="n">CLIENT_NAME</span><span class="p">,</span>
+            <span class="n">CLIENT_VERSION</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">clientp</span><span class="p">,</span> <span class="n">XMLRPC_CPSIZE</span><span class="p">(</span><span class="n">transportparm_size</span><span class="p">));</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_occurred</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;XML-RPC Fault: %s (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_string</span><span class="p">,</span>
+                    <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_code</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With C, use the <a class="reference external" href="http://xmlrpc-c.sourceforge.net/">xmlrpc-c</a> library.</p>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-01" ).tabs();
+    });
+</script><div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>A server instance is represented by a virtual machine with the object <tt class="xref py py-class docutils literal"><span class="pre">hosting.vm</span></tt>. A
+<tt class="xref py py-class docutils literal"><span class="pre">hosting.vm</span></tt> object contains:</p>
+<ul class="simple">
+<li>disks</li>
+<li>network interfaces</li>
+</ul>
+</div>
+<div class="section" id="attributes-conventions">
+<h3>Attributes Conventions<a class="headerlink" href="#attributes-conventions" title="Permalink to this headline">¶</a></h3>
+<p>The attributes respect the following conventions:</p>
+<ul class="simple">
+<li><em>id</em> or <cite>*_id</cite>: unique positive integer (datacenter_id for example) or list of unique positive integers (ifaces_id for example)</li>
+<li><em>name</em>: unicode string</li>
+<li><em>description</em>: unicode string</li>
+<li><em>signature</em>: cryptographic hash or pgp signature?</li>
+</ul>
+</div>
+</div>
+<div class="section" id="virtual-machine-management">
+<h2>Virtual Machine Management<a class="headerlink" href="#virtual-machine-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="steps-to-create-a-vm">
+<h3>Steps to create a VM<a class="headerlink" href="#steps-to-create-a-vm" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#hosting-resources-dc-usage-ref"><em>Check available resources</em></a></li>
+<li><a class="reference internal" href="#hosting-choose-dc-usage-ref"><em>Choose a datacenter</em></a></li>
+<li><a class="reference internal" href="#hosting-choose-os-usage-ref"><em>Choose an operating system image</em></a></li>
+<li><a class="reference internal" href="#hosting-create-vm-usage-ref"><em>Create the VM</em></a></li>
+</ol>
+<p>Gandi Hosting provides devices &amp; servers instances management in the cloud.
+The main object is the virtual machine or VM (server instance).
+You can attach devices like disks and network interfaces to a VM.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Hosting API only manages devices &amp; servers instances.
+Billing (resources management) is managed on the control panel (Gandi.net website).
+It means you must have enough resources to create a new VM instance or device,
+or you will have to add resources using your Gandi.net control panel.</p>
+</div>
+</div>
+<div class="section" id="check-available-resources">
+<span id="hosting-resources-dc-usage-ref"></span><h3>Check available resources<a class="headerlink" href="#check-available-resources" title="Permalink to this headline">¶</a></h3>
+<p>All resources you created are associated with an account, and
+you can call <a class="reference internal" href="reference_account.html#hosting.account.info" title="hosting.account.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.account.info()</span></tt></a> in order to obtain
+its information.</p>
+<p>Gandi Hosting API is preparing a big change on the way it manages the
+user quota. Gandi Users will be all migrated to a new system
+based on the rating system. To know in which mode your account is, you have
+to check your hosting account information.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">account</span> <span class="o">=</span> <span class="n">hosting</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">account</span><span class="p">[</span><span class="s">&#39;rating_enabled&#39;</span><span class="p">]</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>If the <tt class="docutils literal"><span class="pre">rating_enabled</span></tt> is <cite>0</cite>, you are still using the
+<a class="reference internal" href="#hosting-shares-usage-ref"><em>Shares</em></a> model,
+otherwise, congratulations, your account has been migrated to
+<a class="reference internal" href="#hosting-credit-usage-ref"><em>Gandi credits</em></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a temporary situation, Gandi plans to migrate all existing accounts.
+Every shares and options are going to be cast in credits.</p>
+</div>
+<p>This change doesn&#8217;t break others api such as <a class="reference internal" href="reference_vm.html#hosting.vm.create" title="hosting.vm.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create()</span></tt></a>.</p>
+<div class="section" id="shares">
+<span id="hosting-shares-usage-ref"></span><h4>Shares<a class="headerlink" href="#shares" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">resources management is deprecated and is going to be dropped
+in favor of the <a class="reference internal" href="#hosting-credit-usage-ref"><em>Gandi credits</em></a>.
+To prepare a migration you can use the new key <cite>rating_enabled</cite>,
+from the call <a class="reference internal" href="reference_account.html#hosting.account.info" title="hosting.account.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.account.info()</span></tt></a>.
+In case it&#8217;s <tt class="docutils literal"><span class="pre">1</span></tt>, the account has been upgraded to use the
+rating platform: <cite>resources</cite> is empty, and <cite>credits</cite> is a number.</p>
+</div>
+<p>You can check that you have enough quota with <a class="reference internal" href="reference_account.html#hosting.account.info" title="hosting.account.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.account.info()</span></tt></a></p>
+<p>Now <em>account</em> holds information about your account and the status of your resources:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">account</span><span class="p">[</span><span class="s">&#39;resources&#39;</span><span class="p">][</span><span class="s">&#39;available&#39;</span><span class="p">]</span>
+<span class="go">{&#39;available&#39;: {&#39;bandwidth&#39;: 40960.0,</span>
+<span class="go">               &#39;cores&#39;: 3,</span>
+<span class="go">               &#39;disk&#39;: 73728,</span>
+<span class="go">               &#39;ips&#39;: 0,</span>
+<span class="go">               &#39;memory&#39;: 2048,</span>
+<span class="go">               &#39;shares&#39;: 8}}</span>
+</pre></div>
+</div>
+<p>To create a VM you need at least one share. You may want to map a description
+in terms of memory, disk and bandwidth to shares. The following configuration,
+in YAML format, describes a VM:</p>
+<div class="highlight-python"><pre>datacenter: France
+hostname:   vmexample0
+cores:      1
+memory:     512
+disks:
+    - size: 12288
+      name: vmexample0data0
+    - size: 6144
+      name: vmexample0data1
+ifaces:
+    ip_version: 4
+    bandwidth:  10240
+    reverse:    'vmexample0.example.net'</pre>
+</div>
+<p>Let translate it to a Python data structure:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">yaml</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myvm_description</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">file</span><span class="p">(</span><span class="s">&#39;myvm.yaml&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myvm_description</span>
+<span class="go">{&#39;cores&#39;: 1,</span>
+<span class="go"> &#39;datacenter&#39;: &#39;France&#39;,</span>
+<span class="go"> &#39;disks&#39;: [{&#39;name&#39;: &#39;vmexample0data0&#39;, &#39;size&#39;: 12288},</span>
+<span class="go">           {&#39;name&#39;: &#39;vmexample0data1&#39;, &#39;size&#39;: 6144}],</span>
+<span class="go"> &#39;hostname&#39;: &#39;vmexample0&#39;,</span>
+<span class="go"> &#39;ifaces&#39;: {&#39;bandwidth&#39;: 10240,</span>
+<span class="go">            &#39;ip_version&#39;: 4,</span>
+<span class="go">            &#39;reverse&#39;: &#39;vmexample0.example.net&#39;},</span>
+<span class="go"> &#39;memory&#39;: 512}</span>
+</pre></div>
+</div>
+<p>Now define <em>share_def</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">share_def</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)[</span><span class="s">&#39;share_definition&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">share_def</span>
+<span class="go">{&#39;bandwidth&#39;: 10240.0, &#39;cores&#39;: 0.25, &#39;disk&#39;: 8192, &#39;memory&#39;: 256, &#39;servers&#39;: 1}</span>
+</pre></div>
+</div>
+<p>This defines a share with grants of 256MB of memory, 8192MB (8GB) of disk, and 10240Kbps
+(5Mbps) of bandwidth, 0.25 core, and also one right to create a VM. We want
+to create a VM with 512MB of memory, two disks with a total of 18432, and one
+network interface of 10240Kbps. Calculate memory first.</p>
+<p>Two shares brings:</p>
+<ul class="simple">
+<li>1024MB of memory</li>
+<li>16384MB of disk</li>
+<li>10240Kbps of bandwidth</li>
+<li>0.5 of core</li>
+<li>the possibility to spawn 2 servers</li>
+</ul>
+<p>We have twice the required bandwidth and lack 2048MB of disk (18GB for the two disks
+to create our VM instead of 16GB contained in two shares).
+Then we check if we have enough available disk quota in our account:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">account</span><span class="p">[</span><span class="s">&#39;resources&#39;</span><span class="p">][</span><span class="s">&#39;available&#39;</span><span class="p">][</span><span class="s">&#39;disk&#39;</span><span class="p">]</span>
+<span class="go">73728</span>
+</pre></div>
+</div>
+<p>Consequently we can create a VM with this configuration file. We can go further
+and actually create the VM.</p>
+</div>
+<div class="section" id="gandi-credits">
+<span id="hosting-credit-usage-ref"></span><h4>Gandi credits<a class="headerlink" href="#gandi-credits" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Gandi has made the choice to drop the hosting.product API for many reasons.
+The introduction of credits is meant to simplify creation, management and
+renewal of your resources.</p>
+</div>
+<p>To create resources, you just now need credits, and your credit amount is shared
+by every hosting resources.
+To credit your account, just buy some via <tt class="xref py py-meth docutils literal"><span class="pre">hosting.account.credit()</span></tt>.
+Credit are sells via packages, to get the pricing, use <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">catalog.list()</span></tt></a> method.
+Then, to get resource prices, in credit, call the <a class="reference internal" href="reference_catalog.html#hosting.catalog.list" title="hosting.catalog.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.catalog.list()</span></tt></a>.
+Finally, watch your rating with <a class="reference internal" href="reference_rating.html#hosting.rating.list" title="hosting.rating.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.rating.list()</span></tt></a>.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">account</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">account</span><span class="p">[</span><span class="s">&#39;rating_enabled&#39;</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="choose-a-datacenter">
+<span id="hosting-choose-dc-usage-ref"></span><h3>Choose a datacenter<a class="headerlink" href="#choose-a-datacenter" title="Permalink to this headline">¶</a></h3>
+<p>Gandi hosts virtual servers in several datacenters. At first, you need to
+choose where your servers instances will be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">datacenter</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="go">[{&#39;country&#39;: &#39;France&#39;,</span>
+<span class="go">  &#39;id&#39;: 1,</span>
+<span class="go">  &#39;iso&#39;: &#39;FR&#39;,</span>
+<span class="go">  &#39;name&#39;: &#39;Equinix Paris&#39;},</span>
+<span class="go"> {&#39;country&#39;: &#39;United States of America&#39;,</span>
+<span class="go">  &#39;id&#39;: 2,</span>
+<span class="go">  &#39;iso&#39;: &#39;US&#39;,</span>
+<span class="go">  &#39;name&#39;: &#39;Level3 Baltimore&#39;}]</span>
+</pre></div>
+</div>
+<p>You can automate this by retrieving the datacenter&#8217;s country from the
+configuration file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fr_datacenters</span> <span class="o">=</span> <span class="p">[</span><span class="n">dc</span> <span class="k">for</span> <span class="n">dc</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">datacenter</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">dc</span><span class="p">[</span><span class="s">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">myvm_description</span><span class="p">[</span><span class="s">&#39;datacenter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fr_datacenters</span>
+<span class="go">[{&#39;country&#39;: &#39;France&#39;, &#39;id&#39;: 1, &#39;iso&#39;: &#39;FR&#39;, &#39;name&#39;: &#39;Equinix Paris&#39;}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dc_id</span> <span class="o">=</span> <span class="n">fr_datacenters</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="choose-an-operating-system-image">
+<span id="hosting-choose-os-usage-ref"></span><h3>Choose an operating system image<a class="headerlink" href="#choose-an-operating-system-image" title="Permalink to this headline">¶</a></h3>
+<p>Before you create a VM, you need to choose the disk image with the OS you
+want. Lets imagine you want to create a VM with an Ubuntu image:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;datacenter_id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubuntu_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">images</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;ubuntu&#39;</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubuntu_images</span>
+<span class="go">[{&#39;author_id&#39;: 248842,</span>
+<span class="go">  &#39;datacenter_id&#39;: 1,</span>
+<span class="go">  &#39;date_created&#39;: &lt;DateTime &#39;20100101T00:00:00&#39; at 25cd248&gt;,</span>
+<span class="go">  &#39;date_updated&#39;: &lt;DateTime &#39;20101007T06:43:17&#39; at 25cd200&gt;,</span>
+<span class="go">  &#39;disk_id&#39;: 43024,</span>
+<span class="go">  &#39;id&#39;: 15,</span>
+<span class="go">  &#39;label&#39;: &#39;Ubuntu 9.10&#39;,</span>
+<span class="go">  &#39;os_arch&#39;: &#39;x86-32&#39;,</span>
+<span class="go">  &#39;visibility&#39;: &#39;all&#39;},</span>
+<span class="go"> {&#39;author_id&#39;: 248842,</span>
+<span class="go">  &#39;datacenter_id&#39;: 1,</span>
+<span class="go">  &#39;date_created&#39;: &lt;DateTime &#39;20100101T00:00:00&#39; at 25cd2d8&gt;,</span>
+<span class="go">  &#39;date_updated&#39;: &lt;DateTime &#39;20101007T06:43:17&#39; at 25cd290&gt;,</span>
+<span class="go">  &#39;disk_id&#39;: 45512,</span>
+<span class="go">  &#39;id&#39;: 16,</span>
+<span class="go">  &#39;label&#39;: &#39;Ubuntu 9.10 + ispCP&#39;,</span>
+<span class="go">  &#39;os_arch&#39;: &#39;x86-32&#39;,</span>
+<span class="go">  &#39;visibility&#39;: &#39;alpha&#39;},</span>
+<span class="go"> {&#39;author_id&#39;: 248842,</span>
+<span class="go">  &#39;datacenter_id&#39;: 1,</span>
+<span class="go">  &#39;date_created&#39;: &lt;DateTime &#39;20100101T00:00:00&#39; at 25cd368&gt;,</span>
+<span class="go">  &#39;date_updated&#39;: &lt;DateTime &#39;20101007T06:43:17&#39; at 25cd320&gt;,</span>
+<span class="go">  &#39;disk_id&#39;: 49300,</span>
+<span class="go">  &#39;id&#39;: 17,</span>
+<span class="go">  &#39;label&#39;: &#39;Ubuntu 9.10 + Cherokee&#39;,</span>
+<span class="go">  &#39;os_arch&#39;: &#39;x86-32&#39;,</span>
+<span class="go">  &#39;visibility&#39;: &#39;all&#39;},</span>
+<span class="go"> {&#39;author_id&#39;: 248842,</span>
+<span class="go">  &#39;datacenter_id&#39;: 1,</span>
+<span class="go">  &#39;date_created&#39;: &lt;DateTime &#39;20100101T00:00:00&#39; at 25cd3f8&gt;,</span>
+<span class="go">  &#39;date_updated&#39;: &lt;DateTime &#39;20101007T06:43:17&#39; at 25cd3b0&gt;,</span>
+<span class="go">  &#39;disk_id&#39;: 51848,</span>
+<span class="go">  &#39;id&#39;: 18,</span>
+<span class="go">  &#39;label&#39;: &#39;Ubuntu 10.04&#39;,</span>
+<span class="go">  &#39;os_arch&#39;: &#39;x86-32&#39;,</span>
+<span class="go">  &#39;visibility&#39;: &#39;all&#39;}]</span>
+</pre></div>
+</div>
+<p>It will return the list of all images with a name like (&#8216;~&#8217;) ubuntu
+(case-insensitive). You can filter the list for the version:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;10.04&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">],</span> <span class="n">ubuntu_images</span><span class="p">)</span>
+<span class="go">[{&#39;author_id&#39;: 248842,</span>
+<span class="go">  &#39;datacenter_id&#39;: 1,</span>
+<span class="go">  &#39;date_created&#39;: &lt;DateTime &#39;20100101T00:00:00&#39; at 25cd3f8&gt;,</span>
+<span class="go">  &#39;date_updated&#39;: &lt;DateTime &#39;20101007T06:43:17&#39; at 25cd3b0&gt;,</span>
+<span class="go">  &#39;disk_id&#39;: 51848,</span>
+<span class="go">  &#39;id&#39;: 18,</span>
+<span class="go">  &#39;label&#39;: &#39;Ubuntu 10.04&#39;,</span>
+<span class="go">  &#39;os_arch&#39;: &#39;x86-32&#39;,</span>
+<span class="go">  &#39;visibility&#39;: &#39;all&#39;}]</span>
+</pre></div>
+</div>
+<p>Let take the disk associated with this image to create our VM:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">src_disk_id</span> <span class="o">=</span> <span class="mi">51848</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may choose a disk image you created yourself and configured
+to fit your needs. It is easier to duplicate VMs this way.</p>
+</div>
+</div>
+<div class="section" id="create-the-vm">
+<span id="hosting-create-vm-usage-ref"></span><h3>Create the VM<a class="headerlink" href="#create-the-vm" title="Permalink to this headline">¶</a></h3>
+<p>Create the VM from a <em>vm_spec</em> mapping with <a class="reference internal" href="reference_vm.html#hosting.vm.create_from" title="hosting.vm.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create_from()</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">disk_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    &#39;datacenter_id&#39;: dc_id,</span>
+<span class="go">    &#39;name&#39;: myvm_description[&#39;disks&#39;][0]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vm_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    &#39;datacenter_id&#39;:dc_id,</span>
+<span class="go">    &#39;hostname&#39;:     myvm_description[&#39;hostname&#39;],</span>
+<span class="go">    &#39;memory&#39;:       myvm_description[&#39;memory&#39;],</span>
+<span class="go">    &#39;cores&#39;:        myvm_description[&#39;cores&#39;],</span>
+<span class="go">    &#39;ip_version&#39;:   myvm_description[&#39;ifaces&#39;][&#39;ip_version&#39;],</span>
+<span class="go">    &#39;bandwidth&#39;:    myvm_description[&#39;ifaces&#39;][&#39;bandwidth&#39;],</span>
+<span class="go">    &#39;password&#39;:     &#39;password_to_change&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">create_from</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">vm_spec</span><span class="p">,</span> <span class="n">disk_spec</span><span class="p">,</span> <span class="n">src_disk_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="reference_vm.html#hosting.vm.create_from" title="hosting.vm.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create_from()</span></tt></a> takes the VM specification as its second argument, the
+disk specification as its third and finally the source disk id. Behind the
+scenes, the Gandi backend creates a new disk from the source disk.  When you ask
+Gandi to create a VM, the VM is not immediately available. It will start to
+work in Gandi&#8217;s backend to prepare the environment of the VM. This work is
+tracked with the <tt class="xref py py-class docutils literal"><span class="pre">Operation</span></tt>.</p>
+<p>A VM create operation does 3 operations:</p>
+<blockquote>
+<div><ul class="simple">
+<li>disk_create</li>
+<li>iface_create</li>
+<li>vm_create</li>
+</ul>
+</div></blockquote>
+<p>You can poll the operation status by calling <a class="reference internal" href="../operation/reference.html#operation.info" title="operation.info"><tt class="xref py py-meth docutils literal"><span class="pre">operation.info()</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">op2</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vm_id</span> <span class="o">=</span> <span class="n">op2</span><span class="p">[</span><span class="s">&#39;params&#39;</span><span class="p">][</span><span class="s">&#39;vm_id&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vm_id</span>
+<span class="go">    63907</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">in order to boot, a VM will use the <em>cmdline</em> defined with its first
+disk. With a linux disk image, <em>cmdline</em> may contain <tt class="docutils literal"><span class="pre">root=/dev/xvda1</span></tt>. This
+means the kernel will mount the first partition of the first disk as the
+root filesystem.</p>
+</div>
+<p>The process of VM creation will automatically create a network interface.
+When creating a network interface, the system tries to recycle an IP.
+If you have already released an IP (by deleting the network interface that was using it),
+the next created network interface will get the old IP.</p>
+<p>After the creation, the VM is automatically started.</p>
+</div>
+<div class="section" id="log-into-a-vm">
+<h3>Log into a VM<a class="headerlink" href="#log-into-a-vm" title="Permalink to this headline">¶</a></h3>
+<p>Once the VM has successfully started you can log in:</p>
+<div class="highlight-python"><pre>$ ssh user@vm_ip
+    &lt;enter password from vm_spec passed to vm.create&gt;</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may want to add an SSH public key for some users in
+~&lt;user&gt;/.ssh/authorized_keys . Please refer to the system administration and
+security manual of the operation system distribution. You may also add directly
+the public SSH key in the vm_spec object using the ssh_key parameter. The vm_spec
+can manage password, SSH key or both.</p>
+</div>
+</div>
+<div class="section" id="update-a-vm">
+<h3>Update a VM<a class="headerlink" href="#update-a-vm" title="Permalink to this headline">¶</a></h3>
+<p>The VM is running and you want to increase its memory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">hosting</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">vm</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">],</span> <span class="p">{</span><span class="s">&#39;memory&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The following VM attributes can be updated:</p>
+<ul class="simple">
+<li>hostname: a Unicode string up to 63 characters</li>
+<li>memory: by step of 64MB between 256MB and 24576MB</li>
+<li>vm_max_memory: 2048MB, 4096MB, 24576MB</li>
+<li>cores: by unit between 1 and 12</li>
+</ul>
+<p>The state is managed by <a class="reference internal" href="reference_vm.html#hosting.vm.start" title="hosting.vm.start"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.start()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.reboot" title="hosting.vm.reboot"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.reboot()</span></tt></a>, and
+<a class="reference internal" href="reference_vm.html#hosting.vm.stop" title="hosting.vm.stop"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.stop()</span></tt></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>vm_max_memory</em> is used to limit the memory reserved by xen to manage
+memory allocation on the guest. It is an implementation-specific attribute
+we need to expose to the user. In practice, it defines the maximum memory
+the VM can manage. When a VM is created with less than 2048MB of memory,
+<em>vm_max_memory</em> is equal to 2048MB. If you want to increase memory beyond
+this limit you need to update vm_max_memory and reboot the VM.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="IaaS Hosting API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi Hosting API"
+             >previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Gandi Hosting API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

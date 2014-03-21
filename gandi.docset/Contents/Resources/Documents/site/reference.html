@@ -1,0 +1,1129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Site API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="index.html" rel="up" title="Gandi Site API"/>
+<link href="../paas/index.html" rel="next" title="Gandi PaaS API"/>
+<link href="usage.html" rel="prev" title="Site API"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="../paas/index.html" title="Gandi PaaS API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="usage.html" title="Site API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a accesskey="U" href="index.html">Gandi Site API</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Site API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="usage.html" title="previous chapter">Site API</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="../paas/index.html" title="next chapter">Gandi PaaS API</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="site-api-reference">
+<h1>Site API Reference<a class="headerlink" href="#site-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="site.alter_zone"><a name="//apple_ref/cpp/clm/site.alter_zone"></a>
+<tt class="descclassname">site.</tt><tt class="descname">alter_zone</tt><big>(</big><em>apikey</em>, <em>host</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.alter_zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a record in the domain zone for all this site’s host</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>host</strong> (<em>string</em>) – FQDN of the host</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteAlterZone" title="SiteAlterZone"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">sitebuilder_zone_alter</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.count"><a name="//apple_ref/cpp/clm/site.count"></a>
+<tt class="descclassname">site.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#site.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count sites.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteListOptions" title="SiteListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – Number of sites</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.create"><a name="//apple_ref/cpp/clm/site.create"></a>
+<tt class="descclassname">site.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteCreate" title="SiteCreate"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">sitebuilder_create</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.delete"><a name="//apple_ref/cpp/clm/site.delete"></a>
+<tt class="descclassname">site.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>site</em><big>)</big><a class="headerlink" href="#site.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">sitebuilder_delete</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.edit"><a name="//apple_ref/cpp/clm/site.edit"></a>
+<tt class="descclassname">site.</tt><tt class="descname">edit</tt><big>(</big><em>apikey</em>, <em>site</em>, <em>token</em><big>)</big><a class="headerlink" href="#site.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit a site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+<li><strong>token</strong> (<em>struct</em>) – <tt class="xref py py-data docutils literal"><span class="pre">Token</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">key</span></tt></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string – An url that let edit site</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.get_dns_entries"><a name="//apple_ref/cpp/clm/site.get_dns_entries"></a>
+<tt class="descclassname">site.</tt><tt class="descname">get_dns_entries</tt><big>(</big><em>apikey</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.get_dns_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the keys you need to put in your zone (including the TXT record).
+If <strong>host</strong> is a domain name, you have to put @=key.
+Otherwise, you have to put subdomain=key.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteDnsEntry" title="SiteDnsEntry"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – Information on the dns entries you need to add</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.info"><a name="//apple_ref/cpp/clm/site.info"></a>
+<tt class="descclassname">site.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>site</em><big>)</big><a class="headerlink" href="#site.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get site information.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SiteReturn" title="SiteReturn"><tt class="xref py py-data docutils literal"><span class="pre">Informations</span> <span class="pre">about</span> <span class="pre">the</span> <span class="pre">site.</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.list"><a name="//apple_ref/cpp/clm/site.list"></a>
+<tt class="descclassname">site.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#site.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List sites.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteListOptions" title="SiteListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SiteReturn" title="SiteReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">sites</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.renew"><a name="//apple_ref/cpp/clm/site.renew"></a>
+<tt class="descclassname">site.</tt><tt class="descname">renew</tt><big>(</big><em>apikey</em>, <em>site</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.renew" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renew a site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="../paas/reference.html#RenewOptions" title="RenewOptions"><tt class="xref py py-data docutils literal"><span class="pre">renew</span> <span class="pre">information</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">sitebuilder_renew</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.update"><a name="//apple_ref/cpp/clm/site.update"></a>
+<tt class="descclassname">site.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>site</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a site.
+<strong>Updating the package is a site package upgrade and is not a
+free operation.</strong>. In other case, this operation is free.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteUpdate" title="SiteUpdate"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">sitebuilder_update</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.key.create"><a name="//apple_ref/cpp/clm/site.key.create"></a>
+<tt class="descclassname">site.key.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>site</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.key.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a key for a given site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>string</em>) – site unique identifier</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteEditKeyCreate" title="SiteEditKeyCreate"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SiteKeyReturn" title="SiteKeyReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">package</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">provider</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.key.delete"><a name="//apple_ref/cpp/clm/site.key.delete"></a>
+<tt class="descclassname">site.key.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>token</em><big>)</big><a class="headerlink" href="#site.key.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a key.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>token</strong> (<em>string</em>) – Token of the key</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – <tt class="docutils literal"><span class="pre">1</span></tt> if succeed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.key.list"><a name="//apple_ref/cpp/clm/site.key.list"></a>
+<tt class="descclassname">site.key.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em>, <em>site</em><big>)</big><a class="headerlink" href="#site.key.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List keys for a given site.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>site</strong> (<em>int</em>) – site  unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SiteKeyReturn" title="SiteKeyReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">keys</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">site</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.key.update"><a name="//apple_ref/cpp/clm/site.key.update"></a>
+<tt class="descclassname">site.key.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>token</em>, <em>params</em><big>)</big><a class="headerlink" href="#site.key.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a key.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>token</strong> (<em>string</em>) – Token of the key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#SiteEditKeyEdit" title="SiteEditKeyEdit"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SiteKeyReturn" title="SiteKeyReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">package</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">provider</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="site.package.list"><a name="//apple_ref/cpp/clm/site.package.list"></a>
+<tt class="descclassname">site.package.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em>, <em>opts</em><big>)</big><a class="headerlink" href="#site.package.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List packages.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.14.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#PackageListOptions" title="PackageListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#SitePackageListReturn" title="SitePackageListReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">package</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">provider</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="PackageName"><a name="//apple_ref/cpp/clconst/PackageName"></a>
+<tt class="descname">PackageName</tt><a class="headerlink" href="#PackageName" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#PackageListOptions" title="PackageListOptions"><tt class="xref py py-data docutils literal"><span class="pre">PackageListOptions</span></tt></a>, <a class="reference internal" href="#SiteCreate" title="SiteCreate"><tt class="xref py py-data docutils literal"><span class="pre">SiteCreate</span></tt></a>, <a class="reference internal" href="#SiteListOptions" title="SiteListOptions"><tt class="xref py py-data docutils literal"><span class="pre">SiteListOptions</span></tt></a>, <a class="reference internal" href="#SitePackageListReturn" title="SitePackageListReturn"><tt class="xref py py-data docutils literal"><span class="pre">SitePackageListReturn</span></tt></a>, <a class="reference internal" href="#SiteReturn" title="SiteReturn"><tt class="xref py py-data docutils literal"><span class="pre">SiteReturn</span></tt></a> and <a class="reference internal" href="#SiteUpdate" title="SiteUpdate"><tt class="xref py py-data docutils literal"><span class="pre">SiteUpdate</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>business</td>
+<td>The free package with unlimited web pages</td>
+</tr>
+<tr class="row-odd"><td>free</td>
+<td>The free package with 3 web pages include</td>
+</tr>
+<tr class="row-even"><td>personal</td>
+<td>The free package that includes 10 web pages</td>
+</tr>
+<tr class="row-odd"><td>professional</td>
+<td>The free package that includes 100 web pages</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="Provider"><a name="//apple_ref/cpp/clconst/Provider"></a>
+<tt class="descname">Provider</tt><a class="headerlink" href="#Provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#SiteDnsEntry" title="SiteDnsEntry"><tt class="xref py py-data docutils literal"><span class="pre">SiteDnsEntry</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>basekit</td>
+<td>associated site must contain a gandi.ws <cite>vhost</cite></td>
+</tr>
+<tr class="row-odd"><td>basekit_whitelabel</td>
+<td>associated site must contain a bk-site.net <cite>vhost</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProviderName"><a name="//apple_ref/cpp/clconst/ProviderName"></a>
+<tt class="descname">ProviderName</tt><a class="headerlink" href="#ProviderName" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#PackageListOptions" title="PackageListOptions"><tt class="xref py py-data docutils literal"><span class="pre">PackageListOptions</span></tt></a>, <a class="reference internal" href="#SiteCreate" title="SiteCreate"><tt class="xref py py-data docutils literal"><span class="pre">SiteCreate</span></tt></a>, <a class="reference internal" href="#SiteListOptions" title="SiteListOptions"><tt class="xref py py-data docutils literal"><span class="pre">SiteListOptions</span></tt></a> and <a class="reference internal" href="#SitePackageListReturn" title="SitePackageListReturn"><tt class="xref py py-data docutils literal"><span class="pre">SitePackageListReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>basekit</td>
+<td>associated site must contain a gandi.ws <cite>vhost</cite></td>
+</tr>
+<tr class="row-odd"><td>basekit_whitelabel</td>
+<td>associated site must contain a bk-site.net <cite>vhost</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteAlterZone"><a name="//apple_ref/cpp/clconst/SiteAlterZone"></a>
+<tt class="descname">SiteAlterZone</tt><a class="headerlink" href="#SiteAlterZone" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.alter_zone" title="site.alter_zone"><tt class="xref py py-meth docutils literal"><span class="pre">site.alter_zone()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>override</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteCreate"><a name="//apple_ref/cpp/clconst/SiteCreate"></a>
+<tt class="descname">SiteCreate</tt><a class="headerlink" href="#SiteCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.create" title="site.create"><tt class="xref py py-meth docutils literal"><span class="pre">site.create()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">given name of the site</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">vhosts</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">list of virtualhosts, <strong>the first one is the preferred</strong></td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>1m</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">subscription period, used to calculate the <tt class="docutils literal"><span class="pre">date_end</span></tt></td>
+</tr>
+<tr class="row-even"><td>fixed</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>override</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Define the behaviour when a DNS record already exists         (<tt class="docutils literal"><span class="pre">zone_alter</span></tt> must also be set)</td>
+</tr>
+<tr class="row-odd"><td>owner</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">handle of the site owner</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">package</span></tt></a></td>
+<td>free</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ProviderName" title="ProviderName"><tt class="xref py py-data docutils literal"><span class="pre">provider</span></tt></a></td>
+<td>basekit</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>zone_alter</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Define if the PaaS backend should modify the domain’s         zone to add virtual hosts (you must have
+permissions on the domain)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteDnsEntry"><a name="//apple_ref/cpp/clconst/SiteDnsEntry"></a>
+<tt class="descname">SiteDnsEntry</tt><a class="headerlink" href="#SiteDnsEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.get_dns_entries" title="site.get_dns_entries"><tt class="xref py py-meth docutils literal"><span class="pre">site.get_dns_entries()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Provider" title="Provider"><tt class="xref py py-data docutils literal"><span class="pre">provider</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">name of the provider that host the site</td>
+</tr>
+<tr class="row-even"><td>vhost</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">FQDN of the DNS Domain Zone that must set the TXT record</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteListOptions"><a name="//apple_ref/cpp/clconst/SiteListOptions"></a>
+<tt class="descname">SiteListOptions</tt><a class="headerlink" href="#SiteListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.count" title="site.count"><tt class="xref py py-meth docutils literal"><span class="pre">site.count()</span></tt></a> and <a class="reference internal" href="#site.list" title="site.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>contact</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>date_end</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">package</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ProviderName" title="ProviderName"><tt class="xref py py-data docutils literal"><span class="pre">provider</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SiteStatus" title="SiteStatus"><tt class="xref py py-data docutils literal"><span class="pre">status</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>~name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~vhost</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteStatus"><a name="//apple_ref/cpp/clconst/SiteStatus"></a>
+<tt class="descname">SiteStatus</tt><a class="headerlink" href="#SiteStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#SiteListOptions" title="SiteListOptions"><tt class="xref py py-data docutils literal"><span class="pre">SiteListOptions</span></tt></a> and <a class="reference internal" href="#SiteReturn" title="SiteReturn"><tt class="xref py py-data docutils literal"><span class="pre">SiteReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>active</td>
+<td>the site is running</td>
+</tr>
+<tr class="row-odd"><td>expired</td>
+<td>the site must be renew to be <tt class="docutils literal"><span class="pre">active</span></tt></td>
+</tr>
+<tr class="row-even"><td>locked</td>
+<td>the site is locked for complaints</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteUpdate"><a name="//apple_ref/cpp/clconst/SiteUpdate"></a>
+<tt class="descname">SiteUpdate</tt><a class="headerlink" href="#SiteUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.update" title="site.update"><tt class="xref py py-meth docutils literal"><span class="pre">site.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">subscription period, used to calculate the <tt class="docutils literal"><span class="pre">date_end</span></tt></td>
+</tr>
+<tr class="row-even"><td>fixed</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">given name of the site</td>
+</tr>
+<tr class="row-odd"><td>override</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Define the behaviour when a DNS record already exists         (<tt class="docutils literal"><span class="pre">zone_alter</span></tt> must also be set)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">package</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">upgrade the package. <strong>you cannot downgrade</strong></td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">vhosts</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">list of virtualhosts, <strong>the first one is the preferred</strong></td>
+</tr>
+<tr class="row-odd"><td>zone_alter</td>
+<td>False</td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">Define if the PaaS backend should modify the domain’s         zone to add virtual hosts (you must have
+permissions on the domain)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="SiteEditKeyCreate"><a name="//apple_ref/cpp/clconst/SiteEditKeyCreate"></a>
+<tt class="descname">SiteEditKeyCreate</tt><a class="headerlink" href="#SiteEditKeyCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.key.create" title="site.key.create"><tt class="xref py py-meth docutils literal"><span class="pre">site.key.create()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">given name for the key</td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td>None</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">expiration date, never expire if omitted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SiteEditKeyEdit"><a name="//apple_ref/cpp/clconst/SiteEditKeyEdit"></a>
+<tt class="descname">SiteEditKeyEdit</tt><a class="headerlink" href="#SiteEditKeyEdit" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.key.update" title="site.key.update"><tt class="xref py py-meth docutils literal"><span class="pre">site.key.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td>None</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">expiration date, never expire if set to <cite>nil</cite></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">given name for the key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="PackageListOptions"><a name="//apple_ref/cpp/clconst/PackageListOptions"></a>
+<tt class="descname">PackageListOptions</tt><a class="headerlink" href="#PackageListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#site.package.list" title="site.package.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.package.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ProviderName" title="ProviderName"><tt class="xref py py-data docutils literal"><span class="pre">provider</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">provider name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">&gt;name</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">use to get available packages for an upgrade.</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="SiteReturn"><a name="//apple_ref/cpp/clconst/SiteReturn"></a>
+<tt class="descname">SiteReturn</tt><a class="headerlink" href="#SiteReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#site.info" title="site.info"><tt class="xref py py-meth docutils literal"><span class="pre">site.info()</span></tt></a> and <a class="reference internal" href="#site.list" title="site.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#AutorenewReturn" title="AutorenewReturn"><tt class="xref py py-data docutils literal"><span class="pre">autorenew</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <a class="reference internal" href="#site.info" title="site.info"><tt class="xref py py-meth docutils literal"><span class="pre">site.info()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">expiration date of the site</td>
+</tr>
+<tr class="row-even"><td>date_end_commitment</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">end of commitment date</td>
+</tr>
+<tr class="row-even"><td>edit_url</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2"><strong>url to browse in order to edit the site</strong></td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#site.info" title="site.info"><tt class="xref py py-meth docutils literal"><span class="pre">site.info()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td>host</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">preferred virtual hostname</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <a class="reference internal" href="#site.list" title="site.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.list()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">site unique identifier</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">given name of the site</td>
+</tr>
+<tr class="row-even"><td>owner</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">handle of the site owner</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#site.info" title="site.info"><tt class="xref py py-meth docutils literal"><span class="pre">site.info()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">package</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">subscribed package</td>
+</tr>
+<tr class="row-odd"><td>provider</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">site builder tool provider</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#SiteStatus" title="SiteStatus"><tt class="xref py py-data docutils literal"><span class="pre">status</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">current status of the site</td>
+</tr>
+<tr class="row-odd"><td>vhosts</td>
+<td>array</td>
+</tr>
+<tr class="row-even"><td colspan="2">list of all virtual hosts</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <a class="reference internal" href="#site.info" title="site.info"><tt class="xref py py-meth docutils literal"><span class="pre">site.info()</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="SiteKeyReturn"><a name="//apple_ref/cpp/clconst/SiteKeyReturn"></a>
+<tt class="descname">SiteKeyReturn</tt><a class="headerlink" href="#SiteKeyReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#site.key.create" title="site.key.create"><tt class="xref py py-meth docutils literal"><span class="pre">site.key.create()</span></tt></a>, <a class="reference internal" href="#site.key.list" title="site.key.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.key.list()</span></tt></a> and <a class="reference internal" href="#site.key.update" title="site.key.update"><tt class="xref py py-meth docutils literal"><span class="pre">site.key.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>count_use</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">number of times that the token has been consumed</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">creation date</td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">expiration date of the token</td>
+</tr>
+<tr class="row-even"><td>date_last_used</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">last time that the token has been consumed</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">given name of the key</td>
+</tr>
+<tr class="row-even"><td>token</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">token to consume to retrieve a site edition url</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="SitePackageListReturn"><a name="//apple_ref/cpp/clconst/SitePackageListReturn"></a>
+<tt class="descname">SitePackageListReturn</tt><a class="headerlink" href="#SitePackageListReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#site.package.list" title="site.package.list"><tt class="xref py py-meth docutils literal"><span class="pre">site.package.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#PackageName" title="PackageName"><tt class="xref py py-data docutils literal"><span class="pre">name</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ProviderName" title="ProviderName"><tt class="xref py py-data docutils literal"><span class="pre">provider</span></tt></a></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../paas/index.html" title="Gandi PaaS API">next</a> |</li>
+<li class="right">
+<a href="usage.html" title="Site API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Site API</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

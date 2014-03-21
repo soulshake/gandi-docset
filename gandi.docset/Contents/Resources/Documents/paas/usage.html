@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PaaS API &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/menu.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="../index.html" />
+    <link rel="up" title="Gandi PaaS API" href="index.html" />
+    <link rel="next" title="PaaS API Reference" href="reference.html" />
+    <link rel="prev" title="Gandi PaaS API" href="index.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="PaaS API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi PaaS API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Gandi PaaS API</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PaaS API</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#connect-to-the-api-server">Connect to the API server</a></li>
+<li><a class="reference internal" href="#paas-management">PaaS Management</a><ul>
+<li><a class="reference internal" href="#list-your-paas-instances">List your PaaS Instances</a></li>
+<li><a class="reference internal" href="#count-your-paas-instances">Count your PaaS Instances</a></li>
+<li><a class="reference internal" href="#get-info-on-a-paas-instance">Get info on a PaaS Instance</a></li>
+<li><a class="reference internal" href="#create-a-paas-instance">Create a PaaS Instance</a></li>
+<li><a class="reference internal" href="#update-a-paas-instance">Update a PaaS Instance</a></li>
+<li><a class="reference internal" href="#delete-a-paas-instance">Delete a PaaS Instance</a></li>
+<li><a class="reference internal" href="#additional-information-about-security">Additional information about security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Gandi PaaS API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="next chapter">PaaS API Reference</a></p>
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="paas-api">
+<h1>PaaS API<a class="headerlink" href="#paas-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Gandi PaaS API provides a set of remote requests to manage your PaaS instances.</p>
+</div>
+<div class="section" id="connect-to-the-api-server">
+<h2>Connect to the API server<a class="headerlink" href="#connect-to-the-api-server" title="Permalink to this headline">¶</a></h2>
+<p>The Gandi PaaS API is provided through a set of XML-RPC calls:</p>
+<div id="tabpages-01">
+    <ul>
+        <li><a href="#tab-python-01">python</a></li>
+        <li><a href="#tab-php-01">php</a></li>
+        <li><a href="#tab-nodejs-01">nodejs</a></li>
+        <li><a href="#tab-perl-10">perl</a></li>
+        <li><a href="#tab-ruby-10">ruby</a></li>
+        <li><a href="#tab-C-10">C</a></li>
+    </ul>
+    <div id="tab-python-01"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Now you can call API methods.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># You must authenticate yourself by passing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># the API key as the first method&#39;s argument</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">version</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In Python, use the <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> module from the standard
+library.</p>
+<p class="last">In Python 3 <a class="reference external" href="http://docs.python.org/library/xmlrpclib.html">xmlrpclib</a> has been renamed xmlrpc.client.</p>
+</div>
+</div>
+<div id="tab-php-01"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// Library installed from PEAR</span>
+<span class="k">require_once</span> <span class="s1">&#39;XML/RPC2/Client.php&#39;</span><span class="p">;</span>
+
+<span class="c1">// The first step is to connect to the API</span>
+<span class="nv">$version_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span>
+    <span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;version.&#39;</span><span class="p">,</span> <span class="s1">&#39;sslverify&#39;</span> <span class="o">=&gt;</span> <span class="k">True</span> <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 checks the SSL certificate with Curl</span>
+<span class="c1">// Curl has its own CA bundle so you may :</span>
+<span class="c1">// * disable the &#39;sslverify&#39; option: leads to security issue</span>
+<span class="c1">// * enable the &#39;sslverify&#39; option (default) and add the Gandi</span>
+<span class="c1">// SSL certificate to the Curl bundle: best choice for security</span>
+<span class="c1">// See: http://curl.haxx.se/docs/sslcerts.html</span>
+
+<span class="nv">$apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1">// Now you can call API method</span>
+<span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="c1">// as the first method&#39;s argument</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$version_api</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">);</span>
+
+<span class="c1">// Warning !</span>
+<span class="c1">// PEAR::XML_RPC2 has known bugs on methods calls</span>
+<span class="c1">// See http://pear.php.net/bugs/bug.php?id=13963</span>
+<span class="c1">// You may use this call instead of the above one :</span>
+<span class="c1">// $result = $version_api-&gt;__call(&quot;info&quot;, $apikey);</span>
+
+<span class="c1">// dump the result</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In PHP 5, use the <a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> package from pear.</p>
+<p class="last"><a class="reference external" href="http://pear.php.net/package/XML_RPC2">XML_RPC2</a> works with &#8216;prefix&#8217; in order to bind to namespace.
+The &#8216;prefix&#8217; isn&#8217;t editable, so you have to instanciante
+a client by namespace.</p>
+</div>
+</div>
+<div id="tab-nodejs-01"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">xmlrpc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">xmlrpc</span><span class="p">.</span><span class="nx">createSecureClient</span><span class="p">({</span>
+<span class="p">...</span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;rpc.gandi.net&#39;</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">port</span><span class="o">:</span> <span class="mi">443</span><span class="p">,</span>
+<span class="p">...</span>  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/xmlrpc/&#39;</span>
+<span class="p">...</span> <span class="p">})</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="c1">// Now you can call API methods.</span>
+<span class="o">&gt;</span> <span class="c1">// You must authenticate yourself by passing the API key</span>
+<span class="o">&gt;</span> <span class="c1">// as the first method&#39;s argument</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;version.info&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">apikey</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With NodeJS, use the <a class="reference external" href="http://search.npmjs.org/#/xmlrpc">npm xmlrpc package</a>.</p>
+</div>
+</div>
+<div id="tab-perl-10"><div class="highlight-perl"><div class="highlight"><pre><span class="k">use</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$api</span> <span class="o">=</span> <span class="nn">XML::</span><span class="n">RPC</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$apikey</span> <span class="o">=</span> <span class="s">&#39;my 24-character API key&#39;</span><span class="p">;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="k">my</span> <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;version.info&#39;</span><span class="p">,</span> <span class="nv">$apikey</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With perl, use the <a class="reference external" href="http://search.cpan.org/~daan/XML-RPC-0.9/lib/XML/RPC.pm">cpan xml::rpc package</a>.</p>
+</div>
+</div>
+<div id="tab-ruby-10"><div class="highlight-ruby"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">&#39;xmlrpc/client&#39;</span>
+
+<span class="k">class</span> <span class="nc">ZlibParserDecorator</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+    <span class="vi">@parser</span> <span class="o">=</span> <span class="n">parser</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodResponse</span><span class="p">(</span><span class="n">responseText</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodResponse</span><span class="p">(</span><span class="no">Zlib</span><span class="o">::</span><span class="no">GzipReader</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">StringIO</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">responseText</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="vi">@parser</span><span class="o">.</span><span class="n">parseMethodCall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">XMLRPC</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new2</span><span class="p">(</span><span class="s1">&#39;https://rpc.gandi.net/xmlrpc/&#39;</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">http_header_extra</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Accept-Encoding&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;gzip&quot;</span> <span class="p">}</span>
+<span class="n">server</span><span class="o">.</span><span class="n">set_parser</span> <span class="no">ZlibParserDecorator</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:parser</span><span class="p">))</span>
+
+<span class="n">apikey</span> <span class="o">=</span> <span class="s1">&#39;my 24-character API key&#39;</span>
+
+<span class="c1"># Now you can call API methods.</span>
+<span class="c1"># You must authenticate yourself by passing the API key</span>
+<span class="c1"># as the first method&#39;s argument</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>With ruby, use the <a class="reference external" href="http://ruby-doc.org/stdlib/libdoc/xmlrpc/rdoc/index.html">xmlrpc/client</a> module from the standard library.
+Ruby does not support gzip by default, the ZlibParserDecorator
+is used to enabled with Ruby &gt;1.9.</p>
+<p class="last">For older ruby version, neither set the http_header_extra nor the parser.</p>
+</div>
+</div>
+<div id="tab-C-10"><div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="cp">#include &lt;xmlrpc.h&gt;</span>
+<span class="cp">#include &lt;xmlrpc_client.h&gt;</span>
+
+<span class="cp">#define CLIENT_NAME             &quot;Documentation Client&quot;</span>
+<span class="cp">#define CLIENT_VERSION          &quot;0.1&quot;</span>
+<span class="cp">#define CLIENT_USERAGENT        CLIENT_NAME &quot;/&quot; CLIENT_VERSION</span>
+
+<span class="cp">#define SERVER_URL              &quot;https:</span><span class="c1">//rpc.gandi.net/xmlrpc/&quot;</span>
+
+<span class="kt">int</span>     <span class="n">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+<span class="kt">void</span>    <span class="n">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">xmlrpc_env</span>      <span class="n">env</span><span class="p">;</span>
+        <span class="n">xmlrpc_value</span>    <span class="o">*</span><span class="n">apikey</span><span class="p">,</span> <span class="o">*</span><span class="n">rv</span><span class="p">;</span>
+
+        <span class="n">client_connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">apikey</span> <span class="o">=</span> <span class="n">xmlrpc_build_value</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="s">&quot;(s)&quot;</span><span class="p">,</span> <span class="s">&quot;my 24-character API key&quot;</span><span class="p">);</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">xmlrpc_client_call_params</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="n">SERVER_URL</span><span class="p">,</span> <span class="s">&quot;version.info&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">);</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">rv</span><span class="p">);</span>
+        <span class="n">xmlrpc_DECREF</span><span class="p">(</span><span class="n">apikey</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_clean</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_cleanup</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>
+<span class="nf">client_connect</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_clientparms</span> <span class="n">clientp</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">xmlrpc_curl_xportparms</span> <span class="n">curlp</span><span class="p">;</span>
+
+        <span class="n">curlp</span><span class="p">.</span><span class="n">network_interface</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>         <span class="cm">/* use curl&#39;s default */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifypeer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>               <span class="cm">/* Gandi API CA must be present */</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">ssl_verifyhost</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="n">curlp</span><span class="p">.</span><span class="n">user_agent</span> <span class="o">=</span> <span class="n">CLIENT_USERAGENT</span><span class="p">;</span>    <span class="cm">/* XML-RPC requirement */</span>
+
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transport</span> <span class="o">=</span> <span class="s">&quot;curl&quot;</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparmsP</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">curlp</span><span class="p">;</span>
+        <span class="n">clientp</span><span class="p">.</span><span class="n">transportparm_size</span> <span class="o">=</span> <span class="n">XMLRPC_CXPSIZE</span><span class="p">(</span><span class="n">user_agent</span><span class="p">);</span>
+
+        <span class="n">xmlrpc_env_init</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+        <span class="n">xmlrpc_client_init2</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">XMLRPC_CLIENT_NO_FLAGS</span><span class="p">,</span> <span class="n">CLIENT_NAME</span><span class="p">,</span>
+            <span class="n">CLIENT_VERSION</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">clientp</span><span class="p">,</span> <span class="n">XMLRPC_CPSIZE</span><span class="p">(</span><span class="n">transportparm_size</span><span class="p">));</span>
+        <span class="n">client_check_fault</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>
+<span class="nf">client_check_fault</span><span class="p">(</span><span class="n">xmlrpc_env</span> <span class="o">*</span><span class="n">env</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_occurred</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;XML-RPC Fault: %s (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_string</span><span class="p">,</span>
+                    <span class="n">env</span><span class="o">-&gt;</span><span class="n">fault_code</span><span class="p">);</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">With C, use the <a class="reference external" href="http://xmlrpc-c.sourceforge.net/">xmlrpc-c</a> library.</p>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-01" ).tabs();
+    });
+</script><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the PaaS API does not use HTTP authentication scheme. It uses a custom
+authentication mechanism based on the API key.</p>
+</div>
+</div>
+<div class="section" id="paas-management">
+<h2>PaaS Management<a class="headerlink" href="#paas-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="list-your-paas-instances">
+<h3>List your PaaS Instances<a class="headerlink" href="#list-your-paas-instances" title="Permalink to this headline">¶</a></h3>
+<p>To list the instances you own, just call the <a class="reference internal" href="reference.html#paas.list" title="paas.list"><tt class="xref py py-func docutils literal"><span class="pre">paas.list()</span></tt></a> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="go">[{ &#39;catalog_name&#39;: &#39;phpmysql_m&#39;,</span>
+<span class="go">   &#39;data_disk_additional_size&#39;: 0,</span>
+<span class="go">   &#39;datacenter_id&#39;: 1,</span>
+<span class="go">   &#39;date_end&#39;: &lt;DateTime &#39;20111014T14:36:30&#39; at 7f96c47a0368&gt;,</span>
+<span class="go">   &#39;date_end_commitment&#39;: None,</span>
+<span class="go">   &#39;date_start&#39;: &lt;DateTime &#39;20110914T14:36:30&#39; at 7f96c47a03b0&gt;,</span>
+<span class="go">   &#39;id&#39;: 1,</span>
+<span class="go">   &#39;name&#39;: &#39;Mon PaaS&#39;,</span>
+<span class="go">   &#39;need_upgrade&#39;: True,</span>
+<span class="go">   &#39;servers&#39;: [{&#39;id&#39;: 1}],</span>
+<span class="go">   &#39;size&#39;: &#39;m&#39;,</span>
+<span class="go">   &#39;state&#39;: &#39;running&#39;,</span>
+<span class="go">   &#39;type&#39;: &#39;phpmysql&#39;</span>
+<span class="go">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span><span class="s">&#39;s&#39;</span><span class="p">})</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-your-paas-instances">
+<h3>Count your PaaS Instances<a class="headerlink" href="#count-your-paas-instances" title="Permalink to this headline">¶</a></h3>
+<p>To count the PaaS instances you own, just call the <a class="reference internal" href="reference.html#paas.count" title="paas.count"><tt class="xref py py-func docutils literal"><span class="pre">paas.count()</span></tt></a> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">apikey</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span><span class="s">&#39;s&#39;</span><span class="p">})</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-info-on-a-paas-instance">
+<h3>Get info on a PaaS Instance<a class="headerlink" href="#get-info-on-a-paas-instance" title="Permalink to this headline">¶</a></h3>
+<p>Get info on an instance with method <a class="reference internal" href="reference.html#paas.info" title="paas.info"><tt class="xref py py-func docutils literal"><span class="pre">paas.info()</span></tt></a> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &#39;autorenew&#39;: None,</span>
+<span class="go">    &#39;catalog_name&#39;: &#39;phpmysql_m&#39;,</span>
+<span class="go">    &#39;data_disk_additional_size&#39;: 0,</span>
+<span class="go">    &#39;datacenter&#39;: {&#39;country&#39;: &#39;France&#39;, &#39;id&#39;: 1, &#39;iso&#39;: &#39;FR&#39;, &#39;name&#39;: &#39;eqx pa2&#39;},</span>
+<span class="go">    &#39;date_end&#39;: &lt;DateTime &#39;20111014T14:36:30&#39; at 7f96c47a0440&gt;,</span>
+<span class="go">    &#39;date_start&#39;: &lt;DateTime &#39;20110914T14:36:30&#39; at 7f96c47a0488&gt;,</span>
+<span class="go">    &#39;ftp_server&#39;: &#39;10.0.0.10&#39;,</span>
+<span class="go">    &#39;id&#39;: 1,</span>
+<span class="go">    &#39;name&#39;: &#39;Mon PaaS&#39;,</span>
+<span class="go">    &#39;owner&#39;: {&#39;handle&#39;: &#39;XXX-GANDI&#39;, &#39;id&#39;: 1},</span>
+<span class="go">    &#39;servers&#39;: [{</span>
+<span class="go">        &#39;graph_urls&#39;:  {&#39;vcpu&#39;: [&#39;http://console.gandi.net/?key=[...]&#39;],</span>
+<span class="go">                        &#39;vdi&#39;: [&#39;http://console.gandi.net/?key=[...]&#39;],</span>
+<span class="go">                        &#39;vif&#39;: [&#39;http://console.gandi.net/?key=[...]&#39;]},</span>
+<span class="go">        &#39;id&#39;: 1,</span>
+<span class="go">        &#39;uuid&#39;:1}],</span>
+<span class="go">    &#39;size&#39;: &#39;m&#39;,</span>
+<span class="go">    &#39;state&#39;: &#39;running&#39;,</span>
+<span class="go">    &#39;type&#39;: &#39;phpmysql&#39;,</span>
+<span class="go">    &#39;user&#39;: 2316,</span>
+<span class="go">    &#39;vhosts&#39;: [{</span>
+<span class="go">        &#39;date_creation&#39;: &lt;DateTime &#39;20110914T14:36:30&#39; at 7f96c47a03f8&gt;,</span>
+<span class="go">        &#39;id&#39;: 1,</span>
+<span class="go">        &#39;name&#39;: &#39;vhost.test.fr&#39;,</span>
+<span class="go">        &#39;state&#39;: &#39;running&#39;</span>
+<span class="go">    }</span>
+<span class="go">]}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-paas-instance">
+<h3>Create a PaaS Instance<a class="headerlink" href="#create-a-paas-instance" title="Permalink to this headline">¶</a></h3>
+<p>To create a PaaS instance, use the <a class="reference internal" href="reference.html#paas.create" title="paas.create"><tt class="xref py py-func docutils literal"><span class="pre">paas.create()</span></tt></a> method by specifying a name,
+a size (one of s, m, l, xl, xxl), a type (phpmysql), a list
+of vhosts, a duration, and a password.
+You can also specify an optional disk size via the quantity attribute:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">paas_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    &#39;name&#39;: &#39;My PaaS&#39;,</span>
+<span class="go">    &#39;size&#39;: &#39;m&#39;,</span>
+<span class="go">    &#39;type&#39;: &#39;phpmysql&#39;,</span>
+<span class="go">    &#39;datacenter_id&#39;: 1,</span>
+<span class="go">    &#39;vhosts&#39;: [&#39;vhost.test.fr&#39;],</span>
+<span class="go">    &#39;quantity&#39;: 0,</span>
+<span class="go">    &#39;duration&#39;: &#39;3m&#39;,</span>
+<span class="go">    &#39;password&#39;: &#39;xxxxxxxxxx&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">paas_spec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ops</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+<span class="go">&#39;paas_vm_create&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+<span class="go">&#39;paas_disk_create&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+<span class="go">&#39;rproxy_create&#39;</span>
+</pre></div>
+</div>
+<p>This will create an instance called &#8220;Mon Paas&#8221; of type &#8220;phpmysql&#8221;,
+size &#8220;m&#8221;.
+see <a class="reference external" href="https://www.gandi.net/hebergement/simple/puissance?lang=en">https://www.gandi.net/hebergement/simple/puissance?lang=en</a> for a full
+description of the different sizes), with the default 10 GB of disk,
+for 3 Months and one attached host (&#8220;vhost.test.fr&#8221;).</p>
+</div>
+<div class="section" id="update-a-paas-instance">
+<h3>Update a PaaS Instance<a class="headerlink" href="#update-a-paas-instance" title="Permalink to this headline">¶</a></h3>
+<p>To update an instance, use the <a class="reference internal" href="reference.html#paas.update" title="paas.update"><tt class="xref py py-func docutils literal"><span class="pre">paas.update()</span></tt></a> method.
+You can specify a size, a quantity (of additional disk size in Go) and a password:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">paas_id</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span><span class="s">&#39;xl&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+<span class="go">&#39;paas_vm_update&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-a-paas-instance">
+<h3>Delete a PaaS Instance<a class="headerlink" href="#delete-a-paas-instance" title="Permalink to this headline">¶</a></h3>
+<p>To delete an instance, use the <a class="reference internal" href="reference.html#paas.delete" title="paas.delete"><tt class="xref py py-func docutils literal"><span class="pre">paas.delete()</span></tt></a> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">paas_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">]</span>
+<span class="go">&#39;paas_delete&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="additional-information-about-security">
+<span id="paas-dns-check"></span><h3>Additional information about security<a class="headerlink" href="#additional-information-about-security" title="Permalink to this headline">¶</a></h3>
+<p>If you are not using the Gandi DNS or you did not registred your domain at
+Gandi, you can also run a PaaS instance hosted at Gandi.
+Gandi must verify that the domain is your own by checking you have
+administration privilege on it.
+To perform that, Gandi will check DNS record on the vhost you want to bind
+to a PaaS instance.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">paas_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">    &#39;name&#39;: &#39;My PaaS&#39;,</span>
+<span class="go">    &#39;size&#39;: &#39;m&#39;,</span>
+<span class="go">    &#39;type&#39;: &#39;phpmysql&#39;,</span>
+<span class="go">    &#39;datacenter_id&#39;: 1,</span>
+<span class="go">    &#39;vhosts&#39;: [&#39;vhost.test.fr&#39;],</span>
+<span class="go">    &#39;quantity&#39;: 0,</span>
+<span class="go">    &#39;duration&#39;: &#39;3m&#39;,</span>
+<span class="go">    &#39;password&#39;: &#39;xxxxxxxxxx&#39;,</span>
+<span class="go">    &#39;--dry-run&#39;: True}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ops</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">paas_spec</span><span class="p">)</span>
+<span class="go">[{&#39;attr&#39;: [&#39;vhost.test.fr&#39;, &#39;vhost=2e5d8f0899053fffcd3ecf4ac5a6433b&#39;],</span>
+<span class="go">  &#39;error&#39;: &#39;EC_TXT+EC_MISSINGMANDATORY&#39;,</span>
+<span class="go">  &#39;field&#39;: &#39;vhosts&#39;,</span>
+<span class="go">  &#39;field_type&#39;: None,</span>
+<span class="go">  &#39;reason&#39;: &#39;You must put a TXT value in your zone&#39;}]</span>
+</pre></div>
+</div>
+<p>The DNS zone must be altered to store tha record like:</p>
+<p>10800 IN TXT &#8220;vhost=2e5d8f0899053fffcd3ecf4ac5a6433b&#8221;</p>
+<p>Or, by adding a new virtual host:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">paas</span><span class="o">.</span><span class="n">vhost</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;paas_id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="go">    &#39;vhost&#39;: &#39;vhost.test.fr&#39;,</span>
+<span class="go">    &#39;--dry-run&#39;: True})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="PaaS API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Gandi PaaS API"
+             >previous</a> |</li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Gandi PaaS API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Rating API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="reference.html" rel="up" title="IaaS Hosting API Reference"/>
+<link href="reference_product.html" rel="next" title="Product API Reference"/>
+<link href="reference_catalog.html" rel="prev" title="Hosting Catalog API Reference"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="reference_product.html" title="Product API Reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="reference_catalog.html" title="Hosting Catalog API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a accesskey="U" href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Rating API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="reference_catalog.html" title="previous chapter">Hosting Catalog API Reference</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="reference_product.html" title="next chapter">Product API Reference</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="rating-api-reference">
+<span id="hosting-catalog-api-ref"></span><h1>Rating API Reference<a class="headerlink" href="#rating-api-reference" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">hosting.rating</span></tt> API is used to get credits amount rating.</p>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="hosting.rating.list"><a name="//apple_ref/cpp/clm/hosting.rating.list"></a>
+<tt class="descclassname">hosting.rating.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.rating.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List credits consumption by resource</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#HostingRatingOptions" title="HostingRatingOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <a class="reference internal" href="#HostingRatingListReturn" title="HostingRatingListReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">consumption</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="HostingRatingOptions"><a name="//apple_ref/cpp/clconst/HostingRatingOptions"></a>
+<tt class="descname">HostingRatingOptions</tt><a class="headerlink" href="#HostingRatingOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.rating.list" title="hosting.rating.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.rating.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">ending period</td>
+</tr>
+<tr class="row-even"><td>date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">start period</td>
+</tr>
+<tr class="row-even"><td>offset</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">local time offset, if omit, use GMT time.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#RatingResolution" title="RatingResolution"><tt class="xref py py-data docutils literal"><span class="pre">resolution</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">aggregate rating on time series</td>
+</tr>
+<tr class="row-even"><td>resource</td>
+<td> </td>
+<td>struct or array of
+struct</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">filter on specific resources, all resources by default</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="HostingResource"><a name="//apple_ref/cpp/clconst/HostingResource"></a>
+<tt class="descname">HostingResource</tt><a class="headerlink" href="#HostingResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#HostingRatingOptions" title="HostingRatingOptions"><tt class="xref py py-data docutils literal"><span class="pre">HostingRatingOptions</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#HostingResourceType" title="HostingResourceType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">type of the resource</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">id of the resource, retrieved from the each specific api</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="HostingResourceType"><a name="//apple_ref/cpp/clconst/HostingResourceType"></a>
+<tt class="descname">HostingResourceType</tt><a class="headerlink" href="#HostingResourceType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#HostingResource" title="HostingResource"><tt class="xref py py-data docutils literal"><span class="pre">HostingResource</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>vm</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>disk</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>iface</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>ip</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>rproxy</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="RatingResolution"><a name="//apple_ref/cpp/clconst/RatingResolution"></a>
+<tt class="descname">RatingResolution</tt><a class="headerlink" href="#RatingResolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#HostingRatingOptions" title="HostingRatingOptions"><tt class="xref py py-data docutils literal"><span class="pre">HostingRatingOptions</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>hourly</td>
+<td>resolution by hour</td>
+</tr>
+<tr class="row-odd"><td>daily</td>
+<td>resolution by day</td>
+</tr>
+<tr class="row-even"><td>weekly</td>
+<td>resolution by week</td>
+</tr>
+<tr class="row-odd"><td>monthly</td>
+<td>resolution by month</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="HostingRatingListReturn"><a name="//apple_ref/cpp/clconst/HostingRatingListReturn"></a>
+<tt class="descname">HostingRatingListReturn</tt><a class="headerlink" href="#HostingRatingListReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#hosting.rating.list" title="hosting.rating.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.rating.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>bw_out</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>cpu</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>disk_data</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>disk_snapshot</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>disk_snapshot_auto</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>instance</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>ip</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>ram</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>rproxy</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>rproxy_server</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>rproxy_ssl</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="reference_product.html" title="Product API Reference">next</a> |</li>
+<li class="right">
+<a href="reference_catalog.html" title="Hosting Catalog API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

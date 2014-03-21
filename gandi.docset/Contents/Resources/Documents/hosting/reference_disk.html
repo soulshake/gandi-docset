@@ -1,0 +1,988 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Disk API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="reference.html" rel="up" title="IaaS Hosting API Reference"/>
+<link href="reference_iface.html" rel="next" title="Network Interface API Reference"/>
+<link href="reference_image.html" rel="prev" title="Disk Image API Reference"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="reference_iface.html" title="Network Interface API Reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="reference_image.html" title="Disk Image API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a accesskey="U" href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Disk API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="reference_image.html" title="previous chapter">Disk Image API Reference</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="reference_iface.html" title="next chapter">Network Interface API Reference</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="disk-api-reference">
+<span id="hosting-disk-api-ref"></span><h1>Disk API Reference<a class="headerlink" href="#disk-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Legacy access to <cite>disk.*</cite> methods will be removed soon, you will need to use <cite>hosting.disk.*</cite> instead</p>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="hosting.disk.count"><a name="//apple_ref/cpp/clm/hosting.disk.count"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.disk.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the number of disks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#DiskCountOptions" title="DiskCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – number of disks</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.create"><a name="//apple_ref/cpp/clm/hosting.disk.create"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>disk_spec</em><big>)</big><a class="headerlink" href="#hosting.disk.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create an empty disk with respect to the attributes specified by           <strong>disk_spec</strong>.</div>
+<div class="line">It checks the available quota.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>disk_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#DiskDescription" title="DiskDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">disk</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_create</span> <span class="pre">Operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.create_from"><a name="//apple_ref/cpp/clm/hosting.disk.create_from"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">create_from</tt><big>(</big><em>apikey</em>, <em>disk_spec</em>, <em>src_disk_id</em><big>)</big><a class="headerlink" href="#hosting.disk.create_from" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create a disk with the same data as the disk identified by          <strong>src_disk_id</strong>.</div>
+<div class="line"><tt class="docutils literal"><span class="pre">kernel_id</span></tt>, <tt class="docutils literal"><span class="pre">kernel_cmdline</span></tt>, <tt class="docutils literal"><span class="pre">size</span></tt>, and <tt class="docutils literal"><span class="pre">label</span></tt> will          be copied from the source disk.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>disk_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#DiskCopyDescription" title="DiskCopyDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">disk</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+<li><strong>src_disk_id</strong> (<em>int</em>) – source disk unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_create</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.delete"><a name="//apple_ref/cpp/clm/hosting.disk.delete"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>disk_id</em><big>)</big><a class="headerlink" href="#hosting.disk.delete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete a disk. ALL DATA WILL BE ERASED.</div>
+<div class="line">Free the quota used by the disk size.</div>
+<div class="line">The disk must not be attached to a VM.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>disk_id</strong> (<em>int</em>) – disk unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_delete</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.info"><a name="//apple_ref/cpp/clm/hosting.disk.info"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>disk_id</em><big>)</big><a class="headerlink" href="#hosting.disk.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a disk.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>struct</em>) – API connection key</li>
+<li><strong>disk_id</strong> (<em>int</em>) – disk unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">disk</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.list"><a name="//apple_ref/cpp/clm/hosting.disk.list"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.disk.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the disks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#DiskListOptions" title="DiskListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">disks</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.list_kernels"><a name="//apple_ref/cpp/clm/hosting.disk.list_kernels"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">list_kernels</tt><big>(</big><em>apikey</em>, <em>datacenter_id</em><big>)</big><a class="headerlink" href="#hosting.disk.list_kernels" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of available kernels for the given datacenter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>struct</em>) – API connection key</li>
+<li><strong>datacenter_id</strong> (<em>int</em>) – datacenter unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – list of kernels</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.list_options"><a name="//apple_ref/cpp/clm/hosting.disk.list_options"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">list_options</tt><big>(</big><em>apikey</em>, <em>kernel_version</em><big>)</big><a class="headerlink" href="#hosting.disk.list_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available options for the given kernel version.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>struct</em>) – API connection key</li>
+<li><strong>kernel_version</strong> (<em>string</em>) – version of the kernel</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – list of options and their parameters</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.rollback_from"><a name="//apple_ref/cpp/clm/hosting.disk.rollback_from"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">rollback_from</tt><big>(</big><em>apikey</em>, <em>snapshot_id</em><big>)</big><a class="headerlink" href="#hosting.disk.rollback_from" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Rollback a disk to the last taken snapshot.</div>
+</div>
+<p>It creates a disk to get a new id, then asks the backend to rollback
+the disk with a ‘disk_rollback’ operation. The current source disk of
+the snapshot is put in state ‘rollback’. This state prevents
+modifications on the disk from some operations. The disk is not
+counted in the quota.
+The caller gets the new disk id in the returned operating mapping with
+op[‘id’].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>struct</em>) – API connection key</li>
+<li><strong>snapshot_id</strong> (<em>int</em>) – unique identifier of the snapshot to rollback</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_rollback_from</span> <span class="pre">operation</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">id</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">new</span> <span class="pre">disk</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.disk.update"><a name="//apple_ref/cpp/clm/hosting.disk.update"></a>
+<tt class="descclassname">hosting.disk.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>disk_id</em>, <em>disk_spec</em><big>)</big><a class="headerlink" href="#hosting.disk.update" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Update a disk with respect to the attributes specified by           <strong>disk_spec</strong>.</div>
+<div class="line">By now, you can’t shrink a disk.</div>
+</div>
+<p>If you update <em>kernel</em> or <em>kernel_cmdline</em>, you will have to restart
+the VM where the disk is attached.</p>
+<p>If the size is modified the logged user must have enough
+free disk quota.</p>
+<p>When updating <em>name</em> or <em>size</em>, if the disk is attached to a VM,
+this VM will be automatically rebooted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>struct</em>) – API connection key</li>
+<li><strong>disk_id</strong> (<em>int</em>) – disk unique identifier</li>
+<li><strong>disk_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#DiskUpdate" title="DiskUpdate"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">disk</span> <span class="pre">to</span> <span class="pre">update</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_update</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="DiskCopyDescription"><a name="//apple_ref/cpp/clconst/DiskCopyDescription"></a>
+<tt class="descname">DiskCopyDescription</tt><a class="headerlink" href="#DiskCopyDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">disk.create_from()</span></tt>, <a class="reference internal" href="#hosting.disk.create_from" title="hosting.disk.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.create_from()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.create_from" title="hosting.vm.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create_from()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.create_from()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The disk name</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The datacenter id</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">repulse_from</span></tt></td>
+<td> </td>
+<td>array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">This disk will not be in the same storage units</td>
+</tr>
+<tr class="row-even"><td>size</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>snapshot_profile</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">The snapshot profile id</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DiskCreateFromType" title="DiskCreateFromType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>data</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td colspan="4">The disk type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskCountOptions"><a name="//apple_ref/cpp/clconst/DiskCountOptions"></a>
+<tt class="descname">DiskCountOptions</tt><a class="headerlink" href="#DiskCountOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">disk.count()</span></tt> and <a class="reference internal" href="#hosting.disk.count" title="hosting.disk.count"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.count()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>can_snapshot</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>size</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>source</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DiskState" title="DiskState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DiskType" title="DiskType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>vm_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskCreateFromType"><a name="//apple_ref/cpp/clconst/DiskCreateFromType"></a>
+<tt class="descname">DiskCreateFromType</tt><a class="headerlink" href="#DiskCreateFromType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#DiskCopyDescription" title="DiskCopyDescription"><tt class="xref py py-data docutils literal"><span class="pre">DiskCopyDescription</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>snapshot</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>snapshot_auto</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskCreateType"><a name="//apple_ref/cpp/clconst/DiskCreateType"></a>
+<tt class="descname">DiskCreateType</tt><a class="headerlink" href="#DiskCreateType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#DiskDescription" title="DiskDescription"><tt class="xref py py-data docutils literal"><span class="pre">DiskDescription</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>backup</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskDescription"><a name="//apple_ref/cpp/clconst/DiskDescription"></a>
+<tt class="descname">DiskDescription</tt><a class="headerlink" href="#DiskDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">disk.create()</span></tt> and <a class="reference internal" href="#hosting.disk.create" title="hosting.disk.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.create()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The datacenter id</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The disk name</td>
+</tr>
+<tr class="row-even"><td>size</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The disk size, in megabytes</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">repulse_from</span></tt></td>
+<td> </td>
+<td>array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">This disk will not be in the same storage units</td>
+</tr>
+<tr class="row-even"><td>snapshot_profile</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The snapshot profile id</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DiskCreateType" title="DiskCreateType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>data</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The disk type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskListOptions"><a name="//apple_ref/cpp/clconst/DiskListOptions"></a>
+<tt class="descname">DiskListOptions</tt><a class="headerlink" href="#DiskListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">disk.list()</span></tt> and <a class="reference internal" href="#hosting.disk.list" title="hosting.disk.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>can_snapshot</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>size</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>source</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DiskState" title="DiskState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DiskType" title="DiskType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vm_id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskState"><a name="//apple_ref/cpp/clconst/DiskState"></a>
+<tt class="descname">DiskState</tt><a class="headerlink" href="#DiskState" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#DiskCountOptions" title="DiskCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">DiskCountOptions</span></tt></a>, <a class="reference internal" href="#DiskListOptions" title="DiskListOptions"><tt class="xref py py-data docutils literal"><span class="pre">DiskListOptions</span></tt></a> and <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">DiskReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>being_created</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>created</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>rollback</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>redemption</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>deleted</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskType"><a name="//apple_ref/cpp/clconst/DiskType"></a>
+<tt class="descname">DiskType</tt><a class="headerlink" href="#DiskType" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#DiskCountOptions" title="DiskCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">DiskCountOptions</span></tt></a>, <a class="reference internal" href="#DiskListOptions" title="DiskListOptions"><tt class="xref py py-data docutils literal"><span class="pre">DiskListOptions</span></tt></a> and <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">DiskReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>system</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>image</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>backup</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>snapshot</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>snapshot_auto</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskUpdate"><a name="//apple_ref/cpp/clconst/DiskUpdate"></a>
+<tt class="descname">DiskUpdate</tt><a class="headerlink" href="#DiskUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <tt class="xref py py-meth docutils literal"><span class="pre">disk.update()</span></tt> and <a class="reference internal" href="#hosting.disk.update" title="hosting.disk.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>cmdline</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">cmdline_options</span></tt></td>
+<td> </td>
+<td>struct</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>kernel</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>size</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>snapshot_profile</td>
+<td> </td>
+<td>int or string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DiskVisibility"><a name="//apple_ref/cpp/clconst/DiskVisibility"></a>
+<tt class="descname">DiskVisibility</tt><a class="headerlink" href="#DiskVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">DiskReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>all</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>alpha</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>private</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>community</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="DiskReturn">
+<tt class="descname">DiskReturn</tt><a class="headerlink" href="#DiskReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <tt class="xref py py-meth docutils literal"><span class="pre">disk.info()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">disk.list()</span></tt>, <a class="reference internal" href="#hosting.disk.info" title="hosting.disk.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.info()</span></tt></a> and <a class="reference internal" href="#hosting.disk.list" title="hosting.disk.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.list()</span></tt></a></p>
+<p>used by <a class="reference internal" href="reference_vm.html#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>can_snapshot</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><td>datacenter_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>is_boot_disk</td>
+<td>boolean</td>
+</tr>
+<tr class="row-even"><td>kernel_cmdline</td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <tt class="xref py py-meth docutils literal"><span class="pre">disk.info()</span></tt> and <a class="reference internal" href="#hosting.disk.info" title="hosting.disk.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.info()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>kernel_version</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>label</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>size</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#SnapshotProfileReturn" title="SnapshotProfileReturn"><tt class="xref py py-data docutils literal"><span class="pre">snapshot_profile</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <tt class="xref py py-meth docutils literal"><span class="pre">disk.info()</span></tt> and <a class="reference internal" href="#hosting.disk.info" title="hosting.disk.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.info()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>snapshot_profile_id</td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <tt class="xref py py-meth docutils literal"><span class="pre">disk.list()</span></tt> and <a class="reference internal" href="#hosting.disk.list" title="hosting.disk.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.list()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td>source</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DiskState" title="DiskState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>total_size</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DiskType" title="DiskType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DiskVisibility" title="DiskVisibility"><tt class="xref py py-data docutils literal"><span class="pre">visibility</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>vms_id</td>
+<td>struct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="SnapshotProfileReturn"><a name="//apple_ref/cpp/clconst/SnapshotProfileReturn"></a>
+<tt class="descname">SnapshotProfileReturn</tt><a class="headerlink" href="#SnapshotProfileReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">DiskReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>kept_total</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>quota_factor</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="OperationReturn">
+<tt class="descname">OperationReturn</tt><a class="headerlink" href="#OperationReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <tt class="xref py py-meth docutils literal"><span class="pre">disk.create_from()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">disk.create()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">disk.delete()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">disk.rollback_from()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">disk.update()</span></tt>, <a class="reference internal" href="#hosting.disk.create_from" title="hosting.disk.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.create_from()</span></tt></a>, <a class="reference internal" href="#hosting.disk.create" title="hosting.disk.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.create()</span></tt></a>, <a class="reference internal" href="#hosting.disk.delete" title="hosting.disk.delete"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.delete()</span></tt></a>, <a class="reference internal" href="#hosting.disk.rollback_from" title="hosting.disk.rollback_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.rollback_from()</span></tt></a>, <a class="reference internal" href="#hosting.disk.update" title="hosting.disk.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.update()</span></tt></a>, <a class="reference internal" href="reference_iface.html#hosting.iface.create" title="hosting.iface.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.create()</span></tt></a>, <a class="reference internal" href="reference_iface.html#hosting.iface.delete" title="hosting.iface.delete"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.delete()</span></tt></a>, <a class="reference internal" href="reference_iface.html#hosting.iface.update" title="hosting.iface.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.iface.update()</span></tt></a>, <a class="reference internal" href="reference_ip.html#hosting.ip.update" title="hosting.ip.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.ip.update()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.create_from" title="hosting.vm.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create_from()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.create" title="hosting.vm.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.delete" title="hosting.vm.delete"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.delete()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.disk_attach" title="hosting.vm.disk_attach"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.disk_attach()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.disk_detach" title="hosting.vm.disk_detach"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.disk_detach()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.disk_rollback" title="hosting.vm.disk_rollback"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.disk_rollback()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.iface_attach" title="hosting.vm.iface_attach"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.iface_attach()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.iface_detach" title="hosting.vm.iface_detach"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.iface_detach()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.reboot" title="hosting.vm.reboot"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.reboot()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.start" title="hosting.vm.start"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.start()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.stop" title="hosting.vm.stop"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.stop()</span></tt></a>, <a class="reference internal" href="reference_vm.html#hosting.vm.update" title="hosting.vm.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.update()</span></tt></a>, <tt class="xref py py-meth docutils literal"><span class="pre">iface.create()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">iface.delete()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">iface.update()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">ip.update()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.create_from()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.create()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.delete()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.disk_attach()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.disk_detach()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.disk_rollback()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.iface_attach()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.iface_detach()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.reboot()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.start()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.stop()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.update()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_start</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>disk_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>iface_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>ip_id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>source</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">contact who create the operation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#OperationStep" title="OperationStep"><tt class="xref py py-data docutils literal"><span class="pre">step</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">current step of the operation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#OperationType" title="OperationType"><tt class="xref py py-data docutils literal"><span class="pre">type</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>vm_id</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="reference_iface.html" title="Network Interface API Reference">next</a> |</li>
+<li class="right">
+<a href="reference_image.html" title="Disk Image API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

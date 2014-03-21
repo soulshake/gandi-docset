@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Product API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="reference.html" rel="up" title="IaaS Hosting API Reference"/>
+<link href="../operation/index.html" rel="next" title="Gandi Operation API"/>
+<link href="reference_rating.html" rel="prev" title="Rating API Reference"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="../operation/index.html" title="Gandi Operation API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="reference_rating.html" title="Rating API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a accesskey="U" href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Product API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="reference_rating.html" title="previous chapter">Rating API Reference</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="../operation/index.html" title="next chapter">Gandi Operation API</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="product-api-reference">
+<span id="hosting-product-api-ref"></span><h1>Product API Reference<a class="headerlink" href="#product-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This API is deprecated and is going to be dropped soon
+The resource management is going to be replaced by Gandi credits.
+see also <a class="reference internal" href="usage.html#hosting-resources-dc-usage-ref"><em>Check available resources</em></a></p>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="hosting.product.create"><a name="//apple_ref/cpp/clm/hosting.product.create"></a>
+<tt class="descclassname">hosting.product.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>product</em><big>)</big><a class="headerlink" href="#hosting.product.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method does nothing and will be removed in the next major release.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.2.</span></p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version Gandi: </span>IaaS billing is based on Gandi credits.                         use <tt class="xref py py-func docutils literal"><span class="pre">hosting.account.credit()</span></tt></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>product</strong> (<em>struct</em>) – <a class="reference internal" href="#ProductDescription" title="ProductDescription"><tt class="xref py py-data docutils literal"><span class="pre">product</span> <span class="pre">to</span> <span class="pre">add</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string – <tt class="docutils literal"><span class="pre">nil</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.product.delete"><a name="//apple_ref/cpp/clm/hosting.product.delete"></a>
+<tt class="descclassname">hosting.product.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>product_id</em><big>)</big><a class="headerlink" href="#hosting.product.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method does nothing and will be removed in the next major release.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.2.</span></p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version Gandi: </span>IaaS billing is based on Gandi credits.                         use <tt class="xref py py-func docutils literal"><span class="pre">hosting.account.credit()</span></tt></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>product_id</strong> (<em>int</em>) – product ID to delete</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string – <tt class="docutils literal"><span class="pre">nil</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.product.renew"><a name="//apple_ref/cpp/clm/hosting.product.renew"></a>
+<tt class="descclassname">hosting.product.</tt><tt class="descname">renew</tt><big>(</big><em>apikey</em>, <em>product_id</em>, <em>product</em><big>)</big><a class="headerlink" href="#hosting.product.renew" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method does nothing and will be removed in the next major release.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.2.</span></p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version Gandi: </span>IaaS billing is based on Gandi credits.                         use <tt class="xref py py-func docutils literal"><span class="pre">hosting.account.credit()</span></tt></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>product_id</strong> (<em>int</em>) – product ID to update</li>
+<li><strong>product</strong> (<em>struct</em>) – <a class="reference internal" href="#ProductRenewDescription" title="ProductRenewDescription"><tt class="xref py py-data docutils literal"><span class="pre">product</span> <span class="pre">to</span> <span class="pre">renew</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string – <tt class="docutils literal"><span class="pre">nil</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.product.update"><a name="//apple_ref/cpp/clm/hosting.product.update"></a>
+<tt class="descclassname">hosting.product.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>product_id</em>, <em>product</em><big>)</big><a class="headerlink" href="#hosting.product.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method does nothing and will be removed in the next major release.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.1.2.</span></p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version Gandi: </span>IaaS billing is based on Gandi credits.                         use <tt class="xref py py-func docutils literal"><span class="pre">hosting.account.credit()</span></tt></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>product_id</strong> (<em>int</em>) – product ID to update</li>
+<li><strong>product</strong> (<em>struct</em>) – <a class="reference internal" href="#ProductUpdateDescription" title="ProductUpdateDescription"><tt class="xref py py-data docutils literal"><span class="pre">product</span> <span class="pre">to</span> <span class="pre">update</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string – <tt class="docutils literal"><span class="pre">nil</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="ProductDescription"><a name="//apple_ref/cpp/clconst/ProductDescription"></a>
+<tt class="descname">ProductDescription</tt><a class="headerlink" href="#ProductDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.product.create" title="hosting.product.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.product.create()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">product.create()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">1m: 1 month, 12m: 1 year</td>
+</tr>
+<tr class="row-even"><td>product_name</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">shares, cores, disk, memory, ips</td>
+</tr>
+<tr class="row-even"><td>quantity</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProductRenewDescription"><a name="//apple_ref/cpp/clconst/ProductRenewDescription"></a>
+<tt class="descname">ProductRenewDescription</tt><a class="headerlink" href="#ProductRenewDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.product.renew" title="hosting.product.renew"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.product.renew()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">product.renew()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">1m: 1 month, 12m: 1 year</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProductUpdateDescription"><a name="//apple_ref/cpp/clconst/ProductUpdateDescription"></a>
+<tt class="descname">ProductUpdateDescription</tt><a class="headerlink" href="#ProductUpdateDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.product.update" title="hosting.product.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.product.update()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">product.update()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>quantity</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../operation/index.html" title="Gandi Operation API">next</a> |</li>
+<li class="right">
+<a href="reference_rating.html" title="Rating API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

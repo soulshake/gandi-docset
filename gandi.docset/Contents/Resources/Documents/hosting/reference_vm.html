@@ -1,0 +1,1136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Virtual Machine API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="reference.html" rel="up" title="IaaS Hosting API Reference"/>
+<link href="reference_catalog.html" rel="next" title="Hosting Catalog API Reference"/>
+<link href="reference_ip.html" rel="prev" title="IP Address API Reference"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="reference_catalog.html" title="Hosting Catalog API Reference">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="reference_ip.html" title="IP Address API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a accesskey="U" href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Virtual Machine API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="reference_ip.html" title="previous chapter">IP Address API Reference</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="reference_catalog.html" title="next chapter">Hosting Catalog API Reference</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="virtual-machine-api-reference">
+<span id="hosting-vm-api-ref"></span><h1>Virtual Machine API Reference<a class="headerlink" href="#virtual-machine-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Legacy access to <cite>vm.*</cite> methods will be removed soon, you will need to use <cite>hosting.vm.*</cite> instead</p>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="hosting.vm.count"><a name="//apple_ref/cpp/clm/hosting.vm.count"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.vm.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count virtual machines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#VMCountOptions" title="VMCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – number of VMs</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.create"><a name="//apple_ref/cpp/clm/hosting.vm.create"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>vm_spec</em><big>)</big><a class="headerlink" href="#hosting.vm.create" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create a new virtual machine using attributes specified by <strong>vm_spec</strong>.</div>
+<div class="line">Disk, iface, and vm must be in the same datacenter.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#VMDescription" title="VMDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">VM</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_create</span> <span class="pre">operation</span> <span class="pre">if</span> <span class="pre">an</span> <span class="pre">iface</span> <span class="pre">was</span> <span class="pre">created,</span> <span class="pre">vm_create</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.create_from"><a name="//apple_ref/cpp/clm/hosting.vm.create_from"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">create_from</tt><big>(</big><em>apikey</em>, <em>vm_spec</em>, <em>disk_spec</em>, <em>src_disk_id</em><big>)</big><a class="headerlink" href="#hosting.vm.create_from" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Create a disk and a virtual machine.</div>
+<div class="line">This is a convenient method to do the disk.create and vm.create in a     single API call.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_spec</strong> (<em>struct</em>) – <a class="reference internal" href="#VMCreateFromDescription" title="VMCreateFromDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">VM</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+<li><strong>disk_spec</strong> (<em>struct</em>) – <a class="reference internal" href="reference_disk.html#DiskCopyDescription" title="DiskCopyDescription"><tt class="xref py py-data docutils literal"><span class="pre">specifications</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Disk</span> <span class="pre">to</span> <span class="pre">create</span></tt></a></li>
+<li><strong>src_disk_id</strong> (<em>int</em>) – source disk unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_create,</span> <span class="pre">iface_create</span> <span class="pre">and</span> <span class="pre">vm_create</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.delete"><a name="//apple_ref/cpp/clm/hosting.vm.delete"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>vm_id</em><big>)</big><a class="headerlink" href="#hosting.vm.delete" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Delete a VM.</div>
+<div class="line">Delete the disk attached in position 0, i.e. the disk used as         system disk.</div>
+<div class="line">Also delete the first network interface.</div>
+<div class="line">Detach all extra disks and network interfaces.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">vm_delete</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.disk_attach"><a name="//apple_ref/cpp/clm/hosting.vm.disk_attach"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">disk_attach</tt><big>(</big><em>apikey</em>, <em>vm_id</em>, <em>disk_id</em><span class="optional">[</span>, <em>options=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.vm.disk_attach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Attach a disk to a virtual machine.</div>
+<div class="line">To access the disk data inside the VM, it <strong>MUST</strong> be attached to the VM.</div>
+<div class="line">When <tt class="docutils literal"><span class="pre">options.position</span></tt> is 0, swaps position with current disk 0.</div>
+<div class="line">A disk can be attached to only one VM.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+<li><strong>disk_id</strong> (<em>int</em>) – unique identifier of the disk to attach</li>
+<li><strong>options</strong> (<em>struct</em>) – <a class="reference internal" href="#VMDiskAttachOptions" title="VMDiskAttachOptions"><tt class="xref py py-data docutils literal"><span class="pre">options</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">disk</span> <span class="pre">attachment</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_attach</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.disk_detach"><a name="//apple_ref/cpp/clm/hosting.vm.disk_detach"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">disk_detach</tt><big>(</big><em>apikey</em>, <em>vm_id</em>, <em>disk_id</em><big>)</big><a class="headerlink" href="#hosting.vm.disk_detach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Detach a disk from a virtual machine.</div>
+<div class="line">If the disk position is 0, i.e. the system disk, the virtual machine     must be halted to detach the disk.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+<li><strong>disk_id</strong> (<em>int</em>) – unique identifier of the disk to attach</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">disk_detach</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.disk_rollback"><a name="//apple_ref/cpp/clm/hosting.vm.disk_rollback"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">disk_rollback</tt><big>(</big><em>apikey</em>, <em>snapshot_id</em><big>)</big><a class="headerlink" href="#hosting.vm.disk_rollback" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Helper method to rollback a disk (instead of     <a class="reference internal" href="reference_disk.html#hosting.disk.rollback_from" title="hosting.disk.rollback_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.disk.rollback_from()</span></tt></a>).</div>
+</div>
+<p>Rollbacking a disk is done by creating a new disk using the given snapshot
+as source, the old disk is deleted afterwards. So, if the disk you try to
+rollback is attached to the VM, this method will create operations to stop
+the VM, detach the old disk, create and attach the new one, and start
+the VM.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>snapshot_id</strong> (<em>int</em>) – snapshot unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of struct – <tt class="xref py py-data docutils literal"><span class="pre">operations</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.iface_attach"><a name="//apple_ref/cpp/clm/hosting.vm.iface_attach"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">iface_attach</tt><big>(</big><em>apikey</em>, <em>vm_id</em>, <em>iface_id</em><big>)</big><a class="headerlink" href="#hosting.vm.iface_attach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Attach a network interface to the VM.</div>
+<div class="line">No <em>magic</em> update is made on the interface bandwidth when attaching.</div>
+<div class="line">You have to manually update interface bandwidth as you desire.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+<li><strong>iface_id</strong> (<em>int</em>) – network interface unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_attach</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.iface_detach"><a name="//apple_ref/cpp/clm/hosting.vm.iface_detach"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">iface_detach</tt><big>(</big><em>apikey</em>, <em>vm_id</em>, <em>iface_id</em><big>)</big><a class="headerlink" href="#hosting.vm.iface_detach" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Detach a network interface from the VM.</div>
+<div class="line">There is <strong>no</strong> restriction on detaching every interface.</div>
+<div class="line">The VM will be unreachable if you choose to detach all interfaces.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+<li><strong>iface_id</strong> (<em>int</em>) – network interface unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">iface_detach</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.info"><a name="//apple_ref/cpp/clm/hosting.vm.info"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>vm_id</em><big>)</big><a class="headerlink" href="#hosting.vm.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a virtual machine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VM</span> <span class="pre">information</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.list"><a name="//apple_ref/cpp/clm/hosting.vm.list"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hosting.vm.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List virtual machines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#VMListOptions" title="VMListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">VMs</span> <span class="pre">descriptions</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.reboot"><a name="//apple_ref/cpp/clm/hosting.vm.reboot"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">reboot</tt><big>(</big><em>apikey</em>, <em>vm_id</em><big>)</big><a class="headerlink" href="#hosting.vm.reboot" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Reboot a Virtual Machine.</div>
+<div class="line">A reboot message is sent to the VM. If it does not reboot properly     after 2 minutes, it is hard-reset (“power cycled”).</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">vm_reboot</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.start"><a name="//apple_ref/cpp/clm/hosting.vm.start"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">start</tt><big>(</big><em>apikey</em>, <em>vm_id</em><big>)</big><a class="headerlink" href="#hosting.vm.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a virtual machine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">vm_start</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.stop"><a name="//apple_ref/cpp/clm/hosting.vm.stop"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">stop</tt><big>(</big><em>apikey</em>, <em>vm_id</em><big>)</big><a class="headerlink" href="#hosting.vm.stop" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">Stop a virtual machine.</div>
+<div class="line">A stop message is sent to the VM. If it does not shutdown properly     after two stop messages and 5 minutes, the VM is “power switched”.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">vm_stop</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="hosting.vm.update"><a name="//apple_ref/cpp/clm/hosting.vm.update"></a>
+<tt class="descclassname">hosting.vm.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>vm_id</em>, <em>update_spec</em><big>)</big><a class="headerlink" href="#hosting.vm.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a virtual machine using attributes specified by <strong>update_spec</strong>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>vm_id</strong> (<em>int</em>) – VM unique identifier</li>
+<li><strong>update_spec</strong> (<em>struct</em>) – specifications of the virtual machine to update</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <tt class="xref py py-data docutils literal"><span class="pre">vm_update</span> <span class="pre">operation</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="IPVersion"><a name="//apple_ref/cpp/clconst/IPVersion"></a>
+<tt class="descname">IPVersion</tt><a class="headerlink" href="#IPVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="reference_ip.html#IPCountOptions" title="IPCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">IPCountOptions</span></tt></a>, <a class="reference internal" href="reference_ip.html#IPListOptions" title="IPListOptions"><tt class="xref py py-data docutils literal"><span class="pre">IPListOptions</span></tt></a>, <a class="reference internal" href="reference_iface.html#IfaceDescription" title="IfaceDescription"><tt class="xref py py-data docutils literal"><span class="pre">IfaceDescription</span></tt></a>, <a class="reference internal" href="#VMCreateFromDescription" title="VMCreateFromDescription"><tt class="xref py py-data docutils literal"><span class="pre">VMCreateFromDescription</span></tt></a> and <a class="reference internal" href="#VMDescription" title="VMDescription"><tt class="xref py py-data docutils literal"><span class="pre">VMDescription</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>ipv4</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>ipv6</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>ipv4</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>ipv6</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMCountOptions"><a name="//apple_ref/cpp/clconst/VMCountOptions"></a>
+<tt class="descname">VMCountOptions</tt><a class="headerlink" href="#VMCountOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.count" title="hosting.vm.count"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.count()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.count()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>cores</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>hostname</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>memory</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#VMState" title="VMState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMCreateFromDescription"><a name="//apple_ref/cpp/clconst/VMCreateFromDescription"></a>
+<tt class="descname">VMCreateFromDescription</tt><a class="headerlink" href="#VMCreateFromDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.create_from" title="hosting.vm.create_from"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create_from()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.create_from()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>hostname</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>memory</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>ai_active</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>bandwidth</td>
+<td> </td>
+<td>double</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>cores</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>iface_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#IPVersion" title="IPVersion"><tt class="xref py py-data docutils literal"><span class="pre">ip_version</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>login</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>run</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>shares</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>ssh_key</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMDescription"><a name="//apple_ref/cpp/clconst/VMDescription"></a>
+<tt class="descname">VMDescription</tt><a class="headerlink" href="#VMDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.create" title="hosting.vm.create"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.create()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.create()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>hostname</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>memory</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>sys_disk_id</td>
+<td> </td>
+<td>int</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>ai_active</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>bandwidth</td>
+<td> </td>
+<td>double</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>cores</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>iface_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#IPVersion" title="IPVersion"><tt class="xref py py-data docutils literal"><span class="pre">ip_version</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>login</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>run</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>shares</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>ssh_key</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMDiskAttachOptions"><a name="//apple_ref/cpp/clconst/VMDiskAttachOptions"></a>
+<tt class="descname">VMDiskAttachOptions</tt><a class="headerlink" href="#VMDiskAttachOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.disk_attach" title="hosting.vm.disk_attach"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.disk_attach()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.disk_attach()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">access</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>position</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMGraphURLs"><a name="//apple_ref/cpp/clconst/VMGraphURLs"></a>
+<tt class="descname">VMGraphURLs</tt><a class="headerlink" href="#VMGraphURLs" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="../paas/reference.html#ServerReturn" title="ServerReturn"><tt class="xref py py-data docutils literal"><span class="pre">ServerReturn</span></tt></a> and <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">vcpu</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">vdi</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">vif</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMListOptions"><a name="//apple_ref/cpp/clconst/VMListOptions"></a>
+<tt class="descname">VMListOptions</tt><a class="headerlink" href="#VMListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.list" title="hosting.vm.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.list()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.list()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>cores</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">datacenter_id</span></tt></td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>hostname</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>memory</td>
+<td> </td>
+<td>int or array of int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#VMState" title="VMState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMState"><a name="//apple_ref/cpp/clconst/VMState"></a>
+<tt class="descname">VMState</tt><a class="headerlink" href="#VMState" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#VMCountOptions" title="VMCountOptions"><tt class="xref py py-data docutils literal"><span class="pre">VMCountOptions</span></tt></a>, <a class="reference internal" href="#VMListOptions" title="VMListOptions"><tt class="xref py py-data docutils literal"><span class="pre">VMListOptions</span></tt></a> and <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>paused</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>running</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>halted</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>locked</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>being_created</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>invalid</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-even"><td>legally_locked</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>deleted</td>
+<td><cite>-</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMUpdate"><a name="//apple_ref/cpp/clconst/VMUpdate"></a>
+<tt class="descname">VMUpdate</tt><a class="headerlink" href="#VMUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#hosting.vm.update" title="hosting.vm.update"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.update()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.update()</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>console</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>cores</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>memory</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>shares</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>ssh_key</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>vm_max_memory</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ProbeReturn"><a name="//apple_ref/cpp/clconst/ProbeReturn"></a>
+<tt class="descname">ProbeReturn</tt><a class="headerlink" href="#ProbeReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">datasource</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">probe device datasource in:</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td colspan="2">probe creation date</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">device_type</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">probe device type in: ‘cpu’, ‘iface’,</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td colspan="2">id of the probe</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">name of the probe</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">status</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">the probe is active and should be used</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="VMReturn"><a name="//apple_ref/cpp/clconst/VMReturn"></a>
+<tt class="descname">VMReturn</tt><a class="headerlink" href="#VMReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a>, <a class="reference internal" href="#hosting.vm.list" title="hosting.vm.list"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.list()</span></tt></a>, <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.list()</span></tt></p>
+<blockquote>
+<div><p class="versionchanged">
+<span class="versionmodified">Changed in version 3.3.3: </span>keys <tt class="docutils literal"><span class="pre">flex_shares</span></tt>, <tt class="docutils literal"><span class="pre">triggers</span></tt> are deprecated and will be removed in the next major release</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>ai_active</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>console</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>cores</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>datacenter_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../paas/reference.html#DiskReturn" title="DiskReturn"><tt class="xref py py-data docutils literal"><span class="pre">disks</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt></td>
+</tr>
+<tr class="row-odd"><td>disks_id</td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>flex_shares</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#VMGraphURLs" title="VMGraphURLs"><tt class="xref py py-data docutils literal"><span class="pre">graph_urls</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt></td>
+</tr>
+<tr class="row-odd"><td>hostname</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference_iface.html#IfaceReturn" title="IfaceReturn"><tt class="xref py py-data docutils literal"><span class="pre">ifaces</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt></td>
+</tr>
+<tr class="row-odd"><td>ifaces_id</td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td>memory</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ProbeReturn" title="ProbeReturn"><tt class="xref py py-data docutils literal"><span class="pre">probes</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-even"><td colspan="2">only return with method <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#VMState" title="VMState"><tt class="xref py py-data docutils literal"><span class="pre">state</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#VMTriggersReturn" title="VMTriggersReturn"><tt class="xref py py-data docutils literal"><span class="pre">triggers</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">only return with method <a class="reference internal" href="#hosting.vm.info" title="hosting.vm.info"><tt class="xref py py-meth docutils literal"><span class="pre">hosting.vm.info()</span></tt></a> and <tt class="xref py py-meth docutils literal"><span class="pre">vm.info()</span></tt></td>
+</tr>
+<tr class="row-even"><td>vm_max_memory</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="VMTriggersReturn"><a name="//apple_ref/cpp/clconst/VMTriggersReturn"></a>
+<tt class="descname">VMTriggersReturn</tt><a class="headerlink" href="#VMTriggersReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#VMReturn" title="VMReturn"><tt class="xref py py-data docutils literal"><span class="pre">VMReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>datasource</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>device_number</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../domain/reference.html#Enum" title="Enum"><tt class="xref py py-data docutils literal"><span class="pre">device_type</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>max_value</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>min_value</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>recovery_duration</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>vm_id</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="reference_catalog.html" title="Hosting Catalog API Reference">next</a> |</li>
+<li class="right">
+<a href="reference_ip.html" title="IP Address API Reference">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Hosting API</a> »</li>
+<li><a href="reference.html">IaaS Hosting API Reference</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>

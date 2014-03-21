@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contact API FAQ &mdash; Gandi API 3.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/gandi.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/menu.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Gandi API 3.3.5 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <h1 class="grid_6">
+        <a href="/">Gandi</a>
+    </h1>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <div class="searchbox-c">
+            
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+
+        
+        
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Contact API FAQ</a><ul>
+<li><a class="reference internal" href="#how-to-search-and-list-your-contacts">How-to search and list your contacts</a></li>
+<li><a class="reference internal" href="#how-to-check-domain-contact-association">How-to check domain/contact association</a></li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="contact-api-faq">
+<h1>Contact API FAQ<a class="headerlink" href="#contact-api-faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-search-and-list-your-contacts">
+<h2>How-to search and list your contacts<a class="headerlink" href="#how-to-search-and-list-your-contacts" title="Permalink to this headline">¶</a></h2>
+<p>Paging results:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;items_per_page&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&#39;page&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Sorting results:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;sort_by&#39;</span> <span class="p">:</span> <span class="s">&#39;handle desc&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Allowed search filters are:</p>
+<ul class="simple">
+<li>handle</li>
+<li>orgname</li>
+<li>given</li>
+<li>family</li>
+<li>type</li>
+<li>email</li>
+<li>zip</li>
+<li>city</li>
+<li>streetaddr</li>
+<li>country</li>
+</ul>
+<p>Listing all contacts with a email like &#8216;%mydomain%&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;~email&#39;</span><span class="p">:</span> <span class="s">&#39;%mydomain%&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Listing contacts by type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>All together:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="p">{</span>
+<span class="go">  &#39;items_per_page&#39;: 10,</span>
+<span class="go">  &#39;sort_by&#39; : &#39;handle desc&#39;,</span>
+<span class="go">  &#39;page&#39;: 1,</span>
+<span class="go">  &#39;type&#39;: 0,</span>
+<span class="go">  })</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-check-domain-contact-association">
+<span id="contact-faq-domaincontactassociation"></span><h2>How-to check domain/contact association<a class="headerlink" href="#how-to-check-domain-contact-association" title="Permalink to this headline">¶</a></h2>
+<p>The Contact API <tt class="xref py py-func docutils literal"><span class="pre">can_associate_domain()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">can_associate()</span></tt> allow you to check the domain availability for a given contact (in a context of a contact registering, transferring, or updating the domain process).</p>
+<p>Example: checking mydomain.fr availability for FLN123-GANDI, as admin and owner contact</p>
+<div id="tabpages-1">
+    <ul>
+        <li><a href="#tab-python-1">python</a></li>
+        <li><a href="#tab-php-1">php</a></li>
+        <li><a href="#tab-nodejs-1">nodejs</a></li>
+        <li><a href="#tab-perl-1">perl</a></li>
+        <li><a href="#tab-ruby-1">ruby</a></li>
+    </ul>
+    <div id="tab-python-1"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">association_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s">&#39;domain&#39;</span><span class="p">:</span> <span class="s">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;owner&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;admin&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">can_associate_domain</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="s">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">can_associate_domain</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="s">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">[</span><span class="s">&#39;field&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;field_type&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;error&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;reason&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<span class="go">[(&#39;birth_city&#39;,</span>
+<span class="go">  &#39;String&#39;,</span>
+<span class="go">  &#39;EC_INVALIDPARAM1+EC_STRTOOFEWCHARS&#39;,</span>
+<span class="go">  &quot;BirthCity: string &#39;&#39; has less than 1 characters&quot;),</span>
+<span class="go">(&#39;birth_date&#39;,</span>
+<span class="go">  &#39;Date&#39;,</span>
+<span class="go">  &#39;EC_INTERNALERR2&#39;,</span>
+<span class="go">  &quot;BirthDate: time data &#39;&#39; does not match format &#39;%Y-%m-%d&#39;&quot;),</span>
+<span class="go">(&#39;birth_department&#39;,</span>
+<span class="go">  &#39;String&#39;,</span>
+<span class="go">  &#39;EC_INVALIDPARAM1+!EC_STRMATCH&#39;,</span>
+<span class="go">  &quot;BirthDepartment: string &#39;&#39; does not match &#39;^(2A|2B|\\d{1,3})$&#39;&quot;),</span>
+<span class="go">(&#39;birth_country&#39;,</span>
+<span class="go">  &#39;Enum&#39;,</span>
+<span class="go">  &#39;EC_INVALIDPARAM1+!EC_ENUMIN&#39;,</span>
+<span class="go">  &#39;BirthCountryIso:  not in list AF,ZA,AL,DZ,DE,AD,AO,AI,AG,AN,SA,AR,AM,AW,AC,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BT,BO,BA,BW,BR,BN,BG,BF,BI,KH,CM,CA,CV,KY,CF,CL,CN,CY,CO,KM,CG,CD,CK,KR,KP,CR,CI,HR,CU,DK,DJ,DO,DM,EG,SV,AE,EC,ER,ES,EE,US,ET,FK,FO,FJ,FI,FR,GA,GM,GE,GH,GI,GR,GD,GL,GU,GT,GN,GQ,GW,GY,HT,HI,HN,HK,HU,IN,ID,IR,IQ,IE,IS,IL,IT,JM,JP,JE,JO,KZ,KE,KG,KI,KW,LA,LS,LV,LB,LR,LY,LI,LT,LU,MO,MK,MG,MY,MW,MV,ML,MT,MP,MA,MH,MU,MR,MX,FM,MD,MC,MN,MS,MZ,MM,NA,NR,NP,NI,NE,NG,NU,NF,NO,NZ,OM,UG,UZ,PK,PW,PS,PA,PG,PY,NL,PE,PH,PL,PT,PR,QA,RO,GB,RU,RW,SH,LC,KN,SM,VC,SB,AS,WS,ST,SN,SC,SL,SG,SK,SI,SO,SD,LK,SE,CH,SR,SZ,SY,TJ,TW,TZ,TD,CZ,TH,TP,TG,TK,TO,TT,TN,TM,TC,TR,TV,UA,UY,VU,VE,VI,VG,VN,YE,ZM,ZW,RE,PF,AQ,GF,NC,MQ,GP,PM,TF,YT,RS,TL,CC,CX,HM,AX,BV,GS,GG,IM,ME,IO,PN,EH,BL,MF,VA,SJ,WF,EP&#39;)]</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-php-1"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$contact_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$api_uri</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;contact.&#39;</span><span class="p">));</span>
+<span class="nv">$association_spec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;owner&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span> <span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">can_associate_domain</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="s1">&#39;GG2647-GANDI&#39;</span><span class="p">,</span> <span class="nv">$association_spec</span><span class="p">)</span> <span class="p">);</span>
+<span class="c1">// 1</span>
+<span class="c1">// OR</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">can_associate_domain</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="s1">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="nv">$association_spec</span><span class="p">)</span> <span class="p">)</span>
+<span class="cm">/*</span>
+<span class="cm">[{&#39;error&#39;: &#39;EC_INVALIDPARAM1+!EC_ENUMIN&#39;,</span>
+<span class="cm">        &#39;field&#39;: &#39;birth_country&#39;,</span>
+<span class="cm">        &#39;field_type&#39;: &#39;Enum&#39;,</span>
+<span class="cm">        &#39;reason&#39;: &#39;BirthCountryIso:  not in list ...</span>
+<span class="cm">},... ]</span>
+<span class="cm">*/</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div id="tab-nodejs-1"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">association_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">...</span>   <span class="nx">domain</span><span class="o">:</span> <span class="s1">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">owner</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">admin</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;contact.can_associate_domain&#39;</span><span class="p">,</span>
+<span class="p">...</span>    <span class="p">[</span><span class="nx">apikey</span><span class="p">,</span> <span class="s1">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="nx">association_spec</span><span class="p">],</span>
+<span class="p">...</span>    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-perl-1"><div class="highlight-perl"><pre>my $association_spec = {
+    'domain' =&gt; 'mydomain.fr',
+    'owner' =&gt; True,
+    'admin' =&gt; True
+};
+my $result = $api-&gt;call( 'contact.can_associate_domain', $apikey, 'FLN123-GANDI', $association_spec );
+print $result;
+True
+$result = $api-&gt;call( 'contact.can_associate_domain', $apikey, 'FLN123-GANDI', $association_spec );
+print $result;
+[{'error': 'EC_INVALIDPARAM1+!EC_ENUMIN',
+'field': 'birth_country',
+'field_type': 'Enum',
+'reason': 'BirthCountryIso:  not in list ...
+},... ]</pre>
+</div>
+</div>
+<div id="tab-ruby-1"><div class="highlight-ruby"><pre>association_spec = {
+    'domain' =&gt; 'mydomain.fr',
+    'owner'=&gt; true,
+    'admin'=&gt; true
+}
+print server.call("contact.can_associate_domain", apikey, 'FLN123-GANDI', association_spec)
+True
+print server.call("contact.can_associate_domain", apikey, 'FLN123-GANDI', association_spec)
+[{'error': 'EC_INVALIDPARAM1+!EC_ENUMIN',
+'field': 'birth_country',
+'field_type': 'Enum',
+'reason': 'BirthCountryIso:  not in list ...
+},... ]</pre>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-1" ).tabs();
+    });
+</script><p>In this example, birth_city, birth_date, birth_department and birth_country are missing or invalid contact attributes.</p>
+<p>For each field, the method returns various information like the field type, the error type and the reason why it is incorrect (see <a class="reference internal" href="glossary.html#term-error-codes"><em class="xref std std-term">error codes</em></a> for a complete description of error types).</p>
+<p>To modify your contact use the <a class="reference internal" href="reference.html#contact.update" title="contact.update"><tt class="xref py py-func docutils literal"><span class="pre">contact.update()</span></tt></a> method:</p>
+<div id="tabpages-3">
+    <ul>
+        <li><a href="#tab-python-3">python</a></li>
+        <li><a href="#tab-php-3">php</a></li>
+        <li><a href="#tab-nodejs-3">nodejs</a></li>
+        <li><a href="#tab-perl-3">perl</a></li>
+        <li><a href="#tab-ruby-3">ruby</a></li>
+    </ul>
+    <div id="tab-python-3"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">  &#39;extra_parameters&#39;: {</span>
+<span class="go">    &#39;birth_city&#39;: &#39;Paris&#39;,</span>
+<span class="go">    &#39;birth_date&#39;: &#39;1980-01-01&#39;,</span>
+<span class="go">    &#39;birth_department&#39;: &#39;75&#39;,</span>
+<span class="go">    &#39;birth_country&#39;: &#39;FR&#39;}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">contact</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="s">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="n">contact_spec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">can_associate_domain</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="s">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-php-3"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$contact_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$api_uri</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;contact.&#39;</span><span class="p">));</span>
+<span class="nv">$contact_spec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">&#39;extra_parameters&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;birth_city&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1980-01-01&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_department&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;75&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_country&#39;</span><span class="o">=&gt;</span> <span class="s1">&#39;FR&#39;</span> <span class="p">));</span>
+<span class="nv">$contact</span> <span class="o">=</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="s1">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="nv">$contact_spec</span><span class="p">)</span> <span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">can_associate_domain</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="nv">$association_spec</span><span class="p">)</span> <span class="p">);</span>
+<span class="c1">// 1</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div id="tab-nodejs-3"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">extra_parameters</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">birth_city</span><span class="o">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
+    <span class="nx">birth_date</span><span class="o">:</span> <span class="s1">&#39;1980-01-01&#39;</span><span class="p">,</span>
+    <span class="nx">birth_department</span><span class="o">:</span> <span class="s1">&#39;75&#39;</span><span class="p">,</span>
+    <span class="nx">birth_country</span><span class="o">:</span> <span class="s1">&#39;FR&#39;</span><span class="p">}}</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;contact.update&#39;</span><span class="p">,</span>
+    <span class="p">[</span><span class="nx">apikey</span><span class="p">,</span> <span class="s1">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="nx">contact_spec</span><span class="p">],</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+ <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-perl-3"><div class="highlight-perl"><div class="highlight"><pre><span class="k">my</span> <span class="nv">$contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">&#39;extra_parameters&#39;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s">&#39;birth_city&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Paris&#39;</span><span class="p">,</span>
+    <span class="s">&#39;birth_date&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;1980-01-01&#39;</span><span class="p">,</span>
+    <span class="s">&#39;birth_department&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;75&#39;</span><span class="p">,</span>
+    <span class="s">&#39;birth_country&#39;</span><span class="o">=&gt;</span> <span class="s">&#39;FR&#39;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">my</span> <span class="nv">$contact</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;contact.update&#39;</span><span class="p">,</span> <span class="nv">$apikey</span><span class="p">,</span> <span class="s">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="nv">$contact_spec</span> <span class="p">);</span>
+<span class="k">my</span> <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$api</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="s">&#39;contact.can_associate_domain&#39;</span><span class="p">,</span> <span class="nv">$apikey</span><span class="p">,</span> <span class="nv">$association_spec</span> <span class="p">);</span>
+<span class="k">print</span> <span class="nv">$result</span><span class="p">;</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-ruby-3"><div class="highlight-ruby"><div class="highlight"><pre><span class="n">contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;extra_parameters&#39;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s1">&#39;birth_city&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1980-01-01&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_department&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;75&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;birth_country&#39;</span><span class="o">=&gt;</span> <span class="s1">&#39;FR&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">contact</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;contact.update&quot;</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="s1">&#39;FLN123-GANDI&#39;</span><span class="p">,</span> <span class="n">contact_spec</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;contact.can_associate_domain&quot;</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">result</span>
+<span class="kp">true</span>
+</pre></div>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-3" ).tabs();
+    });
+</script><p>The <a class="reference internal" href="reference.html#contact.can_associate" title="contact.can_associate"><tt class="xref py py-func docutils literal"><span class="pre">contact.can_associate()</span></tt></a> method allows you to check domain/contact association rules according to contact specifications:</p>
+<div id="tabpages-2">
+    <ul>
+        <li><a href="#tab-python-2">python</a></li>
+        <li><a href="#tab-php-2">php</a></li>
+        <li><a href="#tab-nodejs-2">nodejs</a></li>
+        <li><a href="#tab-perl-2">perl</a></li>
+        <li><a href="#tab-ruby-2">ruby</a></li>
+    </ul>
+    <div id="tab-python-2"><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">association_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s">&#39;domain&#39;</span><span class="p">:</span> <span class="s">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;owner&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;admin&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;given&#39;</span><span class="p">:</span> <span class="s">&#39;Given&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;family&#39;</span><span class="p">:</span> <span class="s">&#39;Family&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="s">&#39;PassworD&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;given@family.net&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;phone&#39;</span><span class="p">:</span> <span class="s">&#39;+33123456789&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;streetaddr&#39;</span><span class="p">:</span> <span class="s">&#39;my street&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;city&#39;</span><span class="p">:</span> <span class="s">&#39;My City&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;zip&#39;</span><span class="p">:</span> <span class="s">&#39;75000&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="s">&#39;FR&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">can_associate</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">contact_spec</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="go">[{&#39;error&#39;: &#39;EC_INVALIDPARAM1+!EC_ENUMIN&#39;,</span>
+<span class="go">&#39;field&#39;: &#39;birth_country&#39;,</span>
+<span class="go">&#39;field_type&#39;: &#39;Enum&#39;,</span>
+<span class="go">&#39;reason&#39;: &#39;BirthCountryIso:  not in list ...</span>
+<span class="go">},... ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span><span class="o">.</span><span class="n">contact</span><span class="o">.</span><span class="n">can_associate</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">contact_spec</span><span class="p">,</span> <span class="n">association_spec</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-php-2"><div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$contact_api</span> <span class="o">=</span> <span class="nx">XML_RPC2_Client</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$api_uri</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;contact.&#39;</span><span class="p">));</span>
+<span class="nv">$association_spec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;owner&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span> <span class="p">);</span>
+<span class="nv">$contact_spec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;given&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Given&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;family&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Family&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;PassworD&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;given@family.net&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;+33123456789&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;streetaddr&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my street&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My City&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zip&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;75000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;country&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;FR&#39;</span> <span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">can_associate</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="nv">$contact_spec</span><span class="p">,</span> <span class="nv">$association_spec</span><span class="p">)</span> <span class="p">);</span>
+<span class="c1">// 1</span>
+<span class="c1">// OR</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$contact_api</span><span class="o">-&gt;</span><span class="na">can_associate</span><span class="p">(</span><span class="nv">$apikey</span><span class="p">,</span> <span class="nv">$contact_spec</span><span class="p">,</span> <span class="nv">$association_spec</span><span class="p">)</span> <span class="p">)</span>
+<span class="cm">/*</span>
+<span class="cm">[{&#39;error&#39;: &#39;EC_INVALIDPARAM1+!EC_ENUMIN&#39;,</span>
+<span class="cm">        &#39;field&#39;: &#39;birth_country&#39;,</span>
+<span class="cm">        &#39;field_type&#39;: &#39;Enum&#39;,</span>
+<span class="cm">        &#39;reason&#39;: &#39;BirthCountryIso:  not in list ...</span>
+<span class="cm">},... ]</span>
+<span class="cm">*/</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div id="tab-nodejs-2"><div class="highlight-javascript"><div class="highlight"><pre><span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">association_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">...</span>   <span class="nx">domain</span><span class="o">:</span> <span class="s1">&#39;mydomain.fr&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">owner</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">admin</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="kd">var</span> <span class="nx">contact_spec</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">...</span>   <span class="nx">type</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">given</span><span class="o">:</span> <span class="s1">&#39;Given&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">family</span><span class="o">:</span> <span class="s1">&#39;Family&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;PassworD&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;given@family.net&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;+33123456789&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">streetaddr</span><span class="o">:</span> <span class="s1">&#39;my street&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">city</span><span class="o">:</span> <span class="s1">&#39;My City&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">zip</span><span class="o">:</span> <span class="s1">&#39;75000&#39;</span><span class="p">,</span>
+<span class="p">...</span>   <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;FR&#39;</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">api</span><span class="p">.</span><span class="nx">methodCall</span><span class="p">(</span><span class="s1">&#39;contact.can_associate&#39;</span><span class="p">,</span>
+<span class="p">...</span>    <span class="p">[</span><span class="nx">apikey</span><span class="p">,</span> <span class="nx">contact_spec</span><span class="p">,</span> <span class="nx">association_spec</span><span class="p">],</span>
+<span class="p">...</span>    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">...</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div id="tab-perl-2"><div class="highlight-perl"><pre>my $association_spec = {
+    domain =&gt; 'mydomain.fr',
+    owner =&gt; True,
+    admin =&gt; True
+};
+my $contact_spec = {
+    type =&gt; 0,
+    given =&gt; 'Given',
+    family =&gt; 'Family',
+    password =&gt; 'PassworD',
+    email =&gt; 'given@family.net',
+    phone =&gt; '+33123456789',
+    streetaddr =&gt; 'my street',
+    city =&gt; 'My City',
+    zip =&gt; '75000',
+    country =&gt; 'FR'
+};
+
+my $result = $api-&gt;call( 'contact.can_associate', $apikey, $contact_spec, $association_spec );
+print $result;
+[{'error': 'EC_INVALIDPARAM1+!EC_ENUMIN',
+'field': 'birth_country',
+'field_type': 'Enum',
+'reason': 'BirthCountryIso:  not in list ...
+},... ]
+my $result = $api-&gt;call( 'contact.can_associate', $apikey, $contact_spec, $association_spec );
+print $result;
+True</pre>
+</div>
+</div>
+<div id="tab-ruby-2"><div class="highlight-ruby"><pre>association_spec = {
+    'domain' =&gt; 'mydomain.fr',
+    'owner'=&gt; true,
+    'admin'=&gt; true
+}
+contact_spec = {
+        'type' =&gt; 0,
+        'given' =&gt; 'Given',
+        'family' =&gt; 'Family',
+        'password' =&gt; 'PassworD',
+        'email' =&gt; 'given@family.net',
+        'phone' =&gt; '+33123456789',
+        'streetaddr' =&gt; 'my street',
+        'city' =&gt; 'My City',
+        'zip' =&gt; '75000',
+        'country' =&gt; 'FR'
+}
+
+print server.call("contact.can_associate", apikey, contact_spec, association_spec)
+[{'error': 'EC_INVALIDPARAM1+!EC_ENUMIN',
+'field': 'birth_country',
+'field_type': 'Enum',
+'reason': 'BirthCountryIso:  not in list ...
+},... ]
+print server.call("contact.can_associate", apikey, contact_spec, association_spec)
+True</pre>
+</div>
+    </div>
+</div>
+<script>
+    $(function() {
+            $( "#tabpages-2" ).tabs();
+    });
+</script></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Gandi API 3.3.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

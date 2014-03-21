@@ -1,0 +1,1332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Certificate API Reference — Gandi API 3.3.5 documentation</title>
+<link href="../_static/gandi.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="../_static/menu.js" type="text/javascript"></script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../index.html" rel="top" title="Gandi API 3.3.5 documentation"/>
+<link href="index.html" rel="up" title="Gandi Certificate API"/>
+<link href="../site/index.html" rel="next" title="Gandi Site API"/>
+<link href="usage.html" rel="prev" title="Certificate API"/>
+</head>
+<body>
+<h1 class="grid_6">
+<a href="/">Gandi</a>
+</h1>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a accesskey="N" href="../site/index.html" title="Gandi Site API">next</a> |</li>
+<li class="right">
+<a accesskey="P" href="usage.html" title="Certificate API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a accesskey="U" href="index.html">Gandi Certificate API</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<div class="searchbox-c">
+<div id="searchbox" style="display: none">
+<h3>Quick search</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="Go"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li><a class="reference internal" href="#">Certificate API Reference</a><ul>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+<h4>Previous topic</h4>
+<p class="topless"><a href="usage.html" title="previous chapter">Certificate API</a></p>
+<h4>Next topic</h4>
+<p class="topless"><a href="../site/index.html" title="next chapter">Gandi Site API</a></p>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="certificate-api-reference">
+<span id="cert-api-ref"></span><h1>Certificate API Reference<a class="headerlink" href="#certificate-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="cert.change_dcv"><a name="//apple_ref/cpp/clm/cert.change_dcv"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">change_dcv</tt><big>(</big><em>apikey</em>, <em>operation</em><span class="optional">[</span>, <em>dcv_method=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#cert.change_dcv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask comodo to change the DCV method for that operation.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>operation</strong> (<em>int</em>) – ID of the operation.</li>
+<li><strong>dcv_method</strong> (<em>string</em>) – The new DCV method</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – True on success</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.count"><a name="//apple_ref/cpp/clm/cert.count"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">count</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#cert.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Counts certificates handled by this account.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#CertListOptions" title="CertListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – number of certificate</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.create"><a name="//apple_ref/cpp/clm/cert.create"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">create</tt><big>(</big><em>apikey</em>, <em>params</em><big>)</big><a class="headerlink" href="#cert.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a certificate.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#CertificateCreate" title="CertificateCreate"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">certificate_create</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.delete"><a name="//apple_ref/cpp/clm/cert.delete"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">delete</tt><big>(</big><em>apikey</em>, <em>cert</em><span class="optional">[</span>, <em>params=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#cert.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a certificate.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>cert</strong> (<em>int</em>) – Id of the certificate</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#CertificateDelete" title="CertificateDelete"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">certificate_delete</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.get_dcv_params"><a name="//apple_ref/cpp/clm/cert.get_dcv_params"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">get_dcv_params</tt><big>(</big><em>apikey</em>, <em>params</em><big>)</big><a class="headerlink" href="#cert.get_dcv_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get params for DCV (Domain Control Validation).
+DCV is a security control that validate/grant access to the registred
+domain name.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#DcvMethodParams" title="DcvMethodParams"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#DcvParamsReturn" title="DcvParamsReturn"><tt class="xref py py-data docutils literal"><span class="pre">The</span> <span class="pre">parameters</span> <span class="pre">to</span> <span class="pre">help</span> <span class="pre">configure</span> <span class="pre">the</span> <span class="pre">DCV</span> <span class="pre">for</span> <span class="pre">this</span> <span class="pre">Certificate</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.info"><a name="//apple_ref/cpp/clm/cert.info"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">info</tt><big>(</big><em>apikey</em>, <em>cert</em><big>)</big><a class="headerlink" href="#cert.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get certificate information.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>cert</strong> (<em>string</em>) – Id of the certificate</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#CertificateReturn" title="CertificateReturn"><tt class="xref py py-data docutils literal"><span class="pre">Informations</span> <span class="pre">about</span> <span class="pre">the</span> <span class="pre">certificate.</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.list"><a name="//apple_ref/cpp/clm/cert.list"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#cert.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists certificates handled by this account.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#CertListOptions" title="CertListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#CertificateReturn" title="CertificateReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">certificates</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.renew"><a name="//apple_ref/cpp/clm/cert.renew"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">renew</tt><big>(</big><em>apikey</em>, <em>cert</em>, <em>params</em><big>)</big><a class="headerlink" href="#cert.renew" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renew a certificate.
+You must pass a new CSR, the end date will be current end_date +
+duration.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not a free operation.        Please ensure your prepaid account has enough credit.        Look at the <a class="reference internal" href="../catalog/reference.html#catalog.list" title="catalog.list"><tt class="xref py py-func docutils literal"><span class="pre">the</span> <span class="pre">catalog</span></tt></a> to get the price.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>cert</strong> (<em>int</em>) – Id of the certificate</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#CertificateRenew" title="CertificateRenew"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">certificate_renew</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.resend_dcv"><a name="//apple_ref/cpp/clm/cert.resend_dcv"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">resend_dcv</tt><big>(</big><em>apikey</em>, <em>operation</em><big>)</big><a class="headerlink" href="#cert.resend_dcv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask comodo to resend the DCV for that operation.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>operation</strong> (<em>int</em>) – ID of the operation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean – True on success</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.update"><a name="//apple_ref/cpp/clm/cert.update"></a>
+<tt class="descclassname">cert.</tt><tt class="descname">update</tt><big>(</big><em>apikey</em>, <em>cert</em>, <em>params</em><big>)</big><a class="headerlink" href="#cert.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the certificate CSR.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 3.2.8.</span></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>cert</strong> (<em>int</em>) – Id of the certificate</li>
+<li><strong>params</strong> (<em>struct</em>) – <a class="reference internal" href="#CertificateUpdate" title="CertificateUpdate"><tt class="xref py py-data docutils literal"><span class="pre">Parameters</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="../operation/reference.html#OperationReturn" title="OperationReturn"><tt class="xref py py-data docutils literal"><span class="pre">Operation</span></tt></a> <tt class="docutils literal"><span class="pre">certificate_update</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="method">
+<dt id="cert.package.list"><a name="//apple_ref/cpp/clm/cert.package.list"></a>
+<tt class="descclassname">cert.package.</tt><tt class="descname">list</tt><big>(</big><em>apikey</em><span class="optional">[</span>, <em>opts=nil</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#cert.package.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists certificate packages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name"></col>
+<col class="field-body"></col>
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>apikey</strong> (<em>string</em>) – API connection key</li>
+<li><strong>opts</strong> (<em>struct</em>) – <a class="reference internal" href="#CertPackageListOptions" title="CertPackageListOptions"><tt class="xref py py-data docutils literal"><span class="pre">Filtering</span> <span class="pre">options</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">struct – <a class="reference internal" href="#CertPackageReturn" title="CertPackageReturn"><tt class="xref py py-data docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">certificate</span> <span class="pre">packages</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="BusinessCategory"><a name="//apple_ref/cpp/clconst/BusinessCategory"></a>
+<tt class="descname">BusinessCategory</tt><a class="headerlink" href="#BusinessCategory" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertificateReturn" title="CertificateReturn"><tt class="xref py py-data docutils literal"><span class="pre">CertificateReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>b</td>
+<td>Private Organization.</td>
+</tr>
+<tr class="row-odd"><td>c</td>
+<td>Government Entity.</td>
+</tr>
+<tr class="row-even"><td>d</td>
+<td>Business Entity.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertListOptions"><a name="//apple_ref/cpp/clconst/CertListOptions"></a>
+<tt class="descname">CertListOptions</tt><a class="headerlink" href="#CertListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.count" title="cert.count"><tt class="xref py py-meth docutils literal"><span class="pre">cert.count()</span></tt></a> and <a class="reference internal" href="#cert.list" title="cert.list"><tt class="xref py py-meth docutils literal"><span class="pre">cert.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>&lt;date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&lt;date_end</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&lt;date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&lt;date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&gt;date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&gt;date_end</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&gt;date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&gt;date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>category</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>date_created</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>date_start</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>date_updated</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>domain.fqdn</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>package</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CertificateStatus" title="CertificateStatus"><tt class="xref py py-data docutils literal"><span class="pre">status</span></tt></a></td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~domain.fqdn</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertSoftware"><a name="//apple_ref/cpp/clconst/CertSoftware"></a>
+<tt class="descname">CertSoftware</tt><a class="headerlink" href="#CertSoftware" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertificateCreate" title="CertificateCreate"><tt class="xref py py-data docutils literal"><span class="pre">CertificateCreate</span></tt></a> and <a class="reference internal" href="#DcvMethodParams" title="DcvMethodParams"><tt class="xref py py-data docutils literal"><span class="pre">DcvMethodParams</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>-1</td>
+<td>OTHER</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>AOL</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Apache/ModSSL</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Apache-SSL (Ben-SSL, not Stronghold)</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>C2Net Stronghold</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>Cobalt Raq</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>Covalent Server Software</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>IBM HTTP Server</td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td>IBM Internet Connection Server</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>iPlanet</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>Java Web Server (Javasoft / Sun)</td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td>Lotus Domino</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>Lotus Domino Go!</td>
+</tr>
+<tr class="row-odd"><td>13</td>
+<td>Microsoft IIS 1.x to 4.x</td>
+</tr>
+<tr class="row-even"><td>14</td>
+<td>Microsoft IIS 5.x to 6.x</td>
+</tr>
+<tr class="row-odd"><td>15</td>
+<td>Netscape Enterprise Server</td>
+</tr>
+<tr class="row-even"><td>16</td>
+<td>Netscape FastTrack</td>
+</tr>
+<tr class="row-odd"><td>17</td>
+<td>Novell Web Server</td>
+</tr>
+<tr class="row-even"><td>18</td>
+<td>Oracle</td>
+</tr>
+<tr class="row-odd"><td>19</td>
+<td>Quid Pro Quo</td>
+</tr>
+<tr class="row-even"><td>20</td>
+<td>R3 SSL Server</td>
+</tr>
+<tr class="row-odd"><td>21</td>
+<td>Raven SSL</td>
+</tr>
+<tr class="row-even"><td>22</td>
+<td>RedHat Linux</td>
+</tr>
+<tr class="row-odd"><td>23</td>
+<td>SAP Web Application Server</td>
+</tr>
+<tr class="row-even"><td>24</td>
+<td>Tomcat</td>
+</tr>
+<tr class="row-odd"><td>25</td>
+<td>Website Professional</td>
+</tr>
+<tr class="row-even"><td>26</td>
+<td>WebStar 4.x and later</td>
+</tr>
+<tr class="row-odd"><td>27</td>
+<td>WebTen (from Tenon)</td>
+</tr>
+<tr class="row-even"><td>28</td>
+<td>Zeus Web Server</td>
+</tr>
+<tr class="row-odd"><td>29</td>
+<td>Ensim</td>
+</tr>
+<tr class="row-even"><td>30</td>
+<td>Plesk</td>
+</tr>
+<tr class="row-odd"><td>31</td>
+<td>WHM/cPanel</td>
+</tr>
+<tr class="row-even"><td>32</td>
+<td>H-Sphere</td>
+</tr>
+<tr class="row-odd"><td>33</td>
+<td>Cisco 3000 Series VPN Concentrator</td>
+</tr>
+<tr class="row-even"><td>34</td>
+<td>Citrix</td>
+</tr>
+<tr class="row-odd"><td>35</td>
+<td>Microsoft IIS 7.x and later</td>
+</tr>
+<tr class="row-even"><td>36</td>
+<td>nginx</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateCreate"><a name="//apple_ref/cpp/clconst/CertificateCreate"></a>
+<tt class="descname">CertificateCreate</tt><a class="headerlink" href="#CertificateCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.create" title="cert.create"><tt class="xref py py-meth docutils literal"><span class="pre">cert.create()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>csr</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Certificate Signing Request</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">altnames</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Alt Name when the cert package permit it</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DCVMethod" title="DCVMethod"><tt class="xref py py-data docutils literal"><span class="pre">dcv_method</span></tt></a></td>
+<td>email</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">the chosen DCV method (default to email)</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>1</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The certificate duration</td>
+</tr>
+<tr class="row-even"><td>handle</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The domain owner if not the same contact as the one making             the call</td>
+</tr>
+<tr class="row-even"><td>package</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Name of the Cert package</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CertSoftware" title="CertSoftware"><tt class="xref py py-data docutils literal"><span class="pre">software</span></tt></a></td>
+<td>2</td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateDelete"><a name="//apple_ref/cpp/clconst/CertificateDelete"></a>
+<tt class="descname">CertificateDelete</tt><a class="headerlink" href="#CertificateDelete" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.delete" title="cert.delete"><tt class="xref py py-meth docutils literal"><span class="pre">cert.delete()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>reason</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">the deletion reason</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateRenew"><a name="//apple_ref/cpp/clconst/CertificateRenew"></a>
+<tt class="descname">CertificateRenew</tt><a class="headerlink" href="#CertificateRenew" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.renew" title="cert.renew"><tt class="xref py py-meth docutils literal"><span class="pre">cert.renew()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>csr</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Certificate Signing Request</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DCVMethod" title="DCVMethod"><tt class="xref py py-data docutils literal"><span class="pre">dcv_method</span></tt></a></td>
+<td>email</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">the chosen DCV method (default to email)</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>1</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The certificate duration</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateStatus"><a name="//apple_ref/cpp/clconst/CertificateStatus"></a>
+<tt class="descname">CertificateStatus</tt><a class="headerlink" href="#CertificateStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertListOptions" title="CertListOptions"><tt class="xref py py-data docutils literal"><span class="pre">CertListOptions</span></tt></a> and <a class="reference internal" href="#CertificateReturn" title="CertificateReturn"><tt class="xref py py-data docutils literal"><span class="pre">CertificateReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>pending</td>
+<td>Certificate is curently emited</td>
+</tr>
+<tr class="row-odd"><td>valid</td>
+<td>Certificate is valid</td>
+</tr>
+<tr class="row-even"><td>revoked</td>
+<td>Certificate has been revoked</td>
+</tr>
+<tr class="row-odd"><td>replaced</td>
+<td>Certifcate was replaced by another one</td>
+</tr>
+<tr class="row-even"><td>replaced_rev</td>
+<td><cite>-</cite></td>
+</tr>
+<tr class="row-odd"><td>expired</td>
+<td>Certificate expired</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateUpdate"><a name="//apple_ref/cpp/clconst/CertificateUpdate"></a>
+<tt class="descname">CertificateUpdate</tt><a class="headerlink" href="#CertificateUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.update" title="cert.update"><tt class="xref py py-meth docutils literal"><span class="pre">cert.update()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>csr</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Certificate Signing Request</td>
+</tr>
+<tr class="row-even"><td><tt class="xref py py-data docutils literal"><span class="pre">altnames</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">Alt Name when the cert package permit it</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#DCVMethod" title="DCVMethod"><tt class="xref py py-data docutils literal"><span class="pre">dcv_method</span></tt></a></td>
+<td>email</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td colspan="4">The chosen DCV method (default to email)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="ChangeDCVMethod"><a name="//apple_ref/cpp/clconst/ChangeDCVMethod"></a>
+<tt class="descname">ChangeDCVMethod</tt><a class="headerlink" href="#ChangeDCVMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.change_dcv" title="cert.change_dcv"><tt class="xref py py-meth docutils literal"><span class="pre">cert.change_dcv()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Send a mail to admin@</td>
+</tr>
+<tr class="row-odd"><td>dns</td>
+<td>Check a dns record</td>
+</tr>
+<tr class="row-even"><td>file</td>
+<td>Check a file on <a class="reference external" href="http://">http://</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DCVMethod"><a name="//apple_ref/cpp/clconst/DCVMethod"></a>
+<tt class="descname">DCVMethod</tt><a class="headerlink" href="#DCVMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertificateCreate" title="CertificateCreate"><tt class="xref py py-data docutils literal"><span class="pre">CertificateCreate</span></tt></a>, <a class="reference internal" href="#CertificateRenew" title="CertificateRenew"><tt class="xref py py-data docutils literal"><span class="pre">CertificateRenew</span></tt></a>, <a class="reference internal" href="#CertificateUpdate" title="CertificateUpdate"><tt class="xref py py-data docutils literal"><span class="pre">CertificateUpdate</span></tt></a> and <a class="reference internal" href="#DcvMethodParams" title="DcvMethodParams"><tt class="xref py py-data docutils literal"><span class="pre">DcvMethodParams</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Send a mail to admin@</td>
+</tr>
+<tr class="row-odd"><td>dns</td>
+<td>Check a dns record</td>
+</tr>
+<tr class="row-even"><td>file</td>
+<td>Check a file on <a class="reference external" href="http://">http://</a></td>
+</tr>
+<tr class="row-odd"><td>auto</td>
+<td>Automatically alter zone and does a dns DCV</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DcvMethodParams"><a name="//apple_ref/cpp/clconst/DcvMethodParams"></a>
+<tt class="descname">DcvMethodParams</tt><a class="headerlink" href="#DcvMethodParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.get_dcv_params" title="cert.get_dcv_params"><tt class="xref py py-meth docutils literal"><span class="pre">cert.get_dcv_params()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>csr</td>
+<td> </td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td><tt class="xref py py-data docutils literal"><span class="pre">altnames</span></tt></td>
+<td> </td>
+<td>array of string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>cert_id</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#DCVMethod" title="DCVMethod"><tt class="xref py py-data docutils literal"><span class="pre">dcv_method</span></tt></a></td>
+<td>email</td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>1</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>handle</td>
+<td> </td>
+<td>array of string or
+string</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>package</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CertSoftware" title="CertSoftware"><tt class="xref py py-data docutils literal"><span class="pre">software</span></tt></a></td>
+<td>2</td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="CertPackageListOptions"><a name="//apple_ref/cpp/clconst/CertPackageListOptions"></a>
+<tt class="descname">CertPackageListOptions</tt><a class="headerlink" href="#CertPackageListOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter of <a class="reference internal" href="#cert.package.list" title="cert.package.list"><tt class="xref py py-meth docutils literal"><span class="pre">cert.package.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%"></col>
+<col width="19%"></col>
+<col width="19%"></col>
+<col width="14%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Default</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Mandatory</strong></td>
+</tr>
+<tr class="row-even"><td>&lt;max_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&lt;min_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>&gt;max_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>&gt;min_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>category</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>items_per_page</td>
+<td>100</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>max_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>min_domains</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>page</td>
+<td>0</td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>sort_by</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>trustlogo</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>warranty</td>
+<td> </td>
+<td>int</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>wildcard</td>
+<td> </td>
+<td>boolean</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>~category</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+<tr class="row-odd"><td>~name</td>
+<td> </td>
+<td>string</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="data">
+<dt id="AltnameReturn"><a name="//apple_ref/cpp/clconst/AltnameReturn"></a>
+<tt class="descname">AltnameReturn</tt><a class="headerlink" href="#AltnameReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertificateReturn" title="CertificateReturn"><tt class="xref py py-data docutils literal"><span class="pre">CertificateReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertificateReturn"><a name="//apple_ref/cpp/clconst/CertificateReturn"></a>
+<tt class="descname">CertificateReturn</tt><a class="headerlink" href="#CertificateReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#cert.info" title="cert.info"><tt class="xref py py-meth docutils literal"><span class="pre">cert.info()</span></tt></a> and <a class="reference internal" href="#cert.list" title="cert.list"><tt class="xref py py-meth docutils literal"><span class="pre">cert.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#AltnameReturn" title="AltnameReturn"><tt class="xref py py-data docutils literal"><span class="pre">altnames</span></tt></a></td>
+<td>array of struct</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Alt Name when the cert package permit it</td>
+</tr>
+<tr class="row-even"><td>assumed_name</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Does business as name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#BusinessCategory" title="BusinessCategory"><tt class="xref py py-data docutils literal"><span class="pre">business_category</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Business Category (see Clause 5 of the EV             Guidelines)</td>
+</tr>
+<tr class="row-even"><td>card_pay_trustlogo</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><td colspan="2"> </td>
+</tr>
+<tr class="row-even"><td>cert</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>cn</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>comodo_id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>contact</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">The certificate’s owner</td>
+</tr>
+<tr class="row-odd"><td>csr</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">Certificate Signing Request</td>
+</tr>
+<tr class="row-odd"><td>date_created</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>date_end</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>date_incorporation</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td colspan="2">Date of Incorporation</td>
+</tr>
+<tr class="row-odd"><td>date_start</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-even"><td>date_updated</td>
+<td>dateTime.iso8601</td>
+</tr>
+<tr class="row-odd"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>ida_email</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">IdAuthority email address</td>
+</tr>
+<tr class="row-even"><td>ida_fax</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">IdAuthority fax number</td>
+</tr>
+<tr class="row-even"><td>ida_tel</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">IdAuthority telephone number</td>
+</tr>
+<tr class="row-even"><td>joi_country</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Jurisdiction of Incorporation: Country</td>
+</tr>
+<tr class="row-even"><td>joi_locality</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Jurisdiction of Incorporation: Locality</td>
+</tr>
+<tr class="row-even"><td>joi_state</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Jurisdiction of Incorporation: State</td>
+</tr>
+<tr class="row-even"><td>middleman</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td colspan="2">The contact who bought the certificate</td>
+</tr>
+<tr class="row-even"><td>order_number</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>package</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td colspan="2">Name of the Cert package</td>
+</tr>
+<tr class="row-odd"><td>software</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td colspan="2">Software in which you will use the cert</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#CertificateStatus" title="CertificateStatus"><tt class="xref py py-data docutils literal"><span class="pre">status</span></tt></a></td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>trustlogo</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Add COMODO SSL TrustLogo to this package</td>
+</tr>
+<tr class="row-even"><td>trustlogo_token</td>
+<td>struct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="DcvParamsReturn"><a name="//apple_ref/cpp/clconst/DcvParamsReturn"></a>
+<tt class="descname">DcvParamsReturn</tt><a class="headerlink" href="#DcvParamsReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#cert.get_dcv_params" title="cert.get_dcv_params"><tt class="xref py py-meth docutils literal"><span class="pre">cert.get_dcv_params()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>dcv_method</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>dns_records</td>
+<td>array</td>
+</tr>
+<tr class="row-even"><td>fqdns</td>
+<td>array</td>
+</tr>
+<tr class="row-odd"><td>md5</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>array</td>
+</tr>
+<tr class="row-odd"><td>sha1</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="data">
+<dt id="CategoryReturn"><a name="//apple_ref/cpp/clconst/CategoryReturn"></a>
+<tt class="descname">CategoryReturn</tt><a class="headerlink" href="#CategoryReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>used by <a class="reference internal" href="#CertPackageReturn" title="CertPackageReturn"><tt class="xref py py-data docutils literal"><span class="pre">CertPackageReturn</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+<dl class="data">
+<dt id="CertPackageReturn"><a name="//apple_ref/cpp/clconst/CertPackageReturn"></a>
+<tt class="descname">CertPackageReturn</tt><a class="headerlink" href="#CertPackageReturn" title="Permalink to this definition">¶</a></dt>
+<dd><p>returned by <a class="reference internal" href="#cert.package.list" title="cert.package.list"><tt class="xref py py-meth docutils literal"><span class="pre">cert.package.list()</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%"></col>
+<col width="38%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#CategoryReturn" title="CategoryReturn"><tt class="xref py py-data docutils literal"><span class="pre">category</span></tt></a></td>
+<td>struct</td>
+</tr>
+<tr class="row-odd"><td>comodo_id</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>max_domains</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>min_domains</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>sgc</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>trustlogo</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>warranty</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>wildcard</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>Navigation</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="General Index">index</a></li>
+<li class="right">
+<a href="../site/index.html" title="Gandi Site API">next</a> |</li>
+<li class="right">
+<a href="usage.html" title="Certificate API">previous</a> |</li>
+<li><a href="../index.html">Gandi API 3.3.5 documentation</a> »</li>
+<li><a href="index.html">Gandi Certificate API</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © Copyright 2014 Gandi.net.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+</body>
+</html>
