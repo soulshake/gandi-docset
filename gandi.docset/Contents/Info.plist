@@ -5,7 +5,7 @@
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>CFBundleName</key>
-	<string></string>
+	<string>Gandi.net API</string>
 	<key>DashDocSetFamily</key>
 	<string>python</string>
 	<key>DocSetPlatformFamily</key>
