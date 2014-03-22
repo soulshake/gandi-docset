@@ -1,5 +1,8 @@
 gandi-docset: Gandi API documentation docset for Dash
 ============
+Gandi has an API that allows users and resellers to fully control all aspects of domains and hosting at Gandi.
+The docs are online here: http://doc.rpc.gandi.net/
+but sometimes it's great to have offiline access.
 
 Instant offline access to [Gandi API](http://doc.rpc.gandi.net/) documentation with 
 [Dash](http://kapeli.com/dash "Dash – Snippet Manager, Documentation Browser"), an API Documentation Browser and Code Snippet Manager.
